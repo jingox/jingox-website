@@ -134,6 +134,25 @@ function initHome(){
 
 /* ---------- collection page ---------- */
 let activePlatform = "all", activeType = "all";
+function injectCollectionSchema(){
+  if(document.querySelector('script[data-schema="collection"]')) return;
+  const s=document.createElement('script');
+  s.type='application/ld+json';
+  s.setAttribute('data-schema','collection');
+  s.textContent=JSON.stringify({
+    "@context":"https://schema.org",
+    "@type":"ItemList",
+    "name":"JINGOX Gaming Console Accessories Catalog",
+    "numberOfItems":PRODUCTS.length,
+    "url":"https://jingox.com/products",
+    "itemListElement":PRODUCTS.map((p,i)=>({
+      "@type":"ListItem","position":i+1,
+      "name":`${p.name} (${p.sku})`,
+      "url":"https://jingox.com/product?sku="+encodeURIComponent(p.sku)
+    }))
+  });
+  document.head.appendChild(s);
+}
 function initCollection(){
   const grid = document.getElementById('productGrid');
   if(!grid) return;
@@ -211,6 +230,7 @@ function initCollection(){
   });
 
   render();
+  injectCollectionSchema();
 }
 function setActive(container, dim, val){
   if(!container) return;
