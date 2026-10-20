@@ -5,16 +5,15 @@
    - Product detail template (?sku=)
    - WhatsApp / email intent links
    - Inquiry form (Web3Forms) + FAQ + mobile nav
-   P4: Web3Forms key is connected (inquiry form sends to info@jingox.com).
-   {{WHATSAPP_NUMBER}} is still a placeholder until the business number is set;
-   until then WhatsApp buttons route to the contact page.
+   P4: Web3Forms inquiry form is connected (sends to info@jingox.com).
+   P4: Business WhatsApp is connected (US +1 508 763 7390 -> wa.me/15087637390).
    ============================================================ */
 
 const CFG = {
   brand: "JINGOX",
   email: "info@jingox.com",
-  // Deploy-time: digits only, country code + number (e.g. 8613800000000)
-  whatsapp: "{{WHATSAPP_NUMBER}}",
+  // Business WhatsApp, digits only, country code + number (US +1 508 763 7390)
+  whatsapp: "15087637390",
   // Web3Forms access key (https://web3forms.com, public client-side key)
   web3formsKey: "2918e864-3ffb-4b3c-913e-6fc4dd27cd94"
 };
