@@ -63,6 +63,40 @@ function phIcon(size){
   </svg>`;
 }
 function countBy(key, val){ return PRODUCTS.filter(p=>p[key]===val).length; }
+function hasImgs(p){ return !!(p.images && p.images.length); }
+function plainText(s){
+  return String(s==null?"":s).replace(/^-\s+/gm,'').replace(/\*\*/g,'').replace(/\s+/g,' ').trim();
+}
+function setMeta(name, content){
+  let el = document.querySelector('meta[name="'+name+'"]');
+  if(!el){ el = document.createElement('meta'); el.setAttribute('name',name); document.head.appendChild(el); }
+  el.setAttribute('content', content);
+}
+function setOg(prop, content){
+  let el = document.querySelector('meta[property="'+prop+'"]');
+  if(!el){ el = document.createElement('meta'); el.setAttribute('property',prop); document.head.appendChild(el); }
+  el.setAttribute('content', content);
+}
+function injectProductSchema(p){
+  const data = {
+    "@context":"https://schema.org","@type":"Product",
+    "name":p.name,
+    "sku":p.sku,
+    "mpn":p.sku,
+    "category":[p.platformName, p.type].filter(Boolean).join(" "),
+    "description":plainText(p.desc),
+    "brand":{"@type":"Brand","name":"JINGOX"},
+    "manufacturer":{"@type":"Organization","name":"Shenzhen Zhimi Technology Co., Ltd."}
+  };
+  if(hasImgs(p)){
+    data.image = p.images.map(x => "https://jingox.com/"+x.src);
+  }
+  // B2B inquiry catalog: prices are on request, so no numeric Offer/price is published.
+  const s = document.createElement('script');
+  s.type = "application/ld+json";
+  s.textContent = JSON.stringify(data);
+  document.head.appendChild(s);
+}
 
 /* ---------- product card ---------- */
 function productCard(p){
@@ -70,10 +104,10 @@ function productCard(p){
   const mail = mailLink(`Inquiry: ${p.sku} ${p.name}`);
   return `<article class="product-card" data-platform="${esc(p.platformKey)}" data-type="${esc(p.type)}"
       data-search="${esc((p.sku+' '+p.name+' '+p.platformName+' '+p.type).toLowerCase())}">
-    <a class="product-ph" href="product.html?sku=${encodeURIComponent(p.sku)}" aria-label="${esc(p.name)}">
-      ${phIcon(74)}
-      <span class="ph-sku">${esc(p.sku)}</span>
-      <span class="ph-type">${esc(p.type)}</span>
+    <a class="product-ph${hasImgs(p)?' has-img':''}" href="product.html?sku=${encodeURIComponent(p.sku)}" aria-label="${esc(p.name)}">
+      ${hasImgs(p)
+        ? `<img class="product-img" src="${esc(p.images[0].src)}" alt="${esc(p.images[0].alt)}" loading="lazy" decoding="async" width="800" height="800">`
+        : `${phIcon(74)}<span class="ph-sku">${esc(p.sku)}</span><span class="ph-type">${esc(p.type)}</span>`}
     </a>
     <div class="product-body">
       <a class="product-name" href="product.html?sku=${encodeURIComponent(p.sku)}">${esc(p.name)}</a>
@@ -288,7 +322,37 @@ function initDetail(){
     return;
   }
   if(crumbName) crumbName.textContent = p.sku;
-  document.title = `${p.name} | JINGOX Wholesale`;
+  document.title = `${p.name} (${p.sku}) | JINGOX Wholesale`;
+  const metaDesc = plainText(p.desc).slice(0,155) +
+    ` Wholesale MOQ 1 piece, OEM/ODM. Contact JINGOX for factory price.`;
+  setMeta('description', metaDesc);
+  setOg('og:title', `${p.name} | JINGOX`);
+  setOg('og:description', metaDesc);
+  const gallery = hasImgs(p)
+    ? `<div class="pd-gallery">
+        <div class="pd-main-ph has-img">
+          <img id="pdMainImg" class="pd-main-img" src="${esc(p.images[0].src)}" alt="${esc(p.images[0].alt)}" width="800" height="800">
+        </div>
+        <div class="pd-thumbs pd-thumbs-scroll">
+          ${p.images.map((x,i)=>`<button type="button" class="pd-thumb${i===0?' active':''}" data-i="${i}" aria-label="View photo ${i+1} of ${p.name}">
+            <img src="${esc(x.src)}" alt="${esc(x.alt)}" loading="lazy" decoding="async" width="120" height="120">
+          </button>`).join('')}
+        </div>
+      </div>`
+    : `<div class="pd-gallery">
+        <div class="pd-main-ph">${phIcon(128)}
+          <span class="ph-sku" style="position:absolute;top:14px;left:14px;font-size:.78rem">${esc(p.sku)}</span>
+        </div>
+        <div class="pd-thumbs">
+          ${[0,1,2,3].map(()=>`<div class="pd-thumb">${phIcon(28)}</div>`).join('')}
+        </div>
+        <p style="font-size:.8rem;color:var(--muted-2);margin-top:12px;text-align:center">
+          Product photos are added during catalog upload (P6). Contact us for the latest image pack.</p>
+      </div>`;
+  if(hasImgs(p)){
+    setOg('og:image', "https://jingox.com/"+p.images[0].src);
+    injectProductSchema(p);
+  }
   const wa = waLink(productWaText(p));
   const mail = mailLink(`Inquiry: ${p.sku} ${p.name}`);
   const related = PRODUCTS.filter(x=>x.sku!==p.sku && (x.platformKey===p.platformKey || x.type===p.type))
@@ -296,16 +360,7 @@ function initDetail(){
 
   wrap.innerHTML = `
   <div class="pd">
-    <div class="pd-gallery">
-      <div class="pd-main-ph">${phIcon(128)}
-        <span class="ph-sku" style="position:absolute;top:14px;left:14px;font-size:.78rem">${esc(p.sku)}</span>
-      </div>
-      <div class="pd-thumbs">
-        ${[0,1,2,3].map(()=>`<div class="pd-thumb">${phIcon(28)}</div>`).join('')}
-      </div>
-      <p style="font-size:.8rem;color:var(--muted-2);margin-top:12px;text-align:center">
-        Product photos are added during catalog upload (P6). Contact us for the latest image pack.</p>
-    </div>
+    ${gallery}
     <div class="pd-info">
       <span class="pd-sku">${esc(p.sku)}</span>
       <h1>${esc(p.name)}</h1>
@@ -343,6 +398,23 @@ function initDetail(){
       <div class="product-grid" id="relatedGrid">${related.map(productCard).join('')}</div>
     </div>
   </div>`;
+
+  // gallery thumbnail switching
+  const mainImgEl = document.getElementById('pdMainImg');
+  if(mainImgEl){
+    wrap.querySelectorAll('.pd-thumb').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const i = parseInt(btn.dataset.i,10);
+        const im = p.images[i];
+        if(!im) return;
+        mainImgEl.src = im.src;
+        mainImgEl.alt = im.alt;
+        wrap.querySelectorAll('.pd-thumb').forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        btn.scrollIntoView({behavior:'smooth', block:'nearest', inline:'center'});
+      });
+    });
+  }
 }
 
 /* ---------- FAQ accordion ---------- */
