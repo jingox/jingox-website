@@ -5,8 +5,9 @@
    - Product detail template (?sku=)
    - WhatsApp / email intent links
    - Inquiry form (Web3Forms) + FAQ + mobile nav
-   Placeholders {{WHATSAPP_NUMBER}} / {{WEB3FORMS_KEY}} are replaced at go-live (P4).
-   Until then WhatsApp buttons route to the contact page and the form routes to email.
+   P4: Web3Forms key is connected (inquiry form sends to info@jingox.com).
+   {{WHATSAPP_NUMBER}} is still a placeholder until the business number is set;
+   until then WhatsApp buttons route to the contact page.
    ============================================================ */
 
 const CFG = {
@@ -14,8 +15,8 @@ const CFG = {
   email: "info@jingox.com",
   // Deploy-time: digits only, country code + number (e.g. 8613800000000)
   whatsapp: "{{WHATSAPP_NUMBER}}",
-  // Deploy-time: Web3Forms access key from https://web3forms.com
-  web3formsKey: "{{WEB3FORMS_KEY}}"
+  // Web3Forms access key (https://web3forms.com, public client-side key)
+  web3formsKey: "2918e864-3ffb-4b3c-913e-6fc4dd27cd94"
 };
 
 const TYPE_ORDER = ["Charging Dock","Cooling Stand","Storage Stand","Somatosensory",
