@@ -19,16 +19,56 @@ window.PRODUCTS = [
     "packingContents": "1 × Charging Dock; 1 × Type-C Charging Cable; 1 × User Manual",
     "desc": "Elevate Your Gaming Setup with the RGB Triangle Charging Dock\n\nWhy settle for a boring, plain charging stand when you can have one that lights up your entire desk? Our RGB Triangle Charging Dock combines high-performance 4-controller charging with a breathtaking rainbow RGB light show — making it both an essential accessory and a statement piece for any gamer's setup.\n\nA Light Show in Every Charge\n\nThe hollow triangular center features a continuously flowing rainbow gradient that cycles through blue, purple, pink, orange, yellow, and green. The soft, diffused glow creates a mesmerizing ambient effect that syncs perfectly with your gaming mood. Whether you're charging overnight or displaying your controllers during the day, the RGB light adds a vibrant, futuristic touch to your desk.\n\nCharge 4 Controllers — Fast & Safe\n\nWith four independent charging slots, you can power up a full set of Joy-Con controllers simultaneously. The 5V/2A input and four 5V/200mA outputs ensure steady, efficient charging for every controller. Built-in smart protection circuitry guards against overcharging, over-voltage, and short circuits, so you can leave your controllers on the dock overnight with total peace of mind.\n\nBuilt to Last, Designed to Impress\n\nThe unique triangle shape isn't just for looks — it lowers the center of gravity for rock-solid stability, even with all four slots filled. The durable ABS+PP construction resists scuffs and daily wear, while the smooth, matte finish complements any gaming aesthetic. Compact and lightweight, it fits easily on any desk, shelf, or entertainment center.\n\nMore Than a Charger — A Controller Organizer\n\nWhen your Joy-Cons aren't charging, the dock doubles as a sleek storage stand that keeps your controllers upright, organized, and always within reach. No more tangled cables or controllers scattered across your desk — everything stays neat and ready for your next multiplayer session.\n\nWhat's in the Box\n\n- 1 × RGB Triangle Charging Dock\n- 1 × Type-C Charging Cable\n- 1 × User Manual\n\nNote: Joy-Con controllers and Nintendo Switch console are not included.",
     "images": [
-      {"src": "images/products/HBS-2801/HBS-2801-01.webp", "alt": "Triangle Charging Dock for Switch 2"},
-      {"src": "images/products/HBS-2801/HBS-2801-02.webp", "alt": "Triangle Charging Dock for Switch 2 view 2"},
-      {"src": "images/products/HBS-2801/HBS-2801-03.webp", "alt": "Triangle Charging Dock for Switch 2 view 3"},
-      {"src": "images/products/HBS-2801/HBS-2801-04.webp", "alt": "Triangle Charging Dock for Switch 2 view 4"},
-      {"src": "images/products/HBS-2801/HBS-2801-05.webp", "alt": "Triangle Charging Dock for Switch 2 view 5"},
-      {"src": "images/products/HBS-2801/HBS-2801-06.webp", "alt": "Triangle Charging Dock for Switch 2 view 6"},
-      {"src": "images/products/HBS-2801/HBS-2801-07.webp", "alt": "Triangle Charging Dock for Switch 2 view 7"},
-      {"src": "images/products/HBS-2801/HBS-2801-08.webp", "alt": "Triangle Charging Dock for Switch 2 view 8"},
-      {"src": "images/products/HBS-2801/HBS-2801-09.webp", "alt": "Triangle Charging Dock for Switch 2 view 9"},
-      {"src": "images/products/HBS-2801/HBS-2801-10.webp", "alt": "Triangle Charging Dock for Switch 2 view 10"}
+      {
+        "src": "images/products/HBS-2801/HBS-2801-01.webp",
+        "alt": "Triangle charging dock with RGB light for Switch 2",
+        "kind": "main"
+      },
+      {
+        "src": "images/products/HBS-2801/HBS-2801-02.webp",
+        "alt": "Two Switch 2 controllers charging on triangle dock",
+        "kind": "main"
+      },
+      {
+        "src": "images/products/HBS-2801/HBS-2801-03.webp",
+        "alt": "Switch 2 controllers on triangle charging dock, front view",
+        "kind": "main"
+      },
+      {
+        "src": "images/products/HBS-2801/HBS-2801-04.webp",
+        "alt": "Triangle charging dock with controllers, top view",
+        "kind": "main"
+      },
+      {
+        "src": "images/products/HBS-2801/HBS-2801-05.webp",
+        "alt": "Triangle RGB charging dock for Switch 2, front view",
+        "kind": "main"
+      },
+      {
+        "src": "images/products/HBS-2801/HBS-2801-06.webp",
+        "alt": "Triangle charging dock charging multiple controllers",
+        "kind": "main"
+      },
+      {
+        "src": "images/products/HBS-2801/HBS-2801-07.webp",
+        "alt": "Triangle charging dock top controls",
+        "kind": "main"
+      },
+      {
+        "src": "images/products/HBS-2801/HBS-2801-08.webp",
+        "alt": "Retail packaging box for Switch 2 charging dock",
+        "kind": "main"
+      },
+      {
+        "src": "images/products/HBS-2801/HBS-2801-09.webp",
+        "alt": "Triangle charging dock dimensions",
+        "kind": "main"
+      },
+      {
+        "src": "images/products/HBS-2801/HBS-2801-10.webp",
+        "alt": "Triangle charging dock dimensions in millimeters",
+        "kind": "main"
+      }
     ]
   },
   {
@@ -624,34 +664,146 @@ window.PRODUCTS = [
     "packingContents": "2 × Tennis Accessory; 2 × Golf Accessory; 2 × Ping Pong Accessory; 2 × Jump Rope Accessory; 2 × Steering Wheel; 2 × Controller Grip; 2 × Wrist Strap; 2 × Bowling Grip; 2 × Universal Grip; 2 × Cooling Stand; 2 × Joy-Con Protective Case; 1 × Console Protective Case; 2 × Screen Protector; 2 × Lanyard; 8 × Thumb Grip Caps; 1 × Game Card Storage Rack; 2 × Mouse Grip; 1 × Storage Bag",
     "desc": "Level up your Nintendo Switch 2 gaming experience with this 43 in 1 deluxe accessory bundle.\nThis all-in-one kit gathers sports game attachments, full protective accessories and storage organizers. Perfect for Switch Sports fans to enjoy tennis, golf, table tennis, bowling, swordplay and rope skipping games.\n\nThe protective combo includes transparent console case, Joy-Con cover, HD screen protector and thumb caps, which offer comprehensive scratch & drop resistance.\nThe portable hard storage bag keeps your console and all accessories safe and tidy when travelling. Game card rack helps organize your game cartridges neatly. All attachments fit Joy-Con perfectly for easy assembly.\n\nAll accessories use eco-friendly sturdy material, precise cutouts ensure you can access all buttons and ports without removing shells.\nA fantastic gift for Switch 2 gamers and family game nights.",
     "images": [
-      {"src": "images/products/HBS-2949/HBS-2949-01.webp", "alt": "43 in 1 Somatosensory sports sets for Switch2 Joycon"},
-      {"src": "images/products/HBS-2949/HBS-2949-02.webp", "alt": "43 in 1 Somatosensory sports sets for Switch2 Joycon view 2"},
-      {"src": "images/products/HBS-2949/HBS-2949-03.webp", "alt": "43 in 1 Somatosensory sports sets for Switch2 Joycon view 3"},
-      {"src": "images/products/HBS-2949/HBS-2949-04.webp", "alt": "43 in 1 Somatosensory sports sets for Switch2 Joycon view 4"},
-      {"src": "images/products/HBS-2949/HBS-2949-05.webp", "alt": "43 in 1 Somatosensory sports sets for Switch2 Joycon view 5"},
-      {"src": "images/products/HBS-2949/HBS-2949-06.webp", "alt": "43 in 1 Somatosensory sports sets for Switch2 Joycon view 6"},
-      {"src": "images/products/HBS-2949/HBS-2949-07.webp", "alt": "43 in 1 Somatosensory sports sets for Switch2 Joycon view 7"},
-      {"src": "images/products/HBS-2949/HBS-2949-08.webp", "alt": "43 in 1 Somatosensory sports sets for Switch2 Joycon view 8"},
-      {"src": "images/products/HBS-2949/HBS-2949-09.webp", "alt": "43 in 1 Somatosensory sports sets for Switch2 Joycon view 9"},
-      {"src": "images/products/HBS-2949/HBS-2949-10.webp", "alt": "43 in 1 Somatosensory sports sets for Switch2 Joycon view 10"},
-      {"src": "images/products/HBS-2949/HBS-2949-11.webp", "alt": "43 in 1 Somatosensory sports sets for Switch2 Joycon view 11"},
-      {"src": "images/products/HBS-2949/HBS-2949-12.webp", "alt": "43 in 1 Somatosensory sports sets for Switch2 Joycon view 12"},
-      {"src": "images/products/HBS-2949/HBS-2949-13.webp", "alt": "43 in 1 Somatosensory sports sets for Switch2 Joycon view 13"},
-      {"src": "images/products/HBS-2949/HBS-2949-14.webp", "alt": "43 in 1 Somatosensory sports sets for Switch2 Joycon view 14"},
-      {"src": "images/products/HBS-2949/HBS-2949-15.webp", "alt": "43 in 1 Somatosensory sports sets for Switch2 Joycon view 15"},
-      {"src": "images/products/HBS-2949/HBS-2949-16.webp", "alt": "43 in 1 Somatosensory sports sets for Switch2 Joycon view 16"},
-      {"src": "images/products/HBS-2949/HBS-2949-17.webp", "alt": "43 in 1 Somatosensory sports sets for Switch2 Joycon view 17"},
-      {"src": "images/products/HBS-2949/HBS-2949-18.webp", "alt": "43 in 1 Somatosensory sports sets for Switch2 Joycon view 18"},
-      {"src": "images/products/HBS-2949/HBS-2949-19.webp", "alt": "43 in 1 Somatosensory sports sets for Switch2 Joycon view 19"},
-      {"src": "images/products/HBS-2949/HBS-2949-20.webp", "alt": "43 in 1 Somatosensory sports sets for Switch2 Joycon view 20"},
-      {"src": "images/products/HBS-2949/HBS-2949-21.webp", "alt": "43 in 1 Somatosensory sports sets for Switch2 Joycon view 21"},
-      {"src": "images/products/HBS-2949/HBS-2949-22.webp", "alt": "43 in 1 Somatosensory sports sets for Switch2 Joycon view 22"},
-      {"src": "images/products/HBS-2949/HBS-2949-23.webp", "alt": "43 in 1 Somatosensory sports sets for Switch2 Joycon view 23"},
-      {"src": "images/products/HBS-2949/HBS-2949-24.webp", "alt": "43 in 1 Somatosensory sports sets for Switch2 Joycon view 24"},
-      {"src": "images/products/HBS-2949/HBS-2949-25.webp", "alt": "43 in 1 Somatosensory sports sets for Switch2 Joycon view 25"},
-      {"src": "images/products/HBS-2949/HBS-2949-26.webp", "alt": "43 in 1 Somatosensory sports sets for Switch2 Joycon view 26"},
-      {"src": "images/products/HBS-2949/HBS-2949-27.webp", "alt": "43 in 1 Somatosensory sports sets for Switch2 Joycon view 27"},
-      {"src": "images/products/HBS-2949/HBS-2949-28.webp", "alt": "43 in 1 Somatosensory sports sets for Switch2 Joycon view 28"}
+      {
+        "src": "images/products/HBS-2949/HBS-2949-01.webp",
+        "alt": "43-in-1 motion accessory kit for Switch 2 with all accessories",
+        "kind": "main"
+      },
+      {
+        "src": "images/products/HBS-2949/HBS-2949-02.webp",
+        "alt": "Steering wheel grips for Switch 2 racing games",
+        "kind": "main"
+      },
+      {
+        "src": "images/products/HBS-2949/HBS-2949-03.webp",
+        "alt": "Bowling grip for Switch 2 motion controller",
+        "kind": "main"
+      },
+      {
+        "src": "images/products/HBS-2949/HBS-2949-04.webp",
+        "alt": "Two LED light swords for Switch 2 controllers",
+        "kind": "main"
+      },
+      {
+        "src": "images/products/HBS-2949/HBS-2949-05.webp",
+        "alt": "Tennis rackets for Switch 2 sports games",
+        "kind": "main"
+      },
+      {
+        "src": "images/products/HBS-2949/HBS-2949-06.webp",
+        "alt": "Protective case, screen protector and thumb grips",
+        "kind": "main"
+      },
+      {
+        "src": "images/products/HBS-2949/HBS-2949-07.webp",
+        "alt": "Carrying case storing the full accessory kit",
+        "kind": "main"
+      },
+      {
+        "src": "images/products/HBS-2949/HBS-2949-08.webp",
+        "alt": "Complete accessory list for the 43-in-1 kit",
+        "kind": "main"
+      },
+      {
+        "src": "images/products/HBS-2949/HBS-2949-09.webp",
+        "alt": "Retail packaging box for 43-in-1 accessory kit",
+        "kind": "main"
+      },
+      {
+        "src": "images/products/HBS-2949/HBS-2949-10.webp",
+        "alt": "43-in-1 deluxe all-in-one motion control accessory set",
+        "kind": "detail"
+      },
+      {
+        "src": "images/products/HBS-2949/HBS-2949-11.webp",
+        "alt": "Detailed accessory list for Switch 2 motion kit",
+        "kind": "detail"
+      },
+      {
+        "src": "images/products/HBS-2949/HBS-2949-12.webp",
+        "alt": "Comfort controller grips for Switch 2",
+        "kind": "detail"
+      },
+      {
+        "src": "images/products/HBS-2949/HBS-2949-13.webp",
+        "alt": "Gaming steering wheel for immersive driving",
+        "kind": "detail"
+      },
+      {
+        "src": "images/products/HBS-2949/HBS-2949-14.webp",
+        "alt": "Six-step installation instructions for accessories",
+        "kind": "detail"
+      },
+      {
+        "src": "images/products/HBS-2949/HBS-2949-15.webp",
+        "alt": "Golf clubs for Switch 2 golf games",
+        "kind": "detail"
+      },
+      {
+        "src": "images/products/HBS-2949/HBS-2949-16.webp",
+        "alt": "Fencing grips for comfortable sword swinging",
+        "kind": "detail"
+      },
+      {
+        "src": "images/products/HBS-2949/HBS-2949-17.webp",
+        "alt": "Tennis rackets with comfortable touch",
+        "kind": "detail"
+      },
+      {
+        "src": "images/products/HBS-2949/HBS-2949-18.webp",
+        "alt": "Bowling grip, plug and play",
+        "kind": "detail"
+      },
+      {
+        "src": "images/products/HBS-2949/HBS-2949-19.webp",
+        "alt": "Wrist straps for hands-free immersive play",
+        "kind": "detail"
+      },
+      {
+        "src": "images/products/HBS-2949/HBS-2949-20.webp",
+        "alt": "Controller and mouse grips, ergonomic plug and play",
+        "kind": "detail"
+      },
+      {
+        "src": "images/products/HBS-2949/HBS-2949-21.webp",
+        "alt": "Table tennis paddles for instant rally",
+        "kind": "detail"
+      },
+      {
+        "src": "images/products/HBS-2949/HBS-2949-22.webp",
+        "alt": "Jump rope for Switch 2 fitness games",
+        "kind": "detail"
+      },
+      {
+        "src": "images/products/HBS-2949/HBS-2949-23.webp",
+        "alt": "Controller grips for immersive gaming",
+        "kind": "detail"
+      },
+      {
+        "src": "images/products/HBS-2949/HBS-2949-24.webp",
+        "alt": "Game cartridge storage rack for 14 games",
+        "kind": "detail"
+      },
+      {
+        "src": "images/products/HBS-2949/HBS-2949-25.webp",
+        "alt": "Cooling bracket to increase ventilation and heat dissipation",
+        "kind": "detail"
+      },
+      {
+        "src": "images/products/HBS-2949/HBS-2949-26.webp",
+        "alt": "Comprehensive protection kit, scratch and drop resistant",
+        "kind": "detail"
+      },
+      {
+        "src": "images/products/HBS-2949/HBS-2949-27.webp",
+        "alt": "Spacious storage bag keeps accessories organized",
+        "kind": "detail"
+      },
+      {
+        "src": "images/products/HBS-2949/HBS-2949-28.webp",
+        "alt": "Retail packaging and specifications for 43-in-1 kit",
+        "kind": "detail"
+      }
     ]
   },
   {
@@ -851,18 +1003,66 @@ window.PRODUCTS = [
     "packingContents": "1 × Charging Dock; 1 × 80cmType-C Charging Cable",
     "desc": "This charging dock is compatible with Nintendo Switch Joy-Con and Pro controller.Free collocation: charge 4 Joy‑Con controllers at the same time; 2 Joy-Con+1 Pro wireless controller; 2 Joy-Con+Switch game consoles, one-stop solution to multi-device charging needs.\nCool acrylic light column LED indicator light, the charging status is clear at a glance: the blue light flashes when Joy‑Con is charging, and it turns to a constant green light after full no-load; the blue light self-test is automatically turned on for 2 seconds.The Pro controller lights up with a green light, and turns off the light after it is fully charged.The non-slip silicone pad design at the bottom of the base is stable and not easy to slip and dump.\nReminder: The Joy‑Con, console and other equipment are not included.",
     "images": [
-      {"src": "images/products/HBS-115/HBS-115-01.webp", "alt": "4 in 1 Charging Dock for Switch Joy-con & Pro Controller"},
-      {"src": "images/products/HBS-115/HBS-115-02.webp", "alt": "4 in 1 Charging Dock for Switch Joy-con & Pro Controller view 2"},
-      {"src": "images/products/HBS-115/HBS-115-03.webp", "alt": "4 in 1 Charging Dock for Switch Joy-con & Pro Controller view 3"},
-      {"src": "images/products/HBS-115/HBS-115-04.webp", "alt": "4 in 1 Charging Dock for Switch Joy-con & Pro Controller view 4"},
-      {"src": "images/products/HBS-115/HBS-115-05.webp", "alt": "4 in 1 Charging Dock for Switch Joy-con & Pro Controller view 5"},
-      {"src": "images/products/HBS-115/HBS-115-06.webp", "alt": "4 in 1 Charging Dock for Switch Joy-con & Pro Controller view 6"},
-      {"src": "images/products/HBS-115/HBS-115-07.webp", "alt": "4 in 1 Charging Dock for Switch Joy-con & Pro Controller view 7"},
-      {"src": "images/products/HBS-115/HBS-115-08.webp", "alt": "4 in 1 Charging Dock for Switch Joy-con & Pro Controller view 8"},
-      {"src": "images/products/HBS-115/HBS-115-09.webp", "alt": "4 in 1 Charging Dock for Switch Joy-con & Pro Controller view 9"},
-      {"src": "images/products/HBS-115/HBS-115-10.webp", "alt": "4 in 1 Charging Dock for Switch Joy-con & Pro Controller view 10"},
-      {"src": "images/products/HBS-115/HBS-115-11.webp", "alt": "4 in 1 Charging Dock for Switch Joy-con & Pro Controller view 11"},
-      {"src": "images/products/HBS-115/HBS-115-12.webp", "alt": "4 in 1 Charging Dock for Switch Joy-con & Pro Controller view 12"}
+      {
+        "src": "images/products/HBS-115/HBS-115-01.webp",
+        "alt": "4-in-1 charging dock for Switch Joy-con and Pro controllers",
+        "kind": "main"
+      },
+      {
+        "src": "images/products/HBS-115/HBS-115-02.webp",
+        "alt": "Charging dock parts, acrylic lamp posts, USB-C and charging ports",
+        "kind": "main"
+      },
+      {
+        "src": "images/products/HBS-115/HBS-115-03.webp",
+        "alt": "Switch console, Joy-con and Pro controller on charging dock",
+        "kind": "main"
+      },
+      {
+        "src": "images/products/HBS-115/HBS-115-04.webp",
+        "alt": "Anti-slip pads on the bottom of charging dock",
+        "kind": "main"
+      },
+      {
+        "src": "images/products/HBS-115/HBS-115-05.webp",
+        "alt": "Joy-con and Pro controllers charging on dock",
+        "kind": "main"
+      },
+      {
+        "src": "images/products/HBS-115/HBS-115-06.webp",
+        "alt": "4-in-1 charging stand for Nintendo Switch",
+        "kind": "detail"
+      },
+      {
+        "src": "images/products/HBS-115/HBS-115-07.webp",
+        "alt": "Three charging modes, four Joy-con, two Joy-con with Pro, or console",
+        "kind": "detail"
+      },
+      {
+        "src": "images/products/HBS-115/HBS-115-08.webp",
+        "alt": "Charging indicator lights for Joy-con and Pro controller",
+        "kind": "detail"
+      },
+      {
+        "src": "images/products/HBS-115/HBS-115-09.webp",
+        "alt": "Smart protection prevents overcharging and damage",
+        "kind": "detail"
+      },
+      {
+        "src": "images/products/HBS-115/HBS-115-10.webp",
+        "alt": "Non-slip base keeps charging dock in place",
+        "kind": "detail"
+      },
+      {
+        "src": "images/products/HBS-115/HBS-115-11.webp",
+        "alt": "Charging dock specifications and parameters",
+        "kind": "detail"
+      },
+      {
+        "src": "images/products/HBS-115/HBS-115-12.webp",
+        "alt": "Retail packaging box for Switch charging dock",
+        "kind": "detail"
+      }
     ]
   },
   {
@@ -1386,15 +1586,51 @@ window.PRODUCTS = [
     "packingContents": "1 × Charging Dock; 1 × 80cmType-C Charging Cable",
     "desc": "The airplane‑shaped dual charging dock is a perfect gaming accessory built exclusively for PS5 DualSense wireless controllers. It supports charging two controllers at the same time, so you will never run out of power in the middle of the game.\nWith stunning blue LED ambient lighting, this charger creates a cool gaming atmosphere. Thanks to the built‑in smart chip, power supply will stop automatically after full charge to avoid battery damage caused by overheating and overcharging.\nThe fashionable airplane shape and transparent brackets combine charging and display functions in one unit. The detachable weighted base provides excellent stability. It is an ideal gift and desktop decoration for game lovers.\nPackage Contents:\n1 × PS5 Dual Controller Charging Dock\nPS5 game controllers are not included.",
     "images": [
-      {"src": "images/products/HBP-253BW/HBP-253BW-01.webp", "alt": "Dual Charging Dock for PS5 Controller (White)"},
-      {"src": "images/products/HBP-253BW/HBP-253BW-02.webp", "alt": "Dual Charging Dock for PS5 Controller (White) view 2"},
-      {"src": "images/products/HBP-253BW/HBP-253BW-03.webp", "alt": "Dual Charging Dock for PS5 Controller (White) view 3"},
-      {"src": "images/products/HBP-253BW/HBP-253BW-04.webp", "alt": "Dual Charging Dock for PS5 Controller (White) view 4"},
-      {"src": "images/products/HBP-253BW/HBP-253BW-05.webp", "alt": "Dual Charging Dock for PS5 Controller (White) view 5"},
-      {"src": "images/products/HBP-253BW/HBP-253BW-06.webp", "alt": "Dual Charging Dock for PS5 Controller (Black) view 6"},
-      {"src": "images/products/HBP-253BW/HBP-253BW-07.webp", "alt": "Dual Charging Dock for PS5 Controller (Black) view 7"},
-      {"src": "images/products/HBP-253BW/HBP-253BW-08.webp", "alt": "Dual Charging Dock for PS5 Controller (Black) view 8"},
-      {"src": "images/products/HBP-253BW/HBP-253BW-09.webp", "alt": "Dual Charging Dock for PS5 Controller (Black) view 9"}
+      {
+        "src": "images/products/HBP-253BW/HBP-253BW-01.webp",
+        "alt": "White aircraft-style dual charging dock with two PS5 controllers",
+        "kind": "main"
+      },
+      {
+        "src": "images/products/HBP-253BW/HBP-253BW-02.webp",
+        "alt": "White dual charging dock with blue LED charging indicators",
+        "kind": "main"
+      },
+      {
+        "src": "images/products/HBP-253BW/HBP-253BW-03.webp",
+        "alt": "White dual charging dock dimensions, 14.5cm height",
+        "kind": "main"
+      },
+      {
+        "src": "images/products/HBP-253BW/HBP-253BW-04.webp",
+        "alt": "Two PS5 controllers charging on white aircraft-style dock",
+        "kind": "main"
+      },
+      {
+        "src": "images/products/HBP-253BW/HBP-253BW-05.webp",
+        "alt": "Retail packaging box for PS5 dual charging dock",
+        "kind": "main"
+      },
+      {
+        "src": "images/products/HBP-253BW/HBP-253BW-06.webp",
+        "alt": "Black aircraft-style dual charging dock with base",
+        "kind": "main"
+      },
+      {
+        "src": "images/products/HBP-253BW/HBP-253BW-07.webp",
+        "alt": "Black dual charging dock dimensions, 14.5cm height",
+        "kind": "main"
+      },
+      {
+        "src": "images/products/HBP-253BW/HBP-253BW-08.webp",
+        "alt": "Black dual charging dock with two charging slots",
+        "kind": "main"
+      },
+      {
+        "src": "images/products/HBP-253BW/HBP-253BW-09.webp",
+        "alt": "White and black aircraft-style dual charging docks",
+        "kind": "main"
+      }
     ]
   },
   {
@@ -1512,8 +1748,16 @@ window.PRODUCTS = [
     "platformName": "PS5 / PS5 Slim / PS5 Pro",
     "type": "Cooling Stand",
     "compatibility": "PS5 / PS5 Slim / PS5 Pro",
+    "compatibilityNote": "Works with both the disc and digital editions of PS5, PS5 Slim and PS5 Pro. The console sits on the base and is locked with the included screws.",
     "color": "Black,White",
     "material": "ABS",
+    "shortName": "Cooling Stand",
+    "features": [
+      "Adjustable cooling fan with bottom air intake",
+      "Dual charging for 2 controllers with LED status",
+      "RGB ambient light with touch control",
+      "Built-in headphone holder & expansion ports"
+    ],
     "netWeight": "423g",
     "grossWeight": "524g",
     "packageSize": "191*38*308mm",
@@ -1522,31 +1766,96 @@ window.PRODUCTS = [
     "packingContents": "1 × Cooling Stand; 1 × Hooks; 1 × User Manual",
     "desc": "This integrated stand for PS5 and PS5 Slim consoles is a one-stop solution for PS5 players on their desktops.\nThe stand features a touch-sensitive adjustable cooling fan, a unique bottom air intake channel that accelerates air circulation and quickly lowers the console temperature; two controllers can be charged simultaneously, and the LED indicator lights clearly show the battery status. It comes with a controllable RGB ambiance light to create a cool gaming atmosphere.\nThe side headphone holder can store headphones and they can be accessed easily; multiple expansion interfaces enable data transmission and power supply for external devices. The anti-slip silicone pad on the bottom and the fixing screws firmly secure the console, preventing it from sliding or tipping over, and protecting the console from damage.\nIt can be quickly assembled without additional tools, integrating cooling, charging, lighting, and storage functions into one, easily creating a neat and cool gaming desktop.",
     "images": [
-      {"src": "images/products/HA-8008/HA-8008-01.webp", "alt": "Multi-functional RGB Cooling Stand for PS5/PS5 Slim/PS5 Pro Disc&Digital Console (White)"},
-      {"src": "images/products/HA-8008/HA-8008-02.webp", "alt": "Multi-functional RGB Cooling Stand for PS5/PS5 Slim/PS5 Pro Disc&Digital Console (White) view 2"},
-      {"src": "images/products/HA-8008/HA-8008-03.webp", "alt": "Multi-functional RGB Cooling Stand for PS5/PS5 Slim/PS5 Pro Disc&Digital Console (White) view 3"},
-      {"src": "images/products/HA-8008/HA-8008-04.webp", "alt": "Multi-functional RGB Cooling Stand for PS5/PS5 Slim/PS5 Pro Disc&Digital Console (White) view 4"},
-      {"src": "images/products/HA-8008/HA-8008-05.webp", "alt": "Multi-functional RGB Cooling Stand for PS5/PS5 Slim/PS5 Pro Disc&Digital Console (White) view 5"},
-      {"src": "images/products/HA-8008/HA-8008-06.webp", "alt": "Multi-functional RGB Cooling Stand for PS5/PS5 Slim/PS5 Pro Disc&Digital Console (White) view 6"},
-      {"src": "images/products/HA-8008/HA-8008-07.webp", "alt": "Multi-functional RGB Cooling Stand for PS5/PS5 Slim/PS5 Pro Disc&Digital Console (White) view 7"},
-      {"src": "images/products/HA-8008/HA-8008-08.webp", "alt": "Multi-functional RGB Cooling Stand for PS5/PS5 Slim/PS5 Pro Disc&Digital Console (White) view 8"},
-      {"src": "images/products/HA-8008/HA-8008-09.webp", "alt": "Multi-functional RGB Cooling Stand for PS5/PS5 Slim/PS5 Pro Disc&Digital Console (White) view 9"},
-      {"src": "images/products/HA-8008/HA-8008-10.webp", "alt": "Multi-functional RGB Cooling Stand for PS5/PS5 Slim/PS5 Pro Disc&Digital Console (White) view 10"},
-      {"src": "images/products/HA-8008/HA-8008-11.webp", "alt": "Multi-functional RGB Cooling Stand for PS5/PS5 Slim/PS5 Pro Disc&Digital Console (White) view 11"},
-      {"src": "images/products/HA-8008/HA-8008-12.webp", "alt": "Multi-functional RGB Cooling Stand for PS5/PS5 Slim/PS5 Pro Disc&Digital Console (White) view 12"},
-      {"src": "images/products/HA-8008/HA-8008-13.webp", "alt": "Multi-functional RGB Cooling Stand for PS5/PS5 Slim/PS5 Pro Disc&Digital Console (White) view 13"},
-      {"src": "images/products/HA-8008/HA-8008-14.webp", "alt": "Multi-functional RGB Cooling Stand for PS5/PS5 Slim/PS5 Pro Disc&Digital Console (White) view 14"},
-      {"src": "images/products/HA-8008/HA-8008-15.webp", "alt": "Multi-functional RGB Cooling Stand for PS5/PS5 Slim/PS5 Pro Disc&Digital Console (White) view 15"},
-      {"src": "images/products/HA-8008/HA-8008-16.webp", "alt": "Multi-functional RGB Cooling Stand for PS5/PS5 Slim/PS5 Pro Disc&Digital Console (White) view 16"},
-      {"src": "images/products/HA-8008/HA-8008-17.webp", "alt": "Multi-functional RGB Cooling Stand for PS5/PS5 Slim/PS5 Pro Disc&Digital Console (White) view 17"},
-      {"src": "images/products/HA-8008/HA-8008-18.webp", "alt": "Multi-functional RGB Cooling Stand for PS5/PS5 Slim/PS5 Pro Disc&Digital Console (White) view 18"},
-      {"src": "images/products/HA-8008/HA-8008-19.webp", "alt": "Multi-functional RGB Cooling Stand for PS5/PS5 Slim/PS5 Pro Disc&Digital Console (White) view 19"},
-      {"src": "images/products/HA-8008/HA-8008-20.webp", "alt": "Multi-functional RGB Cooling Stand for PS5/PS5 Slim/PS5 Pro Disc&Digital Console (Black) view 20"},
-      {"src": "images/products/HA-8008/HA-8008-21.webp", "alt": "Multi-functional RGB Cooling Stand for PS5/PS5 Slim/PS5 Pro Disc&Digital Console (Black) view 21"},
-      {"src": "images/products/HA-8008/HA-8008-22.webp", "alt": "Multi-functional RGB Cooling Stand for PS5/PS5 Slim/PS5 Pro Disc&Digital Console (Black) view 22"},
-      {"src": "images/products/HA-8008/HA-8008-23.webp", "alt": "Multi-functional RGB Cooling Stand for PS5/PS5 Slim/PS5 Pro Disc&Digital Console (Black) view 23"},
-      {"src": "images/products/HA-8008/HA-8008-24.webp", "alt": "Multi-functional RGB Cooling Stand for PS5/PS5 Slim/PS5 Pro Disc&Digital Console (Black) view 24"},
-      {"src": "images/products/HA-8008/HA-8008-25.webp", "alt": "Multi-functional RGB Cooling Stand for PS5/PS5 Slim/PS5 Pro Disc&Digital Console (Black) view 25"}
+      {
+        "src": "images/products/HA-8008/HA-8008-white-main-1.webp",
+        "alt": "White RGB cooling stand with dual controller charging, top view",
+        "kind": "main",
+        "color": "white"
+      },
+      {
+        "src": "images/products/HA-8008/HA-8008-white-main-2.webp",
+        "alt": "White cooling stand with PS5 Slim console, headset and two controllers",
+        "kind": "main",
+        "color": "white"
+      },
+      {
+        "src": "images/products/HA-8008/HA-8008-white-main-3.webp",
+        "alt": "White cooling stand base with cooling fan and headphone hook, flat lay",
+        "kind": "main",
+        "color": "white"
+      },
+      {
+        "src": "images/products/HA-8008/HA-8008-black-main-1.webp",
+        "alt": "Black RGB cooling stand with dual controller charging, top view",
+        "kind": "main",
+        "color": "black"
+      },
+      {
+        "src": "images/products/HA-8008/HA-8008-black-main-2.webp",
+        "alt": "Black cooling stand with PS5 console, headset and controllers",
+        "kind": "main",
+        "color": "black"
+      },
+      {
+        "src": "images/products/HA-8008/HA-8008-black-main-3.webp",
+        "alt": "Black cooling stand base with cooling fan and headphone hook, flat lay",
+        "kind": "main",
+        "color": "black"
+      },
+      {
+        "src": "images/products/HA-8008/HA-8008-detail-1.webp",
+        "alt": "Cooling fan with bottom air intake for PS5, PS5 Slim and PS5 Pro",
+        "kind": "detail",
+        "color": "all"
+      },
+      {
+        "src": "images/products/HA-8008/HA-8008-detail-2.webp",
+        "alt": "Compatibility with six PS5 models and four-step installation guide",
+        "kind": "detail",
+        "color": "all"
+      },
+      {
+        "src": "images/products/HA-8008/HA-8008-detail-3.webp",
+        "alt": "RGB ambient light with seven colors and three lighting modes",
+        "kind": "detail",
+        "color": "all"
+      },
+      {
+        "src": "images/products/HA-8008/HA-8008-detail-4.webp",
+        "alt": "Three-speed adjustable cooling fan with low noise and touch switch",
+        "kind": "detail",
+        "color": "all"
+      },
+      {
+        "src": "images/products/HA-8008/HA-8008-detail-5.webp",
+        "alt": "Three USB ports, Type-C port and controller charging indicator",
+        "kind": "detail",
+        "color": "all"
+      },
+      {
+        "src": "images/products/HA-8008/HA-8008-detail-6.webp",
+        "alt": "Two players gaming with PS5 cooling stand setup",
+        "kind": "detail",
+        "color": "all"
+      },
+      {
+        "src": "images/products/HA-8008/HA-8008-detail-7.webp",
+        "alt": "Two power supply modes, console power or external Type-C power",
+        "kind": "detail",
+        "color": "all"
+      },
+      {
+        "src": "images/products/HA-8008/HA-8008-detail-8.webp",
+        "alt": "Screw fixing locks the console firmly to the stand",
+        "kind": "detail",
+        "color": "all"
+      },
+      {
+        "src": "images/products/HA-8008/HA-8008-packaging.webp",
+        "alt": "Retail packaging box for multifunctional cooling stand",
+        "kind": "detail",
+        "color": "all"
+      }
     ]
   },
   {
@@ -1674,15 +1983,51 @@ window.PRODUCTS = [
     "packingContents": "5 × Console Replacement Shell; 1 × User Manual",
     "desc": "This replacement shell is specifically designed for the PS5 Slim and is compatible with both the optical drive version and the digital version of the console.\nThe shell is made of sturdy ABS material, featuring excellent shock resistance, waterproof and moisture-proof properties, which prevent daily dust and scratches and provide comprehensive protection for the console.\nIt is easy to transform the appearance of the console. The real machine is molded, the holes are precisely made, and the panel is closely attached to the console without any gaps.\nThe snap-lock design without tools can be disassembled and assembled in just a few minutes, preserving the original cooling structure of the console and not blocking any interfaces, ensuring normal use.\nThe package includes 5 console shell panels + instructions. It does not include the game console. Immediately refresh your PS5 Slim and create a unique gaming desktop!",
     "images": [
-      {"src": "images/products/HA-8010/HA-8010-01.webp", "alt": "5 in 1 Replacement Case for PS5 Slim Disc&Digital Console"},
-      {"src": "images/products/HA-8010/HA-8010-02.webp", "alt": "5 in 1 Replacement Case for PS5 Slim Disc&Digital Console view 2"},
-      {"src": "images/products/HA-8010/HA-8010-03.webp", "alt": "5 in 1 Replacement Case for PS5 Slim Disc&Digital Console view 3"},
-      {"src": "images/products/HA-8010/HA-8010-04.webp", "alt": "5 in 1 Replacement Case for PS5 Slim Disc&Digital Console view 4"},
-      {"src": "images/products/HA-8010/HA-8010-05.webp", "alt": "5 in 1 Replacement Case for PS5 Slim Disc&Digital Console view 5"},
-      {"src": "images/products/HA-8010/HA-8010-06.webp", "alt": "5 in 1 Replacement Case for PS5 Slim Disc&Digital Console view 6"},
-      {"src": "images/products/HA-8010/HA-8010-07.webp", "alt": "5 in 1 Replacement Case for PS5 Slim Disc&Digital Console view 7"},
-      {"src": "images/products/HA-8010/HA-8010-08.webp", "alt": "5 in 1 Replacement Case for PS5 Slim Disc&Digital Console view 8"},
-      {"src": "images/products/HA-8010/HA-8010-09.webp", "alt": "5 in 1 Replacement Case for PS5 Slim Disc&Digital Console view 9"}
+      {
+        "src": "images/products/HA-8010/HA-8010-01.webp",
+        "alt": "Midnight black replacement faceplates for PS5 Slim disc edition",
+        "kind": "main"
+      },
+      {
+        "src": "images/products/HA-8010/HA-8010-02.webp",
+        "alt": "PS5 Slim with black faceplates, side view showing vents",
+        "kind": "main"
+      },
+      {
+        "src": "images/products/HA-8010/HA-8010-03.webp",
+        "alt": "Midnight black replacement faceplates for PS5 Slim digital edition",
+        "kind": "main"
+      },
+      {
+        "src": "images/products/HA-8010/HA-8010-04.webp",
+        "alt": "PS5 Slim disc with black faceplates, side view with USB ports",
+        "kind": "main"
+      },
+      {
+        "src": "images/products/HA-8010/HA-8010-05.webp",
+        "alt": "PS5 Slim digital with black faceplates, side view",
+        "kind": "main"
+      },
+      {
+        "src": "images/products/HA-8010/HA-8010-06.webp",
+        "alt": "PS5 Slim with black faceplates, ventilation grille",
+        "kind": "main"
+      },
+      {
+        "src": "images/products/HA-8010/HA-8010-07.webp",
+        "alt": "PS5 Slim with black faceplates, rear view with ports",
+        "kind": "main"
+      },
+      {
+        "src": "images/products/HA-8010/HA-8010-08.webp",
+        "alt": "PS5 Slim disc with black faceplates, angled view",
+        "kind": "main"
+      },
+      {
+        "src": "images/products/HA-8010/HA-8010-09.webp",
+        "alt": "PS5 Slim digital with black faceplates, angled view",
+        "kind": "main"
+      }
     ]
   },
   {
@@ -1846,12 +2191,36 @@ window.PRODUCTS = [
     "packingContents": "1 × Cooling Stand; 2 × 1400mAh Li-Polymer Battery; 4 × Type -CCharging Connector",
     "desc": "This multifunctional cooling dock is custom‑designed for the Xbox Series S console. It combines console cooling, controller charging, headset storage and extra port expansion, creating a neat and practical gaming desktop setup.\nBuilt with two high‑speed cooling fans and an independent push‑button switch, the stand efficiently dissipates accumulated heat after long‑hour gaming sessions. It prevents overheating and thermal throttling to extend your console’s lifespan.\nEquipped with dual charging slots, it can charge two Xbox Series X/S controllers at the same time. Visible LED indicators show working status: red light for charging and green light for standby or fully charged. A vertical headset hanger keeps your gaming headset well organized and saves desk room.\nThere are 2 USB output ports and 1 Type‑C output port on the base to supply power for your mouse, keyboard, mobile phones and other accessories. It works with rechargeable battery packs so you don’t need disposable batteries frequently.\nWith a compact all‑in‑one vertical structure, this stand integrates cooling and storage, tidying up messy cables and upgrading your gaming environment.",
     "images": [
-      {"src": "images/products/HBX-280/HBX-280-01.webp", "alt": "Charging Dock for XboxSeriesS"},
-      {"src": "images/products/HBX-280/HBX-280-02.webp", "alt": "Charging Dock for XboxSeriesS view 2"},
-      {"src": "images/products/HBX-280/HBX-280-03.webp", "alt": "Charging Dock for XboxSeriesS view 3"},
-      {"src": "images/products/HBX-280/HBX-280-04.webp", "alt": "Charging Dock for XboxSeriesS view 4"},
-      {"src": "images/products/HBX-280/HBX-280-05.webp", "alt": "Charging Dock for XboxSeriesS view 5"},
-      {"src": "images/products/HBX-280/HBX-280-06.webp", "alt": "Charging Dock for XboxSeriesS view 6"}
+      {
+        "src": "images/products/HBX-280/HBX-280-01.webp",
+        "alt": "Multifunctional cooling stand with Xbox Series S, headset and controller",
+        "kind": "main"
+      },
+      {
+        "src": "images/products/HBX-280/HBX-280-02.webp",
+        "alt": "Cooling stand base with headset stand and controller charging slots",
+        "kind": "main"
+      },
+      {
+        "src": "images/products/HBX-280/HBX-280-03.webp",
+        "alt": "Xbox Series S on cooling stand with headset and controller, side view",
+        "kind": "main"
+      },
+      {
+        "src": "images/products/HBX-280/HBX-280-04.webp",
+        "alt": "Retail packaging box for Xbox Series S cooling stand",
+        "kind": "main"
+      },
+      {
+        "src": "images/products/HBX-280/HBX-280-05.webp",
+        "alt": "Xbox Series S cooling stand with headset and controller, angled view",
+        "kind": "main"
+      },
+      {
+        "src": "images/products/HBX-280/HBX-280-06.webp",
+        "alt": "Cooling stand base with headset stand, side view",
+        "kind": "main"
+      }
     ]
   },
   {
@@ -1907,20 +2276,76 @@ window.PRODUCTS = [
     "packingContents": "1 × Top Tray; 1 × Vertical Stand; 2 × Controller Stand; 1 × Base Unit; 1 × Charging Cable; 1 × Screwdriver; 2 × Screws",
     "desc": "This RGB lighting VR charging & display stand is compatible with Meta Quest 2, Quest 3 and Quest 3S. It combines charging, storage and desktop display all in one practical unit. The retractable top bracket flexibly fits different shapes of VR headsets. The dual controller holders can rotate 180 degrees freely, allowing you to place touch controllers in hanging down or side‑mounted positions as you like. Built‑in dazzling RGB ambient lights on the base support multiple lighting modes, including 7 solid colors, fast and slow breathing effects and power‑off in cycle, creating an amazing gaming atmosphere. With integrated charging cables, it starts charging your VR headset once you place it on the stand and eliminates messy wires. No more scattered headsets and controllers on your desk; this stand keeps your whole VR set neatly organized. Equipped with a solid acrylic base for stable placement, it serves not only as a functional charging dock but also a stylish desktop decoration. Please note that only the stand is included, VR headset and touch controllers are NOT supplied.",
     "images": [
-      {"src": "images/products/HBV-599/HBV-599-01.webp", "alt": "VR Charging Display Stand (White)"},
-      {"src": "images/products/HBV-599/HBV-599-02.webp", "alt": "VR Charging Display Stand (White) view 2"},
-      {"src": "images/products/HBV-599/HBV-599-03.webp", "alt": "VR Charging Display Stand (White) view 3"},
-      {"src": "images/products/HBV-599/HBV-599-04.webp", "alt": "VR Charging Display Stand (White) view 4"},
-      {"src": "images/products/HBV-599/HBV-599-05.webp", "alt": "VR Charging Display Stand (White) view 5"},
-      {"src": "images/products/HBV-599/HBV-599-06.webp", "alt": "VR Charging Display Stand (White) view 6"},
-      {"src": "images/products/HBV-599/HBV-599-07.webp", "alt": "VR Charging Display Stand (White) view 7"},
-      {"src": "images/products/HBV-599/HBV-599-08.webp", "alt": "VR Charging Display Stand (White) view 8"},
-      {"src": "images/products/HBV-599/HBV-599-09.webp", "alt": "VR Charging Display Stand (Black) view 9"},
-      {"src": "images/products/HBV-599/HBV-599-10.webp", "alt": "VR Charging Display Stand (Black) view 10"},
-      {"src": "images/products/HBV-599/HBV-599-11.webp", "alt": "VR Charging Display Stand (Black) view 11"},
-      {"src": "images/products/HBV-599/HBV-599-12.webp", "alt": "VR Charging Display Stand (Black) view 12"},
-      {"src": "images/products/HBV-599/HBV-599-13.webp", "alt": "VR Charging Display Stand (Black) view 13"},
-      {"src": "images/products/HBV-599/HBV-599-14.webp", "alt": "VR Charging Display Stand (Black) view 14"}
+      {
+        "src": "images/products/HBV-599/HBV-599-01.webp",
+        "alt": "White VR charging display stand with headset and controllers",
+        "kind": "main"
+      },
+      {
+        "src": "images/products/HBV-599/HBV-599-02.webp",
+        "alt": "White VR stand headset holder and controller rings",
+        "kind": "main"
+      },
+      {
+        "src": "images/products/HBV-599/HBV-599-03.webp",
+        "alt": "White VR charging stand with headset and controllers",
+        "kind": "main"
+      },
+      {
+        "src": "images/products/HBV-599/HBV-599-04.webp",
+        "alt": "White VR display stand with headset and controllers, side view",
+        "kind": "main"
+      },
+      {
+        "src": "images/products/HBV-599/HBV-599-05.webp",
+        "alt": "RGB illuminated acrylic base for VR stand",
+        "kind": "main"
+      },
+      {
+        "src": "images/products/HBV-599/HBV-599-06.webp",
+        "alt": "White VR charging stand with headset and controllers",
+        "kind": "main"
+      },
+      {
+        "src": "images/products/HBV-599/HBV-599-07.webp",
+        "alt": "White VR stand with headset holder and controller rings",
+        "kind": "main"
+      },
+      {
+        "src": "images/products/HBV-599/HBV-599-08.webp",
+        "alt": "Retail packaging box for VR charging display stand",
+        "kind": "detail"
+      },
+      {
+        "src": "images/products/HBV-599/HBV-599-09.webp",
+        "alt": "Black VR stand with headset holder and controller rings",
+        "kind": "main"
+      },
+      {
+        "src": "images/products/HBV-599/HBV-599-10.webp",
+        "alt": "Black VR charging stand with headset and controllers",
+        "kind": "main"
+      },
+      {
+        "src": "images/products/HBV-599/HBV-599-11.webp",
+        "alt": "Black VR stand with headset holder and controller rings",
+        "kind": "main"
+      },
+      {
+        "src": "images/products/HBV-599/HBV-599-12.webp",
+        "alt": "Black VR charging stand with headset and controllers",
+        "kind": "main"
+      },
+      {
+        "src": "images/products/HBV-599/HBV-599-13.webp",
+        "alt": "Black VR stand headset holder and cable detail",
+        "kind": "main"
+      },
+      {
+        "src": "images/products/HBV-599/HBV-599-14.webp",
+        "alt": "Black VR stand rear view with cable management",
+        "kind": "main"
+      }
     ]
   },
   {

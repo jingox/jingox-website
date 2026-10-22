@@ -15,7 +15,16 @@ const CFG = {
   // Business WhatsApp, digits only, country code + number (US +1 508 763 7390)
   whatsapp: "15087637390",
   // Web3Forms access key (https://web3forms.com, public client-side key)
-  web3formsKey: "2918e864-3ffb-4b3c-913e-6fc4dd27cd94"
+  web3formsKey: "2918e864-3ffb-4b3c-913e-6fc4dd27cd94",
+  // OEM / ODM & logistics facts — 2026-10-21 审核会议 D5。
+  // 晶 2026-10-21 确认：打样 7 天、大货最长 25 天、付款后 5 天内发货；
+  // paymentTerm 暂缓（待收款渠道确认后单独补）。
+  oem: {
+    sampleLeadTime: "7 days",            // 打样周期
+    massLeadTime: "Up to 25 days",       // 大货交期（最长 25 天）
+    expressShipping: "Within 5 days after payment", // 快递发货时间
+    paymentTerm: ""                       // 付款方式：暂缓，待收款渠道确认
+  }
 };
 
 const TYPE_ORDER = ["Charging Dock","Cooling Stand","Storage Stand","Somatosensory",
@@ -49,7 +58,45 @@ function waLink(text){
   return "https://wa.me/" + CFG.whatsapp.replace(/\D/g,'') + "?text=" + encodeURIComponent(text);
 }
 function productWaText(p){
-  return `Hi, I'm interested in ${p.name} (${p.sku}). Could you send the MOQ and price?`;
+  const sn = p.shortName || p.name;
+  return `Hi, I'm interested in ${sn} (${p.sku}). Could you send me your latest quotation, MOQ and lead time? Thanks.`;
+}
+/* platform short name for short Meta titles */
+const PLATFORM_SHORT = {switch2:"Switch 2", switch:"Switch", ps5:"PS5", ps4:"PS4",
+  xbox:"Xbox", vr:"VR", steamdeck:"Steam Deck", others:""};
+/* colors offered by a product, parsed from p.color ("Black,White" -> ["Black","White"]) */
+function productColors(p){
+  return String(p.color||"").split(",").map(s=>s.trim()).filter(Boolean);
+}
+/* classify images: main / detail / packaging (packaging file is named *packaging*) */
+function classifyImages(p){
+  const imgs = p.images || [];
+  const packaging = imgs.filter(x=>/packaging/i.test(x.src));
+  const main = imgs.filter(x=>x.kind!=='detail' && !/packaging/i.test(x.src));
+  const detail = imgs.filter(x=>x.kind==='detail' && !/packaging/i.test(x.src));
+  return {main, detail, packaging};
+}
+/* main photos for a given color (lowercase). Images without color field show for all colors. */
+function mainForColor(p, color){
+  const c = String(color||"").toLowerCase();
+  return classifyImages(p).main.filter(x=>!x.color || x.color==='all' || x.color===c);
+}
+/* feature bullets: prefer the dedicated p.features data, else fall back to extraction */
+function productFeatures(p){
+  if(p.features && p.features.length) return p.features.slice(0,4);
+  return extractFeatures(p);
+}
+/* SKUs that have real certificate images in images/certificates (11 SKUs) */
+const CERT_SKUS = ["HA-8008","HBP-119","HBP-253","HBP-314","HB-P4002B",
+  "HBP-537","HBP-656","HBS-2846","HBS-2872","HBV-599","HBV-641"];
+function certImgsFor(p){
+  let cs = CERT_SKUS.find(s=>s===p.sku);
+  if(!cs) cs = CERT_SKUS.find(s=>p.sku.startsWith(s));
+  if(!cs) return [];
+  return [
+    {src:"images/certificates/"+cs+"-emc.jpg", alt:cs+" EMC test report"},
+    {src:"images/certificates/"+cs+"-rohs.jpg", alt:cs+" RoHS test report"}
+  ];
 }
 function mailLink(subject){
   return `mailto:${CFG.email}?subject=${encodeURIComponent(subject)}`;
@@ -293,18 +340,21 @@ function renderDesc(p){
   return html;
 }
 function specRows(p){
+  // C2 (2026-10-22): 9 fields; Product Size / Net Weight / Payment Terms removed.
+  // Rendered in the full-width neon spec block below the first screen.
   const rows = [
+    ["Item No.", p.sku],
+    ["Compatibility", p.compatibility],
     ["Material", p.material],
     ["Color", p.color],
-    ["Net Weight", p.netWeight],
     ["Gross Weight", p.grossWeight],
     ["Package Size", p.packageSize],
     ["Carton Size", p.cartonSize],
-    ["Carton Quantity", p.cartonQty],
-    ["Packing Contents", p.packingContents]
+    ["Qty per Carton", p.cartonQty],
+    ["Certifications", "Available on request"]
   ];
   return rows.filter(r=>r[1]).map(r=>
-    `<tr><th>${r[0]}</th><td>${esc(r[1])}</td></tr>`).join('');
+    `<div class="sn-row"><span class="sn-k">${r[0]}</span><span class="sn-v">${esc(r[1])}</span></div>`).join('');
 }
 /* Pull short selling-point headings out of the long description;
    fall back to data-driven + standard B2B promises when the text has none. */
@@ -328,6 +378,67 @@ function extractFeatures(p){
   fb.push("OEM/ODM: custom color, logo, packaging & bundle sets");
   return fb.slice(0,4);
 }
+/* D5 (2026-10-21): OEM/ODM 事实行；CFG.oem 未填时显示中性"Contact us"，不编造天数/数字 */
+function oemFacts(){
+  const o = CFG.oem || {};
+  const ask = '<a href="contact.html">Contact us for the current schedule</a>';
+  const val = v => v ? esc(v) : ask;
+  const rows = [
+    ["MOQ", "<b>1 piece</b> (sample &amp; bulk)"],
+    ["Sample lead time", val(o.sampleLeadTime)],
+    ["Mass production lead time", val(o.massLeadTime)],
+    ["Express shipping", val(o.expressShipping)]
+  ];
+  if(o.paymentTerm) rows.push(["Payment terms", esc(o.paymentTerm)]);
+  return rows.map(r =>
+    `<div class="qi-row"><span class="k">${r[0]}</span><span class="v">${r[1]}</span></div>`).join('');
+}
+
+/* D7 (2026-10-21): 产品页 FAQ（数据驱动；兼容机型只取真实字段，不臆测、不写错 Switch 1/2） */
+function productFaq(p){
+  const compat = p.compatibility || p.platformName;
+  const o = CFG.oem || {};
+  const parts = [];
+  if(o.sampleLeadTime) parts.push(`Samples take about ${o.sampleLeadTime.toLowerCase()}`);
+  if(o.massLeadTime) parts.push(`bulk production takes ${o.massLeadTime.toLowerCase()}`);
+  const lead = parts.length
+    ? `${parts.join(', and ')}, depending on order size and customization. Contact us for the exact schedule for your order.`
+    : `Sample and bulk lead times depend on quantity and customization. Contact us with the SKU and quantity for the current schedule.`;
+  const ship = o.expressShipping
+    ? `Orders are shipped by international express, normally ${o.expressShipping.toLowerCase()}.`
+    : `Orders are shipped by international express or other agreed freight terms.`;
+  const faqs = [
+    { q:"What is the minimum order quantity (MOQ)? Can I order one sample?",
+      a:"The MOQ is 1 piece. You can order a single sample to check quality first, or a bulk order. Both samples and bulk orders are welcome — contact us for factory pricing." },
+    ...(compat ? [{ q:`Is the ${p.sku} compatible with ${compat}?`,
+      a:`Yes. The ${p.name} (${p.sku}) is designed for ${compat}. If you are unsure about your exact device model, please confirm it with us before ordering.` }] : []),
+    { q:"How long do samples and bulk production take?", a:lead },
+    { q:"Do you offer OEM and ODM customization?",
+      a:"Yes — custom color, finish, logo, private label, retail color box or blister packaging, and bundle sets. Send us your target market and quantities for a tailored quote." },
+    { q:"Are CE, RoHS and other certifications available?",
+      a:"Yes. EMC and RoHS test reports are available for eligible models and can be provided on request. Tell us the SKU and your destination market, and we will send the matching documents." }
+  ];
+  return faqs;
+}
+function faqHtml(faqs){
+  return faqs.map(f =>
+    `<div class="faq-item"><div class="faq-q">${esc(f.q)} <span class="plus">+</span></div>
+      <div class="faq-a"><p>${f.a}</p></div></div>`).join('');
+}
+function injectFaqSchema(faqs){
+  const data = {
+    "@context":"https://schema.org","@type":"FAQPage",
+    "mainEntity": faqs.map(f => ({
+      "@type":"Question","name":f.q,
+      "acceptedAnswer":{"@type":"Answer","text":f.a}
+    }))
+  };
+  const s = document.createElement('script');
+  s.type = "application/ld+json";
+  s.textContent = JSON.stringify(data);
+  document.head.appendChild(s);
+}
+
 function copyTextFallback(txt){
   const ta=document.createElement('textarea');
   ta.value=txt; ta.style.position='fixed'; ta.style.opacity='0';
@@ -335,6 +446,80 @@ function copyTextFallback(txt){
   let ok=false;
   try{ ok=document.execCommand('copy'); }catch(e){ ok=false; }
   ta.remove(); return ok;
+}
+
+/* B7: reusable inquiry modal (product SKU passed in; generic when p is null) */
+function modalHtml(p){
+  const sku = p ? p.sku : "";
+  const name = p ? (p.shortName || p.name) : "";
+  const prefill = p ? productWaText(p) : "Hi, I'd like a wholesale quote from JINGOX.";
+  return `<div class="modal-overlay" id="inquiryModal" data-modal>
+    <div class="modal" role="dialog" aria-modal="true" aria-label="Request a quote">
+      <button type="button" class="modal-close" data-modal-close aria-label="Close">×</button>
+      <h3>Request a Quote</h3>
+      <p class="m-sub">${p?esc(sku)+" · "+esc(name):"Send us your inquiry and we will reply within one business day."}</p>
+      <form id="modalForm">
+        <input type="hidden" name="access_key" value="${CFG.web3formsKey}">
+        <input type="hidden" name="subject" value="Website inquiry ${p?esc(sku):''}">
+        <input type="hidden" name="sku" value="${esc(sku)}">
+        <input type="hidden" name="from_content" value="product-modal">
+        <div class="form-field">
+          <label>Name</label>
+          <input type="text" name="name" required placeholder="Your name">
+        </div>
+        <div class="form-field">
+          <label>Email</label>
+          <input type="email" name="email" required placeholder="you@company.com">
+        </div>
+        <div class="form-field">
+          <label>WhatsApp</label>
+          <input type="text" name="whatsapp" placeholder="WhatsApp number (optional)">
+        </div>
+        <div class="form-field">
+          <label>Message</label>
+          <textarea name="message" rows="3">${esc(prefill)}</textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%">Send Inquiry</button>
+      </form>
+    </div>
+  </div>
+  <div class="lightbox" id="lightbox" data-lightbox>
+    <button type="button" class="lightbox-close" data-lightbox-close aria-label="Close">×</button>
+    <img src="" alt="Enlarged image">
+  </div>`;
+}
+/* D5: Packing block — packaging image + what's in the box (no carton qty/size) */
+function packBlockHtml(p, packagingImg){
+  let html = packagingImg
+    ? `<figure class="pd-packaging-img" style="margin:0 0 22px"><img src="${esc(packagingImg.src)}"
+        alt="${esc(packagingImg.alt)}" style="max-width:420px;width:100%;border-radius:10px;border:1px solid var(--line)"></figure>`
+    : '';
+  const items = p.packingContents
+    ? p.packingContents.split(/;\s*/).map(s=>s.trim()).filter(Boolean) : [];
+  if(items.length){
+    html += `<ul class="pd-boxlist">${items.map(i=>`<li>${esc(i)}</li>`).join('')}</ul>`;
+  } else {
+    html += `<p class="pd-desc">Contact us for the full packing list.</p>`;
+  }
+  return html;
+}
+function injectBreadcrumbSchema(p){
+  const s=document.createElement('script');
+  s.type='application/ld+json';
+  s.textContent=JSON.stringify({
+    "@context":"https://schema.org","@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://jingox.com/"},
+      {"@type":"ListItem","position":2,"name":"Products","item":"https://jingox.com/products"},
+      {"@type":"ListItem","position":3,"name":p.sku,"item":"https://jingox.com/product?sku="+encodeURIComponent(p.sku)}
+    ]});
+  document.head.appendChild(s);
+}
+function colorDot(c){
+  const cl=String(c).toLowerCase();
+  if(cl==='white')return '#FFFFFF';
+  if(cl==='black')return '#111111';
+  return cl;
 }
 function initDetail(){
   const wrap = document.getElementById('pd');
@@ -352,56 +537,90 @@ function initDetail(){
     return;
   }
   if(crumbName) crumbName.textContent = p.sku;
-  document.title = `${p.name} (${p.sku}) | JINGOX Wholesale`;
-  const metaDesc = plainText(p.desc).slice(0,155) +
-    ` Wholesale MOQ 1 piece, OEM/ODM. Contact JINGOX for factory price.`;
-  setMeta('description', metaDesc);
-  setOg('og:title', `${p.name} | JINGOX`);
-  setOg('og:description', metaDesc);
-  const gallery = hasImgs(p)
-    ? `<div class="pd-gallery">
-        <div class="pd-main-ph has-img">
-          <img id="pdMainImg" class="pd-main-img" src="${esc(p.images[0].src)}" alt="${esc(p.images[0].alt)}" width="800" height="800">
-        </div>
-        <div class="pd-thumbs pd-thumbs-scroll">
-          ${p.images.map((x,i)=>`<button type="button" class="pd-thumb${i===0?' active':''}" data-i="${i}" aria-label="View photo ${i+1} of ${p.name}">
-            <img src="${esc(x.src)}" alt="${esc(x.alt)}" loading="lazy" decoding="async" width="120" height="120">
-          </button>`).join('')}
-        </div>
-      </div>`
-    : `<div class="pd-gallery">
+
+  /* short Meta title (SEO #2): shortName + platform + JINGOX */
+  const pShort = PLATFORM_SHORT[p.platformKey] || "";
+  document.title = `${p.shortName || p.type}${pShort?(" for "+pShort):""} | JINGOX`;
+  /* Meta description (SEO #3, <=155): core keyword + MOQ/OEM first */
+  const metaDesc = `${p.shortName||p.name} for ${p.platformName}. MOQ 1 piece, OEM/ODM welcome. `+
+    `Contact JINGOX for factory price & lead time.`;
+  setMeta('description', metaDesc.slice(0,160));
+  setOg('og:title', `${p.shortName||p.name} | JINGOX`);
+  setOg('og:description', metaDesc.slice(0,160));
+
+  /* color state; only show the picker when images carry color data */
+  const colors = productColors(p);
+  const hasColorData = p.images.some(x=>x.color);
+  let currentColor = colors.length ? colors[0].toLowerCase() : "";
+  const classified = classifyImages(p);
+  const detailInfoImgs = classified.detail;
+  const packagingImg = classified.packaging[0] || null;
+
+  /* gallery (re-rendered on color switch) */
+  function galleryHtml(color){
+    const imgs = mainForColor(p,color);
+    if(!hasImgs(p) || !imgs.length){
+      return `<div class="pd-gallery">
         <div class="pd-main-ph">${phIcon(128)}
-          <span class="ph-sku" style="position:absolute;top:14px;left:14px;font-size:.78rem;color:var(--muted-2)">${esc(p.sku)}</span>
+          <span class="pd-sku" style="position:absolute;top:14px;left:14px;font-size:.78rem;color:var(--muted-2)">${esc(p.sku)}</span>
         </div>
-        <div class="pd-thumbs">
-          ${[0,1,2,3].map(()=>`<div class="pd-thumb">${phIcon(28)}</div>`).join('')}
-        </div>
+        <div class="pd-thumbs">${[0,1,2,3].map(()=>`<div class="pd-thumb">${phIcon(28)}</div>`).join('')}</div>
       </div>`;
+    }
+    return `<div class="pd-gallery">
+      <div class="pd-main-ph has-img">
+        <img id="pdMainImg" class="pd-main-img" src="${esc(imgs[0].src)}" alt="${esc(imgs[0].alt)}" width="800" height="800">
+      </div>
+      <div class="pd-thumbs pd-thumbs-scroll">
+        ${imgs.map((x,i)=>`<button type="button" class="pd-thumb${i===0?' active':''}" data-i="${i}" aria-label="View photo ${i+1}">
+          <img src="${esc(x.src)}" alt="${esc(x.alt)}" loading="lazy" decoding="async" width="120" height="120">
+        </button>`).join('')}
+      </div>
+    </div>`;
+  }
+  /* bind thumbnails inside the gallery column */
+  function bindThumbs(galleryCol){
+    galleryCol.querySelectorAll('.pd-thumb').forEach(tb=>{
+      tb.addEventListener('click',()=>{
+        const i=parseInt(tb.dataset.i,10);
+        const imgs=mainForColor(p,currentColor);const im=imgs[i];if(!im)return;
+        const mainImgEl=document.getElementById('pdMainImg');
+        mainImgEl.src=im.src;mainImgEl.alt=im.alt;
+        galleryCol.querySelectorAll('.pd-thumb').forEach(b=>b.classList.remove('active'));
+        tb.classList.add('active');
+        tb.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});
+      });
+    });
+  }
+  const colorPicker = (hasColorData && colors.length>=2)
+    ? `<div class="pd-colors" id="pdColors">
+        <span class="clabel">Color:</span>
+        ${colors.map(c=>`<button type="button" class="color-swatch${c.toLowerCase()===currentColor?' active':''}" data-color="${c.toLowerCase()}">
+          <span class="dotc" style="background:${colorDot(c)}"></span>${c}</button>`).join('')}
+      </div>` : '';
+
   if(hasImgs(p)){
-    setOg('og:image', "https://jingox.com/"+p.images[0].src);
+    const firstColorImgs = mainForColor(p,currentColor);
+    setOg('og:image', "https://jingox.com/"+(firstColorImgs[0]?firstColorImgs[0].src:p.images[0].src));
     injectProductSchema(p);
   }
   const wa = waLink(productWaText(p));
-  const mail = mailLink(`Inquiry: ${p.sku} ${p.name}`);
   const related = PRODUCTS.filter(x=>x.sku!==p.sku && (x.platformKey===p.platformKey || x.type===p.type))
-    .slice(0,4);
-  const feats = extractFeatures(p);
-  const quick = [
-    ["Compatibility", p.compatibility],
-    ["Material", p.material],
-    ["Color", p.color],
-    ["Net Weight", p.netWeight],
-    ["Package Size", p.packageSize]
-  ].filter(r=>r[1]);
-  const longImgs = hasImgs(p) ? p.images.slice(1) : [];
-  const packHtml = (p.packingContents ? esc(p.packingContents).replace(/;\s*/g,'<br>') : 'Contact us for the full packing list.')
-    + (p.cartonQty ? `<br><br><b>Carton quantity:</b> ${esc(p.cartonQty)}` : '')
-    + (p.cartonSize ? `<br><b>Carton size:</b> ${esc(p.cartonSize)}` : '');
+    .sort((a,b)=>(hasImgs(a)?0:1)-(hasImgs(b)?0:1)).slice(0,4);
+  const feats = productFeatures(p);
+  const faqs = productFaq(p);
+  const compatTags = [...new Set([p.platformName, p.compatibility].filter(Boolean))];
+  const certImgs = certImgsFor(p);
+  const whyChoose = [
+    "MOQ 1 piece — sample & bulk both welcome",
+    "OEM/ODM: custom color, logo & packaging",
+    "One-stop range for Switch / PS5 / Xbox / VR",
+    "Quality checked before shipment"];
 
   wrap.innerHTML = `
   <div class="container">
     <div class="pd">
-      ${gallery}
+      <div id="pdGalleryCol">${galleryHtml(currentColor)}</div>
       <div class="pd-info">
         <span class="pd-sku">${esc(p.sku)}</span>
         <h1>${esc(p.name)}</h1>
@@ -409,75 +628,113 @@ function initDetail(){
           <span class="tag">${esc(p.platformName)}</span>
           <span class="tag purple">${esc(p.type)}</span>
         </div>
-        <ul class="pd-bullets">
+        ${colorPicker}
+        <ul class="pd-bullets pd-features">
           ${feats.map(f=>`<li>${esc(f)}</li>`).join('')}
         </ul>
-        <div class="pd-moq">✓ <span><b>MOQ: 1 piece accepted.</b> Sample or bulk carton — contact us for factory pricing.</span></div>
+        <div class="pd-why">
+          <h4>Why Choose JINGOX</h4>
+          <ul>${whyChoose.map(f=>`<li>${esc(f)}</li>`).join('')}</ul>
+        </div>
         <div class="pd-cta">
           <a class="btn btn-primary" target="_blank" rel="noopener" href="${wa}">Get Quote on WhatsApp</a>
-          <a class="btn btn-purple" href="${mail}">Email Inquiry</a>
+          <button type="button" class="btn btn-purple" data-modal-open>Email Inquiry</button>
         </div>
         <div class="email-row">
           <span class="email-ico">✉</span>
           <span class="email-addr">${esc(CFG.email)}</span>
           <button type="button" class="copy-mail" data-copy-mail>Copy email</button>
         </div>
-        <div class="pd-quickinfo">
-          ${quick.map(r=>`<div class="qi-row"><span class="k">${r[0]}</span><span class="v">${esc(r[1])}</span></div>`).join('')}
-        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pd-specs-band" style="background:var(--bg);padding:8px 0 8px">
+    <div class="container">
+      <div class="specs-neon" id="specs">
+        <div class="sn-head"><span class="sn-title">Specifications</span><span class="sn-line"></span></div>
+        ${specRows(p)}
       </div>
     </div>
   </div>
 
   <div class="pd-detail">
-    <div class="pd-detail-inner">
-      <div class="pd-nav">
-        <a href="#overview">Overview</a>
-        ${longImgs.length ? '<a href="#details">Product Details</a>' : ''}
-        <a href="#specs">Specifications</a>
-        <a href="#compatibility">Compatibility</a>
-        <a href="#package">Packing</a>
-        <a href="contact.html">Get Quote</a>
+    <div class="pd-nav-sticky">
+      <div class="pd-px">
+        <nav class="pd-nav">
+          <a href="#overview">Overview</a>
+          ${detailInfoImgs.length?'<a href="#details">Product Details</a>':''}
+          <a href="#specs">Specifications</a>
+          <a href="#compatibility">Compatibility</a>
+          <a href="#package">Packing</a>
+          <a href="#certifications">Certifications</a>
+          <a href="#oem">OEM / ODM</a>
+          <a href="#faq">FAQ</a>
+          <button type="button" data-modal-open style="padding:8px 18px;border-radius:24px;font-size:.88rem;font-weight:600;color:var(--blue-ink);background:var(--surface);border:1px solid var(--line)">Get Quote</button>
+        </nav>
       </div>
+    </div>
 
+    <div class="pd-px">
       <div class="pd-block" id="overview">
         <h2>Product Overview</h2>
         <div class="pd-desc">${renderDesc(p)}</div>
       </div>
+    </div>
 
-      ${longImgs.length ? `<div class="pd-block" id="details">
-        <h2>Product Details</h2>
-        <div class="pd-gallery-long">
-          ${longImgs.map(x=>`<figure><img src="${esc(x.src)}" alt="${esc(x.alt)}" loading="lazy" decoding="async">
-            <figcaption>${esc(x.alt)}</figcaption></figure>`).join('')}
-        </div>
-      </div>` : ''}
-
-      <div class="pd-block" id="specs">
-        <h2>Specifications</h2>
-        <table class="spec-table">${specRows(p)}</table>
+    ${detailInfoImgs.length ? `<div class="pd-detail-wide" id="details">
+      <div class="pd-px"><h2>Product Details</h2></div>
+      <div class="pd-gallery-long">
+        ${detailInfoImgs.map(x=>`<figure><img src="${esc(x.src)}" alt="${esc(x.alt)}" loading="lazy" decoding="async"></figure>`).join('')}
       </div>
+    </div>` : ''}
 
+    <div class="pd-px">
       <div class="pd-block" id="compatibility">
         <h2>Compatibility</h2>
         <div class="pd-compat-tags">
-          <span class="tag">${esc(p.platformName)}</span>
-          ${p.compatibility ? `<span class="tag purple">${esc(p.compatibility)}</span>` : ''}
+          ${compatTags.map((t,i)=>`<span class="tag${i===1?' purple':''}">${esc(t)}</span>`).join('')}
         </div>
+        ${p.compatibilityNote?`<p class="compat-note">${esc(p.compatibilityNote)}</p>`:''}
       </div>
 
       <div class="pd-block" id="package">
         <h2>What's in the Box</h2>
-        <div class="pd-package">${packHtml}</div>
+        <div class="pd-package">${packBlockHtml(p, packagingImg)}</div>
+      </div>
+
+      <div class="pd-block" id="certifications">
+        <h2>Certifications &amp; Quality Control</h2>
+        ${certImgs.length ? `<div class="pd-cert-grid" style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:16px">
+          ${certImgs.map(x=>`<button type="button" class="f-cell" data-lightbox-src="${esc(x.src)}" style="border-radius:10px">
+            <img src="${esc(x.src)}" alt="${esc(x.alt)}" style="width:100%;display:block"></button>`).join('')}
+        </div>` : `<div class="pd-cert-gallery">
+          <p>Test reports and compliance documents (CE / RoHS where applicable) are available for eligible models. Contact us for the latest certificates for this specific SKU.</p>
+        </div>`}
+        <div class="pd-cta" style="margin-top:14px">
+          <button type="button" class="btn btn-ghost" data-modal-open>Request Certificates</button>
+        </div>
       </div>
 
       <div class="pd-block" id="oem">
         <h2>OEM / ODM &amp; Wholesale</h2>
-        <div class="pd-desc"><p>We support OEM / ODM — custom color, finish, retail packaging, logo and bundled sets. Tell us your target market and quantities, and our team will send a tailored quote with MOQ, lead time and sampling options.</p></div>
-        <div class="pd-cta" style="margin-top:18px">
-          <a class="btn btn-primary" href="contact.html">Request a Custom Quote</a>
+        <div class="pd-oem-services">
+          <span class="oem-chip">Custom color &amp; finish</span>
+          <span class="oem-chip">Private label &amp; logo</span>
+          <span class="oem-chip">Retail color box / blister</span>
+          <span class="oem-chip">Bundle sets</span>
+        </div>
+        <div class="pd-quickinfo pd-oem-facts">${oemFacts()}</div>
+        <div class="pd-desc"><p>Send us your target market and quantities and we will get back to you with a tailored quote covering MOQ, sample lead time, bulk lead time and shipping.</p></div>
+        <div class="pd-cta" style="margin-top:14px">
+          <button type="button" class="btn btn-primary" data-modal-open>Request a Custom Quote</button>
           <a class="btn btn-ghost" href="oem.html">Explore OEM Services</a>
         </div>
+      </div>
+
+      <div class="pd-block" id="faq">
+        <h2>Frequently Asked Questions</h2>
+        ${faqHtml(faqs)}
       </div>
     </div>
   </div>
@@ -487,25 +744,31 @@ function initDetail(){
       <div class="section-head left"><h2 style="font-size:1.6rem">Related Products</h2></div>
       <div class="product-grid" id="relatedGrid">${related.map(productCard).join('')}</div>
     </div>
-  </div>`;
+  </div>
 
-  // gallery thumbnail switching
-  const mainImgEl = document.getElementById('pdMainImg');
-  if(mainImgEl){
-    wrap.querySelectorAll('.pd-thumb').forEach(btn=>{
+  ${modalHtml(p)}`;
+
+  injectFaqSchema(faqs);
+  injectBreadcrumbSchema(p);
+
+  const galleryCol = document.getElementById('pdGalleryCol');
+  bindThumbs(galleryCol);
+
+  /* color picker switch: re-render gallery then re-bind */
+  const pdColors=document.getElementById('pdColors');
+  if(pdColors){
+    pdColors.querySelectorAll('[data-color]').forEach(btn=>{
       btn.addEventListener('click', ()=>{
-        const i = parseInt(btn.dataset.i,10);
-        const im = p.images[i];
-        if(!im) return;
-        mainImgEl.src = im.src;
-        mainImgEl.alt = im.alt;
-        wrap.querySelectorAll('.pd-thumb').forEach(b=>b.classList.remove('active'));
+        currentColor=btn.dataset.color;
+        galleryCol.innerHTML=galleryHtml(currentColor);
+        pdColors.querySelectorAll('.color-swatch').forEach(b=>b.classList.remove('active'));
         btn.classList.add('active');
-        btn.scrollIntoView({behavior:'smooth', block:'nearest', inline:'center'});
+        bindThumbs(galleryCol);
       });
     });
   }
-  // copy-email button (mailto may not work on devices without a mail client)
+
+  /* copy email */
   wrap.querySelectorAll('[data-copy-mail]').forEach(btn=>{
     btn.addEventListener('click', async ()=>{
       let ok=false;
@@ -518,9 +781,190 @@ function initDetail(){
       }
     });
   });
+
+  /* modal open/close + submit */
+  const modal=document.getElementById('inquiryModal');
+  wrap.querySelectorAll('[data-modal-open]').forEach(btn=>{
+    btn.addEventListener('click',()=>modal.classList.add('show'));
+  });
+  modal.querySelectorAll('[data-modal-close]').forEach(btn=>{
+    btn.addEventListener('click',()=>modal.classList.remove('show'));
+  });
+  modal.addEventListener('click',e=>{ if(e.target===modal) modal.classList.remove('show'); });
+  const modalForm=document.getElementById('modalForm');
+  modalForm.addEventListener('submit', async e=>{
+    e.preventDefault();
+    try{
+      const res=await fetch('https://api.web3forms.com/submit',{method:'POST',body:new FormData(modalForm)});
+      const json=await res.json();
+      if(json.success){
+        const box=modal.querySelector('.modal');
+        box.innerHTML=`<div style="text-align:center;padding:40px 10px">
+          <div style="width:64px;height:64px;border-radius:50%;background:rgba(34,197,94,.15);color:#16A34A;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;font-size:1.8rem">✓</div>
+          <h3>Thank you!</h3>
+          <p style="color:var(--muted)">Your inquiry has been sent. We will reply within one business day.</p>
+          <button type="button" class="btn btn-primary" data-modal-close style="margin-top:10px">Done</button>
+        </div>`;
+        box.querySelector('[data-modal-close]').addEventListener('click',()=>modal.classList.remove('show'));
+      } else { alert('Sorry, the message could not be sent. Please email '+CFG.email); }
+    }catch(err){ alert('Network error. Please email '+CFG.email); }
+  });
+
+  /* lightbox for certificate images */
+  const lightbox=document.getElementById('lightbox');
+  const lbImg=lightbox.querySelector('img');
+  wrap.querySelectorAll('[data-lightbox-src]').forEach(btn=>{
+    btn.addEventListener('click',()=>{ lbImg.src=btn.dataset.lightboxSrc; lightbox.classList.add('show'); });
+  });
+  lightbox.querySelectorAll('[data-lightbox-close]').forEach(btn=>{
+    btn.addEventListener('click',()=>lightbox.classList.remove('show'));
+  });
+  lightbox.addEventListener('click',e=>{ if(e.target===lightbox) lightbox.classList.remove('show'); });
 }
 
-/* ---------- FAQ accordion ---------- */
+/* home factory & certificate blocks: carousel + lightbox */
+function initHomeFactory(){
+  const track=document.getElementById('certTrack');
+  if(!track) return;
+  const cards=track.querySelectorAll('.cert-card');
+  const scroll=document.querySelector('.cert-scroll');
+  const lb=document.getElementById('homeLightbox');
+  const lbImg=lb?lb.querySelector('img'):null;
+  let idx=0,perView=3;
+  function step(){
+    const first=track.children[0];
+    return first.getBoundingClientRect().width+16;
+  }
+  function calc(){
+    const vw=scroll.getBoundingClientRect().width;
+    perView=Math.max(1,Math.round(vw/step()));
+  }
+  function maxIdx(){ return Math.max(0,cards.length-perView); }
+  function renderDots(){
+    const dots=document.getElementById('certDots');
+    if(!dots)return;
+    dots.innerHTML='';
+    const pages=maxIdx()+1;
+    for(let i=0;i<pages;i++){
+      const b=document.createElement('span');
+      if(i===Math.round(idx/perView))b.classList.add('active');
+      b.addEventListener('click',()=>{idx=Math.min(i*perView,maxIdx());move();});
+      dots.appendChild(b);
+    }
+  }
+  function move(){
+    calc();
+    if(idx>maxIdx())idx=maxIdx();
+    track.style.transform='translateX(-'+(idx*step())+'px)';
+    renderDots();
+  }
+  const prev=document.getElementById('certPrev');
+  const next=document.getElementById('certNext');
+  prev&&prev.addEventListener('click',()=>{idx=Math.max(0,idx-1);move();});
+  next&&next.addEventListener('click',()=>{idx=Math.min(idx+1,maxIdx());move();});
+  window.addEventListener('resize',move);
+  window.addEventListener('load',move);
+  setTimeout(move,120);
+
+  /* lightbox: factory cells + cert cards */
+  function openLb(src){
+    if(!lb)return;
+    lbImg.src=src;lb.classList.add('show');
+  }
+  function closeLb(){ lb&&lb.classList.remove('show'); }
+  document.querySelectorAll('.factory-band .f-cell').forEach(c=>{
+    c.addEventListener('click',()=>{
+      const im=c.querySelector('img');if(im)openLb(im.src);
+    });
+  });
+  cards.forEach(c=>{
+    c.addEventListener('click',()=>{ if(c.dataset.lb)openLb(c.dataset.lb); });
+  });
+  lb&&lb.querySelectorAll('.lightbox-close').forEach(b=>b.addEventListener('click',closeLb));
+  lb&&lb.addEventListener('click',e=>{if(e.target===lb)closeLb();});
+
+  /* full factory video modal */
+  const vModal=document.getElementById('videoModal');
+  const vPlayer=document.getElementById('videoModalPlayer');
+  const vPlay=document.getElementById('fvPlay');
+  function openVideo(){
+    if(!vModal)return;
+    vModal.classList.add('show');
+    vPlayer.muted=false;
+    vPlayer.play().catch(()=>{});
+  }
+  function closeVideo(){
+    if(!vModal)return;
+    vModal.classList.remove('show');
+    vPlayer.pause();
+  }
+  vPlay&&vPlay.addEventListener('click',openVideo);
+  vPlay&&vPlay.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openVideo();}});
+  const vClose=document.getElementById('videoModalClose');
+  vClose&&vClose.addEventListener('click',closeVideo);
+  vModal&&vModal.addEventListener('click',e=>{if(e.target===vModal)closeVideo();});
+
+  document.addEventListener('keydown',e=>{
+    if(e.key==='Escape'){closeLb();closeVideo();}
+    if(e.key==='ArrowRight')next&&next.click();
+    if(e.key==='ArrowLeft')prev&&prev.click();
+  });
+}
+
+/* floating WhatsApp + Email button group (E2), injected on every page */
+function initFloatGroup(){
+  document.querySelectorAll('.wa-float').forEach(el=>el.style.display='none');
+  if(document.querySelector('.float-group')) return;
+  const group=document.createElement('div');
+  group.className='float-group';
+  const generic="Hi, I'd like a wholesale quote from JINGOX — MOQ and price, please.";
+  const waHref=waLink(generic);
+  group.innerHTML=`
+    <button type="button" class="float-btn float-mail" data-float-mail aria-label="Email inquiry">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+    </button>
+    <a class="float-btn float-wa" target="_blank" rel="noopener" href="${waHref}" aria-label="Chat on WhatsApp">
+      <svg viewBox="0 0 32 32"><path d="M16 .8C7.6.8.8 7.6.8 16c0 2.7.7 5.3 2 7.6L.8 31.2l7.8-2c2.2 1.2 4.7 1.9 7.4 1.9 8.4 0 15.2-6.8 15.2-15.2S24.4.8 16 .8zm0 27.6c-2.4 0-4.6-.7-6.5-1.9l-.5-.3-4.6 1.2 1.2-4.5-.3-.5C4.8 20.5 4 18.3 4 16 4 9.4 9.4 4 16 4s12 5.4 12 12-5.4 12.4-12 12.4zm6.6-9c-.4-.2-2.1-1-2.4-1.1-.3-.1-.6-.2-.8.2-.2.4-.8 1.1-1 1.3-.2.2-.4.2-.7.1-.4-.2-1.5-.5-2.8-1.7-1-1-1.7-2.2-1.9-2.6-.2-.4 0-.6.2-.8l.6-.7c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6-.1-.2-.8-1.9-1.1-2.6-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.4-1.2 1.1-1.2 2.8s1.2 3.3 1.4 3.5c.2.2 2.4 3.7 5.8 5.2.8.4 1.4.6 1.9.7.8.2 1.5.2 2.1.1.6-.1 2-.8 2.3-1.6.3-.8.3-1.4.2-1.6-.1-.1-.3-.2-.7-.4z"/></svg>
+    </a>`;
+  document.body.appendChild(group);
+  group.querySelector('[data-float-mail]').addEventListener('click',()=>{
+    if(document.getElementById('inquiryModal')){
+      document.getElementById('inquiryModal').classList.add('show');
+    } else {
+      openGenericModal();
+    }
+  });
+}
+/* generic modal on non-product pages (no SKU) */
+function openGenericModal(){
+  let host=document.getElementById('genericModalHost');
+  if(!host){
+    host=document.createElement('div');
+    host.id='genericModalHost';
+    document.body.appendChild(host);
+  }
+  host.innerHTML=modalHtml(null);
+  const modal=host.querySelector('#inquiryModal');
+  modal.classList.add('show');
+  modal.querySelectorAll('[data-modal-close]').forEach(b=>b.addEventListener('click',()=>modal.classList.remove('show')));
+  modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('show');});
+  const form=host.querySelector('#modalForm');
+  form.addEventListener('submit',async e=>{
+    e.preventDefault();
+    try{
+      const res=await fetch('https://api.web3forms.com/submit',{method:'POST',body:new FormData(form)});
+      const json=await res.json();
+      if(json.success){
+        const box=modal.querySelector('.modal');
+        box.innerHTML=`<div style="text-align:center;padding:40px 10px">
+          <div style="width:64px;height:64px;border-radius:50%;background:rgba(34,197,94,.15);color:#16A34A;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;font-size:1.8rem">✓</div>
+          <h3>Thank you!</h3><p style="color:var(--muted)">Your inquiry has been sent. We will reply within one business day.</p>
+          <button type="button" class="btn btn-primary" data-modal-close style="margin-top:10px">Done</button></div>`;
+        box.querySelector('[data-modal-close]').addEventListener('click',()=>modal.classList.remove('show'));
+      } else {alert('Sorry, the message could not be sent.');}
+    }catch(err){alert('Network error. Please email info@jingox.com');}
+  });
+}
 function initFaq(){
   document.querySelectorAll('.faq-item').forEach(item=>{
     const q = item.querySelector('.faq-q');
@@ -591,10 +1035,12 @@ function initYear(){
 document.addEventListener('DOMContentLoaded', ()=>{
   initNav();
   initHome();
+  initHomeFactory();
   initCollection();
   initDetail();
   initFaq();
   initForm();
   initWaLinks();
+  initFloatGroup();
   initYear();
 });
