@@ -565,7 +565,7 @@ a.blog-read:hover{color:var(--purple-ink)}
 .pd-why li::before{content:"▹";position:absolute;left:2px;color:var(--blue);font-weight:800}
 
 /* ---- 弹窗表单 modal（B7）---- */
-.modal-overlay{display:none;position:fixed;inset:0;z-index:100;background:rgba(10,12,28,.66);
+.modal-overlay{display:none;position:fixed;inset:0;z-index:1000;background:rgba(10,12,28,.66);
   backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:22px}
 .modal-overlay.show{display:flex}
 .modal{background:#fff;border-radius:18px;width:100%;max-width:480px;max-height:92vh;overflow:auto;
@@ -707,7 +707,7 @@ a.blog-read:hover{color:var(--purple-ink)}
 .cert-dots span.active{background:#22D3EE}
 
 /* ---- lightbox（证书/工厂点击放大）---- */
-.lightbox{display:none;position:fixed;inset:0;z-index:99;background:rgba(5,6,15,.94);backdrop-filter:blur(6px);
+.lightbox{display:none;position:fixed;inset:0;z-index:1000;background:rgba(5,6,15,.94);backdrop-filter:blur(6px);
   align-items:center;justify-content:center;padding:24px}
 .lightbox.show{display:flex}
 .lightbox img{max-width:100%;max-height:90vh;border-radius:10px;box-shadow:0 30px 80px rgba(0,0,0,.7)}
@@ -740,3 +740,4 @@ a.blog-read:hover{color:var(--purple-ink)}
   .cert-arrow{width:40px;height:40px}
   .cert-card img{width:min(72vw,300px)}
 }
+/* （注：内容由AI生成） */
