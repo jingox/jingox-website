@@ -111,10 +111,10 @@ const slug = (sku) => String(sku).toLowerCase().replace(/[^a-z0-9-]/g, '-');
         ? m
         : `<body${attrs} data-sku="${sku}">`)
     );
-    // 2) canonical 指向独立页（动态渲染时被设成 product.html?sku=，这里改回自指）
+    // 2) canonical 指向独立页的无扩展名 URL（Cloudflare Pages 会 308 到该地址，与静态页一致）
     html = html.replace(
       /<link rel="canonical"[^>]*>/,
-      `<link rel="canonical" href="${PUBLISH_ORIGIN}/product-${slug(sku)}.html">`
+      `<link rel="canonical" href="${PUBLISH_ORIGIN}/product-${slug(sku)}">`
     );
 
     const outFile = path.join(ROOT, `product-${slug(sku)}.html`);

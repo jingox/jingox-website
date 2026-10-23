@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Navigation Prototype</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/manrope@5.0.20/400.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/manrope@5.0.20/500.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/manrope@5.0.20/600.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/manrope@5.0.20/700.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/manrope@5.0.20/800.css">
+<style>
+:root{
+  --bg:#121212;--bg-2:#161616;--surface:#1C1C22;--surface-2:#23232B;--surface-3:#2A2A34;
+  --line:#2E2E38;--border-strong:#3D3D4A;
+  --text:#E8E8EE;--text-dim:#A0A0AD;--muted-2:#848492;
+  --blue:#2BB3DD;--blue-2:#0084AF;--blue-ink:#123A4A;--blue-border:#0E3A4C;
+  --purple:#A78BFA;--purple-2:#7C3AED;
+  --maxw:1200px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Manrope',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+a{text-decoration:none;color:inherit}
+
+/* ===== 公告条 ===== */
+.announce{background:linear-gradient(90deg,var(--blue-ink),#1a1030);border-bottom:1px solid var(--line);
+  font-size:.82rem;font-weight:600;letter-spacing:.02em;color:#cfeaf5;overflow:hidden;white-space:nowrap}
+.announce .inner{width:min(var(--maxw),92%);margin:0 auto;padding:9px 0;display:flex;justify-content:space-between;gap:20px}
+.announce b{color:var(--blue)}
+
+/* ===== 主导航 ===== */
+.site-header{position:sticky;top:0;z-index:100;background:rgba(18,18,24,.85);
+  backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{width:min(var(--maxw),92%);margin:0 auto;display:flex;align-items:center;gap:24px;height:84px}
+.nav-logo{display:flex;align-items:center;gap:11px;font-weight:800;font-size:1.5rem;letter-spacing:.12em;color:var(--text)}
+.nav-logo .dot{width:14px;height:14px;border-radius:4px;background:linear-gradient(135deg,var(--blue),var(--purple));
+  box-shadow:0 0 14px rgba(43,179,221,.7)}
+.nav-menu{display:flex;align-items:center;gap:4px;margin-left:8px}
+.nav-menu>li{list-style:none;position:relative}
+.nav-menu>li>a,.nav-menu>li>span{display:flex;align-items:center;gap:6px;padding:11px 16px;border-radius:10px;
+  color:var(--text-dim);font-size:.98rem;font-weight:600;cursor:pointer;transition:.18s}
+.nav-menu>li>a:hover,.nav-menu>li>span:hover{color:var(--text);background:var(--surface-3)}
+.nav-menu>li.active>a{color:var(--blue)}
+.nav-right{margin-left:auto;display:flex;align-items:center;gap:12px}
+.icon-btn{width:44px;height:44px;border-radius:11px;display:flex;align-items:center;justify-content:center;
+  background:var(--surface-2);border:1px solid var(--line);color:var(--text-dim);cursor:pointer;transition:.18s}
+.icon-btn:hover{color:var(--blue);border-color:var(--blue-border)}
+.btn-quote{padding:12px 24px;border-radius:11px;font-weight:700;font-size:.95rem;color:#fff;
+  background:linear-gradient(135deg,var(--blue),var(--blue-2));box-shadow:0 6px 20px rgba(43,179,221,.3)}
+.btn-quote:hover{filter:brightness(1.08)}
+
+/* ===== MEGA MENU ===== */
+.mega{position:absolute;top:calc(100% + 10px);left:0;transform:translateY(10px);
+  width:min(1060px,92vw);background:var(--surface);border:1px solid var(--line);border-radius:18px;
+  box-shadow:0 30px 70px rgba(0,0,0,.55);padding:26px;opacity:0;visibility:hidden;transition:.22s}
+.has-mega:hover .mega{opacity:1;visibility:visible;transform:translateY(0)}
+.mega-grid{display:grid;grid-template-columns:1fr 1fr 300px;gap:30px}
+.mega-col h5{font-size:.74rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted-2);margin-bottom:14px;padding-left:4px}
+.mega-link{display:flex;align-items:center;gap:12px;padding:9px 12px;border-radius:10px;transition:.15s}
+.mega-link:hover{background:var(--surface-3)}
+.mega-link .ico{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;
+  background:var(--surface-2);border:1px solid var(--line);font-size:1rem}
+.mega-link .t{font-size:.92rem;font-weight:600;color:var(--text)}
+.mega-link .n{margin-left:auto;font-size:.74rem;color:var(--muted-2);background:var(--surface-3);
+  padding:2px 9px;border-radius:20px}
+.mega-link:hover .t{color:var(--blue)}
+.mega-promo{border-radius:14px;overflow:hidden;position:relative;
+  background:linear-gradient(160deg,var(--blue-ink),#150f26);border:1px solid var(--blue-border);
+  padding:18px;display:flex;flex-direction:column}
+.mega-promo img{width:100%;border-radius:10px;display:block;margin-bottom:14px}
+.mega-promo .tag2{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue)}
+.mega-promo h6{font-size:1.02rem;font-weight:700;margin:6px 0 4px;line-height:1.3}
+.mega-promo p{font-size:.8rem;color:var(--text-dim);margin-bottom:16px}
+.mega-promo a{margin-top:auto;text-align:center;padding:10px;border-radius:10px;font-size:.86rem;font-weight:700;
+  color:#fff;background:linear-gradient(135deg,var(--blue),var(--blue-2))}
+</style>
+</head>
+<body>
+
+<!-- 公告条 -->
+<div class="announce">
+  <div class="inner">
+    <span><b>MOQ 1 Piece</b> — Sample &amp; Bulk Orders Both Welcome</span>
+    <span>Factory Direct · OEM / ODM · Worldwide Shipping</span>
+  </div>
+</div>
+
+<!-- 主导航 -->
+<header class="site-header">
+  <div class="nav">
+    <a class="nav-logo" href="#"><span class="dot"></span>JINGOX</a>
+    <ul class="nav-menu">
+      <li><a href="#">Home</a></li>
+      <li class="has-mega active">
+        <span>Products <small>▾</small></span>
+        <div class="mega">
+          <div class="mega-grid">
+            <div class="mega-col">
+              <h5>Shop by Platform</h5>
+              <a class="mega-link" href="#"><span class="ico">🎮</span><span class="t">Nintendo Switch 2</span><span class="n">44</span></a>
+              <a class="mega-link" href="#"><span class="ico">🎮</span><span class="t">Nintendo Switch</span><span class="n">29</span></a>
+              <a class="mega-link" href="#"><span class="ico">🕹️</span><span class="t">PS5 / Slim / Pro</span><span class="n">18</span></a>
+              <a class="mega-link" href="#"><span class="ico">🕹️</span><span class="t">PS4</span><span class="n">5</span></a>
+              <a class="mega-link" href="#"><span class="ico">🟢</span><span class="t">Xbox Series X/S</span><span class="n">3</span></a>
+              <a class="mega-link" href="#"><span class="ico">🥽</span><span class="t">VR / Meta Quest</span><span class="n">5</span></a>
+              <a class="mega-link" href="#"><span class="ico">⚙️</span><span class="t">Others / Universal</span><span class="n">4</span></a>
+            </div>
+            <div class="mega-col">
+              <h5>Shop by Category</h5>
+              <a class="mega-link" href="#"><span class="ico">🔋</span><span class="t">Charging Docks</span><span class="n">34</span></a>
+              <a class="mega-link" href="#"><span class="ico">❄️</span><span class="t">Cooling Stands</span><span class="n">9</span></a>
+              <a class="mega-link" href="#"><span class="ico">👟</span><span class="t">Somatosensory Kits</span><span class="n">38</span></a>
+              <a class="mega-link" href="#"><span class="ico">📦</span><span class="t">Storage Stands</span><span class="n">8</span></a>
+              <a class="mega-link" href="#"><span class="ico">👜</span><span class="t">Bags &amp; Cases</span><span class="n">11</span></a>
+              <a class="mega-link" href="#"><span class="ico">🛡️</span><span class="t">Faceplates</span><span class="n">4</span></a>
+            </div>
+            <div class="mega-promo">
+              <span class="tag2">★ Best Seller</span>
+              <h6>RGB Cooling Stand for PS5</h6>
+              <p>Multi-function dock with cooling fan, dual charging &amp; RGB light.</p>
+              <img src="images/products/HA-8008/HA-8008-black-main-1.webp" alt="product">
+              <a href="#">Browse All 108 Products →</a>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li><a href="#">OEM</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">FAQ</a></li>
+      <li><a href="#">Blog</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="icon-btn" title="Search">🔍</button>
+      <a class="btn-quote" href="#">Get a Quote</a>
+    </div>
+  </div>
+</header>
+
+</body>
+</html>

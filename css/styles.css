@@ -83,7 +83,7 @@ h1,h2,h3,h4{font-family:var(--font-display);line-height:1.2;font-weight:700;lett
 .nav-menu{display:flex;align-items:center;gap:6px}
 .nav-menu>li>a,.nav-menu>li>span{display:flex;align-items:center;gap:5px;padding:9px 14px;border-radius:9px;
   color:var(--muted);font-size:.94rem;font-weight:500;cursor:pointer;transition:.18s}
-.nav-menu>li>a:hover,.nav-menu>li>span:hover{color:var(--text);background:var(--surface-3)}
+.nav-menu>li>a:hover,.nav-menu>li>span:hover{color:#fff;background:linear-gradient(135deg,var(--blue),var(--blue-2))}
 /* 当前页：胶囊高亮（蓝色渐变实底 + 发光 + 白字）*/
 .nav-menu>li.nav-active-page>a,.nav-menu>li.nav-active-page>span{
   color:#fff;background:linear-gradient(135deg,var(--blue),var(--blue-2));

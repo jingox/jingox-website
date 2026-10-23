@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Title Design 2</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/manrope@5.0.20/400.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/manrope@5.0.20/600.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/manrope@5.0.20/700.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/manrope@5.0.20/800.css">
+<style>
+:root{
+  --bg:#0A0B1E;--text:#E8E8EE;--text-dim:#8B94B5;
+  --cyan:#22D3EE;--blue:#60A5FA;--purple:#A78BFA;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Manrope',system-ui,sans-serif;background:var(--bg);color:var(--text);padding:26px}
+.variant{padding:26px 30px 30px;border-radius:14px;border:1px solid #1c2040;margin-bottom:18px}
+.vlabel{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-dim);margin-bottom:18px}
+h2{line-height:1.02;margin:0;font-weight:800;letter-spacing:-.02em}
+.big{font-size:clamp(40px,5.6vw,68px)}
+.line{display:block}
+.w{color:#fff}
+.g{background:linear-gradient(100deg,#22D3EE,#60A5FA 55%,#A78BFA);
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.rule{height:4px;margin-top:14px;border-radius:3px;
+  background:linear-gradient(90deg,#22D3EE,#60A5FA 50%,#A78BFA,transparent);
+  box-shadow:0 0 16px rgba(34,211,238,.4)}
+.arrow{color:var(--cyan);font-weight:700;margin-right:.12em}
+</style>
+</head>
+<body>
+
+<div class="variant">
+  <div class="vlabel">A · 两行 · YOU 大写（渐变）</div>
+  <h2>
+    <span class="line big w">COMPLIANCE</span>
+    <span class="line big g">YOU CAN VERIFY</span>
+  </h2>
+  <div class="rule" style="width:460px"></div>
+</div>
+
+<div class="variant">
+  <div class="vlabel">B · 两行 · 去掉 YOU</div>
+  <h2>
+    <span class="line big w">COMPLIANCE</span>
+    <span class="line big g">CAN VERIFY</span>
+  </h2>
+  <div class="rule" style="width:420px"></div>
+</div>
+
+<div class="variant">
+  <div class="vlabel">C · 一行</div>
+  <h2>
+    <span class="big w">COMPLIANCE </span><span class="big g">YOU CAN VERIFY</span>
+  </h2>
+  <div class="rule" style="width:760px"></div>
+</div>
+
+<div class="variant">
+  <div class="vlabel">D · 两行 · 箭头引导</div>
+  <h2>
+    <span class="line big w">COMPLIANCE</span>
+    <span class="line big g"><span class="arrow">→</span>YOU CAN VERIFY</span>
+  </h2>
+  <div class="rule" style="width:480px"></div>
+</div>
+
+</body>
+</html>

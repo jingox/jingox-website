@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Title Design</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/manrope@5.0.20/400.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/manrope@5.0.20/500.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/manrope@5.0.20/600.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/manrope@5.0.20/700.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/manrope@5.0.20/800.css">
+<style>
+:root{
+  --bg:#0A0B1E;--text:#E8E8EE;--text-dim:#8B94B5;
+  --cyan:#22D3EE;--blue:#60A5FA;--purple:#A78BFA;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Manrope',system-ui,sans-serif;background:var(--bg);color:var(--text);padding:26px}
+.variant{padding:26px 30px;border-radius:14px;border:1px solid #1c2040;margin-bottom:18px;position:relative;overflow:hidden}
+.vlabel{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-dim);margin-bottom:18px}
+h2{line-height:1.02;margin:0}
+.small{font-size:.34em;font-weight:600;color:var(--cyan);vertical-align:middle;margin-right:.14em}
+.big{font-size:clamp(40px,6vw,72px);font-weight:800;letter-spacing:-.02em}
+.line{display:block}
+
+/* 变体1：统一渐变实心 */
+.v1 .grad{background:linear-gradient(100deg,#22D3EE,#60A5FA 45%,#A78BFA 80%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 0 24px rgba(34,211,238,.3))}
+
+/* 变体2：实心 / 空心对比 */
+.v2 .fill{background:linear-gradient(100deg,#22D3EE,#60A5FA 55%,#A78BFA);
+  -webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 22px rgba(34,211,238,.3))}
+.v2 .hollow{-webkit-text-stroke:2px rgba(96,165,250,.65);color:transparent}
+
+/* 变体3：霓虹 RGB 故障 */
+.v3 .neon{color:#fff;
+  text-shadow:-2.5px 0 rgba(255,0,80,.55),2.5px 0 rgba(0,200,255,.55),0 0 26px rgba(34,211,238,.45)}
+.v3 .neon2{background:linear-gradient(100deg,#22D3EE,#60A5FA 50%,#A78BFA);
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* 变体4：白色粗体 + 渐变下划线 */
+.v4 .w{color:#fff}
+.v4 .g{background:linear-gradient(100deg,#22D3EE,#60A5FA 55%,#A78BFA);
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.v4 .rule{height:4px;width:420px;margin-top:14px;border-radius:3px;
+  background:linear-gradient(90deg,#22D3EE,#60A5FA 50%,#A78BFA,transparent);
+  box-shadow:0 0 16px rgba(34,211,238,.4)}
+</style>
+</head>
+<body>
+
+<div class="variant v1">
+  <div class="vlabel">1 · 统一 Manrope 渐变</div>
+  <h2>
+    <span class="line big"><span class="small">the</span><span class="grad">COMPLIANCE</span></span>
+    <span class="line big"><span class="small">you</span><span class="grad">CAN VERIFY</span></span>
+  </h2>
+</div>
+
+<div class="variant v2">
+  <div class="vlabel">2 · 实心 / 空心对比</div>
+  <h2>
+    <span class="line big"><span class="small">the</span><span class="fill">COMPLIANCE</span></span>
+    <span class="line big"><span class="small">you</span><span class="hollow">CAN VERIFY</span></span>
+  </h2>
+</div>
+
+<div class="variant v3">
+  <div class="vlabel">3 · 霓虹 RGB 故障</div>
+  <h2>
+    <span class="line big"><span class="small">the</span><span class="neon">COMPLIANCE</span></span>
+    <span class="line big"><span class="small">you</span><span class="neon2">CAN VERIFY</span></span>
+  </h2>
+</div>
+
+<div class="variant v4">
+  <div class="vlabel">4 · 白色粗体 + 渐变下划线</div>
+  <h2>
+    <span class="line big"><span class="small">the</span><span class="w">COMPLIANCE</span></span>
+    <span class="line big"><span class="small">you</span><span class="g">CAN VERIFY</span></span>
+  </h2>
+  <div class="rule"></div>
+</div>
+
+</body>
+</html>
