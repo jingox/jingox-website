@@ -191,6 +191,25 @@ function initNav(){
       if(window.innerWidth<=760){ e.preventDefault(); t.parentElement.classList.toggle('open'); }
     });
   });
+  setActiveNav();
+}
+
+/* 当前页导航高亮（依据 body data-page）*/
+function setActiveNav(){
+  const page = document.body.dataset.page || '';
+  const menu = document.querySelector('.nav-menu');
+  if(!menu) return;
+  let target = null;
+  if(page==='home') target = menu.querySelector('li a[href="index.html"]');
+  else if(page==='products'||page==='product') target = menu.querySelector('li.has-drop');
+  else if(page==='oem') target = menu.querySelector('li a[href="oem.html"]');
+  else if(page==='about') target = menu.querySelector('li a[href="about.html"]');
+  else if(page==='faq') target = menu.querySelector('li a[href="faq.html"]');
+  else if(page==='blog') target = menu.querySelector('li a[href="blog.html"]');
+  if(target){
+    const li = target.closest('li');
+    if(li) li.classList.add('nav-active-page');
+  }
 }
 
 /* ---------- home ---------- */

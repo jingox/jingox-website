@@ -1,5 +1,5 @@
 /* Fonts are loaded in parallel via <link> tags in each page <head>
-   (Orbitron for display/headings, Manrope for body). See font links. */
+   (Manrope for both display/headings and body). See font links. */
 /* ============================================================
    JINGOX — B2B game console accessories
    DARK ESPORTS theme (electric blue + RGB accents).
@@ -26,7 +26,7 @@
   --purple-ink:#C084FC;    /* purple text on dark */
   --orange:#F97316;
   --wa:#22C55E;
-  --font-display:'Orbitron',system-ui,-apple-system,"Segoe UI",Roboto,"PingFang SC","Microsoft YaHei",sans-serif;
+  --font-display:'Manrope',system-ui,-apple-system,"Segoe UI",Roboto,"PingFang SC","Microsoft YaHei",sans-serif;
   --font-body:'Manrope',system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,"PingFang SC","Microsoft YaHei",sans-serif;
   --radius:16px;
   --radius-sm:10px;
@@ -84,6 +84,11 @@ h1,h2,h3,h4{font-family:var(--font-display);line-height:1.2;font-weight:700;lett
 .nav-menu>li>a,.nav-menu>li>span{display:flex;align-items:center;gap:5px;padding:9px 14px;border-radius:9px;
   color:var(--muted);font-size:.94rem;font-weight:500;cursor:pointer;transition:.18s}
 .nav-menu>li>a:hover,.nav-menu>li>span:hover{color:var(--text);background:var(--surface-3)}
+/* 当前页：胶囊高亮（蓝色渐变实底 + 发光 + 白字）*/
+.nav-menu>li.nav-active-page>a,.nav-menu>li.nav-active-page>span{
+  color:#fff;background:linear-gradient(135deg,var(--blue),var(--blue-2));
+  box-shadow:0 6px 18px rgba(43,179,221,.35)}
+.nav-menu>li.nav-active-page>a:hover,.nav-menu>li.nav-active-page>span:hover{color:#fff}
 .nav-menu .nav-cta{margin-left:8px}
 .nav-menu>li>a.btn{color:#fff}
 .nav-menu>li>a.btn:hover{color:#fff}
@@ -249,9 +254,7 @@ h1,h2,h3,h4{font-family:var(--font-display);line-height:1.2;font-weight:700;lett
   margin-bottom:14px;position:relative;overflow:hidden}
 .pd-main-ph .ph-svg{width:130px;height:130px;opacity:.35}
 .pd-main-ph.has-img{background:radial-gradient(circle at 50% 46%,rgba(0,132,175,.1),rgba(0,132,175,0) 66%);padding:18px}
-.pd-main-img{width:100%;height:100%;object-fit:contain;display:block;position:relative;z-index:1;
-  filter:drop-shadow(0 0 10px rgba(43,179,221,.55)) drop-shadow(0 0 22px rgba(0,132,175,.4))
-          drop-shadow(0 0 34px rgba(168,85,247,.22)) drop-shadow(0 16px 26px rgba(0,0,0,.5))}
+.pd-main-img{width:100%;height:100%;object-fit:contain;display:block;position:relative;z-index:1;border-radius:8px}
 .pd-thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
 .pd-thumb{aspect-ratio:1/1;border-radius:10px;background:var(--surface-2);border:1px solid var(--line);
   display:flex;align-items:center;justify-content:center;overflow:hidden;cursor:pointer;padding:0}
@@ -683,7 +686,7 @@ a.blog-read:hover{color:var(--purple-ink)}
    首页工厂 + 证书 深色信任带（E3，HUD 风格，factory_design_v4）
    ============================================================ */
 .factory-band{position:relative;background:#0A0B1E;color:#E8ECF4;padding:84px 0 0;overflow:hidden}
-.factory-band .f-bg{position:absolute;top:-20px;right:-10px;font-size:clamp(120px,22vw,320px);font-weight:900;
+.factory-band .f-bg{position:absolute;top:-20px;right:-10px;font-size:clamp(120px,22vw,320px);font-weight:800;
   line-height:1;letter-spacing:-10px;color:rgba(255,255,255,.028);pointer-events:none;user-select:none}
 .f-hud{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-bottom:18px;
   border-bottom:1px solid rgba(34,211,238,.2);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;position:relative;z-index:2}
@@ -692,7 +695,7 @@ a.blog-read:hover{color:var(--purple-ink)}
 .f-live{display:inline-block;width:8px;height:8px;border-radius:50%;background:#22D3EE;animation:f-live 1.8s infinite}
 @keyframes f-live{0%,100%{box-shadow:0 0 0 0 rgba(34,211,238,.5)}50%{box-shadow:0 0 0 6px rgba(34,211,238,0)}}
 .f-title{position:relative;z-index:1;margin-top:38px}
-.f-title h2{font-size:clamp(38px,7.5vw,84px);font-weight:900;line-height:1.05;letter-spacing:-2px;margin:0}
+.f-title h2{font-size:clamp(38px,7.5vw,84px);font-weight:800;line-height:1.05;letter-spacing:-2px;margin:0}
 .f-title .f-line{display:block}
 .f-corner{position:absolute;width:22px;height:22px;border-color:#22D3EE;border-style:solid;opacity:.7}
 .em-serif{font-family:Georgia,'Times New Roman',serif;font-style:italic;font-weight:400;color:#67E8F9}
@@ -703,6 +706,17 @@ a.blog-read:hover{color:var(--purple-ink)}
 @keyframes f-glow{0%,100%{filter:drop-shadow(0 0 22px rgba(34,211,238,.35))}50%{filter:drop-shadow(0 0 40px rgba(34,211,238,.6))}}
 .f-caret{color:#22D3EE;animation:f-blink 1.05s step-end infinite;font-weight:400}
 @keyframes f-blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+/* 合规标题 · 一行版（白 + 渐变 + 渐变线）*/
+.f-title-inline{margin-top:34px}
+.f-title-inline h2{font-size:clamp(30px,5.4vw,66px);font-weight:800;line-height:1.05;
+  letter-spacing:-.02em;white-space:nowrap}
+.solid-w{color:#fff}
+.solid-g{background:linear-gradient(100deg,#22D3EE,#60A5FA 55%,#A78BFA);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 0 22px rgba(34,211,238,.3))}
+.title-rule{height:4px;margin-top:16px;border-radius:3px;width:100%;max-width:760px;
+  background:linear-gradient(90deg,#22D3EE,#60A5FA 50%,#A78BFA,transparent);
+  box-shadow:0 0 16px rgba(34,211,238,.4)}
 .f-sub{display:flex;gap:26px;align-items:flex-start;margin-top:38px;flex-wrap:wrap;position:relative;z-index:1}
 .f-desc{display:flex;gap:14px;max-width:560px;align-items:flex-start}
 .f-desc .f-bar{flex:0 0 3px;align-self:stretch;background:linear-gradient(180deg,#22D3EE,transparent);border-radius:2px}
@@ -771,7 +785,7 @@ a.blog-read:hover{color:var(--purple-ink)}
 /* ---- 404 页面 ---- */
 .error-page{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
   text-align:center;padding:40px 24px;background:var(--bg)}
-.error-page .e-code{font-size:clamp(80px,18vw,160px);font-weight:900;line-height:1;
+.error-page .e-code{font-size:clamp(80px,18vw,160px);font-weight:800;line-height:1;
   background:linear-gradient(120deg,var(--blue),var(--purple-2));-webkit-background-clip:text;background-clip:text;color:transparent}
 .error-page h1{font-size:1.6rem;margin:14px 0 10px}
 .error-page p{color:var(--muted);max-width:420px;margin-bottom:28px}
@@ -785,8 +799,8 @@ a.blog-read:hover{color:var(--purple-ink)}
 .pd-detail-wide{max-width:100%}
 .pd-detail-wide .pd-gallery-long{width:min(var(--maxw),92%);margin:0 auto}
 .pd-detail-wide .pd-gallery-long figure{border-radius:0}
-/* 详情文字块容器（980 居中，长图全宽时文字块各自限宽）*/
-.pd-px{max-width:980px;margin:0 auto;padding:0 24px}
+/* 详情文字块容器：与满屏长图/container 完全对齐（min(1200,92%)，无额外 padding）*/
+.pd-px{width:min(var(--maxw),92%);margin:0 auto;padding:0}
 .pd-detail .pd-block{margin-bottom:56px}
 .pd-detail .pd-block:first-of-type{padding-top:54px}
 .pd-detail-wide .pd-block{margin-bottom:0}
@@ -796,4 +810,8 @@ a.blog-read:hover{color:var(--purple-ink)}
   .cert-card img{width:min(72vw,300px)}
   /* 详情图底部留白：让最后一张浅色满屏图在悬浮标上方完整可见 */
   .pd-detail-wide{padding-bottom:145px}
+  /* 合规标题：小屏 COMPLIANCE 一行、YOU CAN VERIFY 一行 */
+  .f-title-inline h2{white-space:normal;font-size:clamp(24px,7.5vw,38px)}
+  .f-title-inline .solid-w,.f-title-inline .solid-g{display:block}
+  .title-rule{max-width:90%}
 }
