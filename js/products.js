@@ -1805,7 +1805,7 @@ window.PRODUCTS = [
       {
         "src": "images/products/HA-8008/HA-8008-detail-1.webp",
         "alt": "Cooling fan with bottom air intake for PS5, PS5 Slim and PS5 Pro",
-        "kind": "detail",
+        "kind": "main",
         "color": "all"
       },
       {
@@ -1817,7 +1817,7 @@ window.PRODUCTS = [
       {
         "src": "images/products/HA-8008/HA-8008-detail-3.webp",
         "alt": "RGB ambient light with seven colors and three lighting modes",
-        "kind": "detail",
+        "kind": "main",
         "color": "all"
       },
       {
@@ -1835,7 +1835,7 @@ window.PRODUCTS = [
       {
         "src": "images/products/HA-8008/HA-8008-detail-6.webp",
         "alt": "Two players gaming with PS5 cooling stand setup",
-        "kind": "detail",
+        "kind": "main",
         "color": "all"
       },
       {

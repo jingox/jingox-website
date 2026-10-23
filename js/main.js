@@ -111,6 +111,10 @@ function phIcon(size){
 }
 function countBy(key, val){ return PRODUCTS.filter(p=>p[key]===val).length; }
 function hasImgs(p){ return !!(p.images && p.images.length); }
+/* 阶段3：每款独立静态页 URL。SKU 转 slug：小写，非字母数字/连字符统一替换为 "-"
+   （如 HBP-253B/W -> product-hbp-253b-w.html） */
+function productSlug(sku){ return String(sku).toLowerCase().replace(/[^a-z0-9-]/g, '-'); }
+function productUrl(p){ return `product-${productSlug(p.sku)}.html`; }
 function plainText(s){
   return String(s==null?"":s).replace(/^-\s+/gm,'').replace(/\*\*/g,'').replace(/\s+/g,' ').trim();
 }
@@ -123,6 +127,11 @@ function setOg(prop, content){
   let el = document.querySelector('meta[property="'+prop+'"]');
   if(!el){ el = document.createElement('meta'); el.setAttribute('property',prop); document.head.appendChild(el); }
   el.setAttribute('content', content);
+}
+function setCanonical(href){
+  let el = document.querySelector('link[rel="canonical"]');
+  if(!el){ el = document.createElement('link'); el.setAttribute('rel','canonical'); document.head.appendChild(el); }
+  el.setAttribute('href', href);
 }
 function injectProductSchema(p){
   const data = {
@@ -151,13 +160,13 @@ function productCard(p){
   const mail = mailLink(`Inquiry: ${p.sku} ${p.name}`);
   return `<article class="product-card" data-platform="${esc(p.platformKey)}" data-type="${esc(p.type)}"
       data-search="${esc((p.sku+' '+p.name+' '+p.platformName+' '+p.type).toLowerCase())}">
-    <a class="product-ph${hasImgs(p)?' has-img':''}" href="product.html?sku=${encodeURIComponent(p.sku)}" aria-label="${esc(p.name)}">
+    <a class="product-ph${hasImgs(p)?' has-img':''}" href="${productUrl(p)}" aria-label="${esc(p.name)}">
       ${hasImgs(p)
         ? `<img class="product-img" src="${esc(p.images[0].src)}" alt="${esc(p.images[0].alt)}" loading="lazy" decoding="async" width="800" height="800">`
         : `${phIcon(74)}<span class="ph-sku">${esc(p.sku)}</span><span class="ph-type">${esc(p.type)}</span>`}
     </a>
     <div class="product-body">
-      <a class="product-name" href="product.html?sku=${encodeURIComponent(p.sku)}">${esc(p.name)}</a>
+      <a class="product-name" href="${productUrl(p)}">${esc(p.name)}</a>
       <div class="product-tag"><span class="platform-tag">${esc(p.platformName)}</span></div>
       <div class="product-actions">
         <a class="pa-wa" target="_blank" rel="noopener" href="${wa}">WhatsApp</a>
@@ -354,7 +363,7 @@ function specRows(p){
     ["Certifications", "Available on request"]
   ];
   return rows.filter(r=>r[1]).map(r=>
-    `<div class="sn-row"><span class="sn-k">${r[0]}</span><span class="sn-v">${esc(r[1])}</span></div>`).join('');
+    `<div class="spec-row"><span class="spec-k">${r[0]}</span><span class="spec-v">${esc(r[1])}</span></div>`).join('');
 }
 /* Pull short selling-point headings out of the long description;
    fall back to data-driven + standard B2B promises when the text has none. */
@@ -421,9 +430,9 @@ function productFaq(p){
   return faqs;
 }
 function faqHtml(faqs){
-  return faqs.map(f =>
-    `<div class="faq-item"><div class="faq-q">${esc(f.q)} <span class="plus">+</span></div>
-      <div class="faq-a"><p>${f.a}</p></div></div>`).join('');
+  return `<div class="faq-board">${faqs.map(f =>
+    `<div class="faq-entry"><div class="faq-q">${esc(f.q)}</div>
+      <div class="faq-a"><p>${f.a}</p></div></div>`).join('')}</div>`;
 }
 function injectFaqSchema(faqs){
   const data = {
@@ -524,7 +533,10 @@ function colorDot(c){
 function initDetail(){
   const wrap = document.getElementById('pd');
   if(!wrap) return;
-  const sku = new URLSearchParams(location.search).get('sku');
+  // SKU 来源：URL query（动态 product.html?sku=）优先；其次 body data-sku（静态独立页 product-<sku>.html）
+  let sku = new URLSearchParams(location.search).get('sku');
+  const isStatic = !sku && !!document.body.dataset.sku;
+  if(!sku) sku = document.body.dataset.sku || null;
   const p = sku ? bySku[sku] : null;
   const crumbName = document.getElementById('crumbName');
   if(!p){
@@ -547,6 +559,12 @@ function initDetail(){
   setMeta('description', metaDesc.slice(0,160));
   setOg('og:title', `${p.shortName||p.name} | JINGOX`);
   setOg('og:description', metaDesc.slice(0,160));
+  /* product page is indexable: self-referencing canonical keyed by sku, ensure robots allows indexing */
+  // canonical：静态独立页自指 product-<sku>.html；动态页自指 product.html?sku=
+  setCanonical(isStatic
+    ? `https://jingox.com/product-${productSlug(p.sku)}.html`
+    : `https://jingox.com/product.html?sku=${encodeURIComponent(p.sku)}`);
+  setMeta('robots', 'index,follow');
 
   /* color state; only show the picker when images carry color data */
   const colors = productColors(p);
@@ -651,9 +669,13 @@ function initDetail(){
 
   <div class="pd-specs-band" style="background:var(--bg);padding:8px 0 8px">
     <div class="container">
-      <div class="specs-neon" id="specs">
-        <div class="sn-head"><span class="sn-title">Specifications</span><span class="sn-line"></span></div>
-        ${specRows(p)}
+      <div class="specs-card" id="specs">
+        <div class="spec-head">
+          <span class="spec-title">Specifications</span>
+        </div>
+        <div class="spec-rows">
+          ${specRows(p)}
+        </div>
       </div>
     </div>
   </div>
@@ -883,6 +905,10 @@ function initHomeFactory(){
   lb&&lb.querySelectorAll('.lightbox-close').forEach(b=>b.addEventListener('click',closeLb));
   lb&&lb.addEventListener('click',e=>{if(e.target===lb)closeLb();});
 
+  /* background loop: ensure muted autoplay actually starts (policy may block the bare attribute) */
+  const bgLoop=document.querySelector('video.fv-loop');
+  if(bgLoop){ bgLoop.muted=true; const kick=()=>bgLoop.play().catch(()=>{}); kick(); bgLoop.addEventListener('loadeddata',kick); document.addEventListener('click',kick,{once:true}); }
+
   /* full factory video modal */
   const vModal=document.getElementById('videoModal');
   const vPlayer=document.getElementById('videoModalPlayer');
@@ -920,12 +946,12 @@ function initFloatGroup(){
   const generic="Hi, I'd like a wholesale quote from JINGOX — MOQ and price, please.";
   const waHref=waLink(generic);
   group.innerHTML=`
-    <button type="button" class="float-btn float-mail" data-float-mail aria-label="Email inquiry">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
-    </button>
     <a class="float-btn float-wa" target="_blank" rel="noopener" href="${waHref}" aria-label="Chat on WhatsApp">
       <svg viewBox="0 0 32 32"><path d="M16 .8C7.6.8.8 7.6.8 16c0 2.7.7 5.3 2 7.6L.8 31.2l7.8-2c2.2 1.2 4.7 1.9 7.4 1.9 8.4 0 15.2-6.8 15.2-15.2S24.4.8 16 .8zm0 27.6c-2.4 0-4.6-.7-6.5-1.9l-.5-.3-4.6 1.2 1.2-4.5-.3-.5C4.8 20.5 4 18.3 4 16 4 9.4 9.4 4 16 4s12 5.4 12 12-5.4 12.4-12 12.4zm6.6-9c-.4-.2-2.1-1-2.4-1.1-.3-.1-.6-.2-.8.2-.2.4-.8 1.1-1 1.3-.2.2-.4.2-.7.1-.4-.2-1.5-.5-2.8-1.7-1-1-1.7-2.2-1.9-2.6-.2-.4 0-.6.2-.8l.6-.7c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6-.1-.2-.8-1.9-1.1-2.6-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.4-1.2 1.1-1.2 2.8s1.2 3.3 1.4 3.5c.2.2 2.4 3.7 5.8 5.2.8.4 1.4.6 1.9.7.8.2 1.5.2 2.1.1.6-.1 2-.8 2.3-1.6.3-.8.3-1.4.2-1.6-.1-.1-.3-.2-.7-.4z"/></svg>
-    </a>`;
+    </a>
+    <button type="button" class="float-btn float-mail" data-float-mail aria-label="Email inquiry">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+    </button>`;
   document.body.appendChild(group);
   group.querySelector('[data-float-mail]').addEventListener('click',()=>{
     if(document.getElementById('inquiryModal')){
