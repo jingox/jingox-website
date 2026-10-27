@@ -82,38 +82,136 @@
 <main>
 
 
-<!-- HERO -->
-<section class="hero">
-  <div class="container">
-    <div>
-      <span class="hero-badge"><span class="pulse"></span> Source Factory · OEM / ODM Welcome</span>
-      <h1>Wholesale Game Console Accessories, <span class="grad-text">Built for Your Brand</span></h1>
-      <p class="lead">JINGOX designs and manufactures charging docks, cooling stands, somatosensory kits, storage, faceplates and protective cases for Switch 2, PS5, Xbox and VR — for distributors, wholesalers and brands worldwide. Start from a single sample, then scale.</p>
-      <div class="hero-cta">
-        <a class="btn btn-primary btn-lg" href="contact.html">Get a Quote</a>
-        <a class="btn btn-purple btn-lg" href="oem.html">Customize OEM</a>
-      </div>
-      <div class="hero-meta">
-        <span><span class="check">✓</span> 1-piece MOQ accepted</span>
-        <span><span class="check">✓</span> OEM &amp; ODM supported</span>
-        <span><span class="check">✓</span> 24-hour response</span>
+<!-- HERO (screen 1) -->
+<section class="hero" id="hero">
+  <div class="hero-bg">
+    <img class="hero-bg-desktop" src="images/hero-bg.jpg" alt="JINGOX game accessories showroom" loading="eager" decoding="async">
+    <img class="hero-bg-mobile" src="images/hero-bg-mobile.jpg" alt="JINGOX game accessories showroom" loading="eager" decoding="async">
+  </div>
+  <div class="hero-shade" aria-hidden="true"></div>
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="hero-dust" aria-hidden="true"><canvas id="heroDust"></canvas></div>
+
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <span class="hero-badge"><span class="pulse"></span>Source Factory · 12+ Years (Since 2014)</span>
+      <h1>Wholesale Game Console Accessories, <span class="hl">Direct From the Source Factory</span></h1>
+      <p class="lead">Switch / Switch 2, PS5 &amp; Xbox controllers, charging docks, protective cases, storage and cables. Low MOQ, OEM/ODM, consistent quality and fast global shipping — built for distributors, brand owners and resellers.</p>
+      <div class="hero-foot">
+        <div class="hero-cta">
+          <a class="btn btn-wa btn-lg" target="_blank" rel="noopener"
+             href="https://wa.me/15087637390?text=Hi%2C%20I%27d%20like%20a%20wholesale%20quote%20and%20MOQ.">Get a Quote</a>
+          <a class="btn btn-purple btn-lg" href="oem.html">Customize OEM</a>
+        </div>
+        <div class="hero-meta">
+          <span><span class="check">✓</span> Low MOQ</span>
+          <span><span class="check">✓</span> OEM / ODM</span>
+          <span><span class="check">✓</span> Fast Global Shipping</span>
+        </div>
       </div>
     </div>
-    <div class="hero-media">
-      <img src="images/factory/production-1.jpg" alt="JINGOX assembly and QC production line with workers" loading="eager" decoding="async">
+  </div>
+
+  <div class="hero-scroll" aria-hidden="true">Scroll</div>
+</section>
+
+<!-- FACTORY REEL (screen 2) -->
+<section class="factory-reel" id="factory">
+  <video class="factory-video" autoplay muted loop playsinline preload="metadata" poster="video/factory-loop-poster.jpg">
+    <source src="video/factory-loop.mp4" type="video/mp4">
+  </video>
+  <div class="factory-shade" aria-hidden="true"></div>
+  <div class="container factory-inner">
+    <span class="eyebrow">Our Factory</span>
+    <h2>From In-House Molding to <span class="hl">Strict AQL Inspection</span></h2>
+    <p class="factory-sub">Horizontal injection molding, in-house assembly and strict AQL inspection — the same team that handles your order builds and checks every batch.</p>
+    <div class="factory-stats">
+      <div class="stat"><div class="num">15<span>+</span></div><div class="lab">Injection Molding Machines</div></div>
+      <div class="stat"><div class="num">6</div><div class="lab">Production Lines</div></div>
+      <div class="stat"><div class="num">150K<span>+</span></div><div class="lab">Pieces Monthly Capacity</div></div>
+      <div class="stat"><div class="num">AQL</div><div class="lab">Strict AQL Inspection</div></div>
     </div>
   </div>
 </section>
 
-<!-- TRUST BAND -->
-<div class="trust-band">
-  <div class="container trust-grid">
-    <div class="trust-stat"><div class="num grad-text">108+</div><div class="lbl">Catalog Models</div></div>
-    <div class="trust-stat"><div class="num grad-text">8</div><div class="lbl">Console Platforms</div></div>
-    <div class="trust-stat"><div class="num grad-text">9</div><div class="lbl">Accessory Categories</div></div>
-    <div class="trust-stat"><div class="num grad-text">1 pc</div><div class="lbl">Minimum Order</div></div>
+<!-- CATEGORIES (screen 3a) -->
+<section class="section" id="categories">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Browse by Accessory Type</span>
+      <h2>What JINGOX Manufactures</h2>
+      <p>Nine in-house product lines — charging docks, cooling stands, storage, somatosensory kits, faceplates, cases and bags — with consistent quality across the catalog.</p>
+    </div>
+    <div class="cat-grid">
+      <a class="cat-card" href="products.html?type=Charging%20Dock">
+        <div class="cat-img"><img src="images/products/HBS-2801/HBS-2801-01.webp" alt="Charging dock for game consoles" loading="lazy" decoding="async"></div>
+        <span class="cat-count">34 models</span>
+        <div class="cat-meta"><div class="cat-name">Charging Dock</div><div class="cat-sub">Switch / PS5 / Xbox / VR</div></div>
+      </a>
+      <a class="cat-card" href="products.html?type=Cooling%20Stand">
+        <div class="cat-img"><img src="images/products/HA-8008/HA-8008-white-main-1.webp" alt="RGB cooling stand for PS5" loading="lazy" decoding="async"></div>
+        <span class="cat-count">9 models</span>
+        <div class="cat-meta"><div class="cat-name">Cooling Stand</div><div class="cat-sub">Switch 2 / PS5 / Xbox</div></div>
+      </a>
+      <a class="cat-card" href="products.html?type=Storage%20Stand">
+        <div class="cat-img"><img src="images/products/HBS-2833/HBS-2833-01.webp" alt="Storage stand for controllers and headsets" loading="lazy" decoding="async"></div>
+        <span class="cat-count">8 models</span>
+        <div class="cat-meta"><div class="cat-name">Storage Stand</div><div class="cat-sub">Switch 2 / PS5 / VR</div></div>
+      </a>
+      <a class="cat-card" href="products.html?type=Somatosensory">
+        <div class="cat-img"><img src="images/products/HBS-2949/HBS-2949-01.webp" alt="Somatosensory sports kit for Nintendo Switch" loading="lazy" decoding="async"></div>
+        <span class="cat-count">38 models</span>
+        <div class="cat-meta"><div class="cat-name">Somatosensory Kits</div><div class="cat-sub">Switch 2 / Switch / PS4</div></div>
+      </a>
+      <a class="cat-card" href="products.html?type=Faceplate">
+        <div class="cat-img"><img src="images/products/HA-8010/HA-8010-01.webp" alt="Replacement faceplate for PS5" loading="lazy" decoding="async"></div>
+        <span class="cat-count">4 models</span>
+        <div class="cat-meta"><div class="cat-name">Faceplates</div><div class="cat-sub">PS5 / Slim / Pro</div></div>
+      </a>
+      <a class="cat-card" href="products.html?type=Switch%20Lite%20Accessories">
+        <div class="cat-img"><img src="images/products/HBS-173/HBS-173-01.webp" alt="Accessories for Nintendo Switch Lite" loading="lazy" decoding="async"></div>
+        <span class="cat-count">2 models</span>
+        <div class="cat-meta"><div class="cat-name">Switch Lite</div><div class="cat-sub">Switch Lite</div></div>
+      </a>
+      <a class="cat-card" href="products.html?type=Protective%20Case">
+        <div class="cat-img"><img src="images/products/HBS-2828/HBS-2828-01.webp" alt="Protective case for Nintendo Switch 2" loading="lazy" decoding="async"></div>
+        <span class="cat-count">4 models</span>
+        <div class="cat-meta"><div class="cat-name">Protective Cases</div><div class="cat-sub">Switch 2</div></div>
+      </a>
+      <a class="cat-card" href="products.html?type=Storage%20Bag">
+        <div class="cat-img"><img src="images/products/HBS-2835/HBS-2835-01.webp" alt="Storage bag for game console and accessories" loading="lazy" decoding="async"></div>
+        <span class="cat-count">7 models</span>
+        <div class="cat-meta"><div class="cat-name">Storage Bags</div><div class="cat-sub">Switch 2 / Switch</div></div>
+      </a>
+      <a class="cat-card" href="products.html?type=Other">
+        <div class="cat-img"><img src="images/products/HBS-2900/HBS-2900-01.webp" alt="Universal gaming accessories" loading="lazy" decoding="async"></div>
+        <span class="cat-count">2 models</span>
+        <div class="cat-meta"><div class="cat-name">Other Accessories</div><div class="cat-sub">Universal / Multi-console</div></div>
+      </a>
+    </div>
   </div>
-</div>
+</section>
+
+<!-- FEATURED CAROUSEL (screen 3b) -->
+<section class="section alt" id="featured">
+  <div class="container">
+    <div class="feat-top">
+      <div class="section-head">
+        <span class="eyebrow">Featured Products</span>
+        <h2>Best Sellers &amp; Proven Openers</h2>
+        <p>The fastest-moving docks, cooling stands and kits that distributors reorder most — ready to ship, ready to sample.</p>
+      </div>
+      <div class="feat-nav">
+        <button type="button" class="feat-arrow" id="featPrev" aria-label="Previous products">‹</button>
+        <button type="button" class="feat-arrow" id="featNext" aria-label="Next products">›</button>
+      </div>
+    </div>
+    <div class="feat-scroll" id="homeFeatured"></div>
+    <div class="feat-foot">
+      <a class="btn btn-primary" href="products.html">View Full Catalog</a>
+    </div>
+  </div>
+</section>
 
 <!-- PLATFORMS -->
 <section class="section">
@@ -127,29 +225,8 @@
   </div>
 </section>
 
-<!-- TYPES -->
-<section class="section alt">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">Browse by Category</span>
-      <h2>Product Categories</h2>
-    </div>
-    <div class="type-strip">
-      <a class="type-chip" href="products.html?type=Charging%20Dock">Charging Dock <span class="n">34</span></a>
-      <a class="type-chip" href="products.html?type=Cooling%20Stand">Cooling Stand <span class="n">9</span></a>
-      <a class="type-chip" href="products.html?type=Storage%20Stand">Storage Stand <span class="n">8</span></a>
-      <a class="type-chip" href="products.html?type=Somatosensory">Somatosensory <span class="n">38</span></a>
-      <a class="type-chip" href="products.html?type=Faceplate">Faceplate <span class="n">4</span></a>
-      <a class="type-chip" href="products.html?type=Switch%20Lite%20Accessories">Switch Lite <span class="n">2</span></a>
-      <a class="type-chip" href="products.html?type=Protective%20Case">Protective Case <span class="n">4</span></a>
-      <a class="type-chip" href="products.html?type=Storage%20Bag">Storage Bag <span class="n">7</span></a>
-      <a class="type-chip" href="products.html?type=Other">Other <span class="n">2</span></a>
-    </div>
-  </div>
-</section>
-
 <!-- SERVICE PROMISE -->
-<section class="section">
+<section class="section alt">
   <div class="container">
     <div class="section-head">
       <span class="eyebrow">Why Buy From Us</span>
@@ -175,152 +252,6 @@
         <div class="feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 7v10l9 4 9-4V7"/><path d="M12 11v10"/></svg></div>
         <h4>Reliable Supply</h4>
         <p>Stable production capacity and consistent specifications for repeat wholesale orders.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FEATURED -->
-<section class="section alt">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">Featured Products</span>
-      <h2>Best-Selling Accessories</h2>
-      <p>A selection of our strongest docks, cooling stands, somatosensory kits and cases. Click any card for specs and a quote.</p>
-    </div>
-    <div class="product-grid" id="homeFeatured"></div>
-    <div style="text-align:center;margin-top:40px">
-      <a class="btn btn-ghost" href="products.html">View Full Catalog</a>
-    </div>
-  </div>
-</section>
-
-<!-- FACTORY & CERTIFICATIONS -->
-<section class="factory-band">
-  <div class="f-bg" aria-hidden="true">FACTORY</div>
-  <div class="container">
-    <div class="f-hud">
-      <span class="f-tag">// FACTORY_TOUR</span>
-      <span class="f-state">01 / 04 <span class="live-dot"></span> LIVE</span>
-    </div>
-    <div class="f-title f-title-inline">
-      <h2>
-        <span class="solid-w">REAL WORKSHOP</span> <span class="solid-g">REAL PRODUCTION</span>
-      </h2>
-      <div class="title-rule"></div>
-    </div>
-    <div class="f-sub">
-      <div style="display:flex;gap:14px;max-width:560px;align-items:flex-start">
-        <span style="flex:0 0 auto;width:3px;align-self:stretch;background:linear-gradient(180deg,#22D3EE,transparent);border-radius:2px"></span>
-        <p style="font-size:clamp(16px,1.6vw,19px);line-height:1.7;color:#C2C9E2;margin:0">From injection molding and assembly to QC and warehousing — see the facilities and the teams <span style="color:#22D3EE;font-weight:600">behind every order we ship.</span></p>
-      </div>
-      <div class="f-datacard">
-        <div><div class="dc-num">13</div><div class="dc-lbl">PHOTOS</div></div>
-        <div><div class="dc-num">04</div><div class="dc-lbl">FACILITIES</div></div>
-      </div>
-    </div>
-
-    <div class="f-video">
-      <video class="fv-loop" autoplay muted loop playsinline preload="metadata" poster="video/factory-loop-poster.jpg">
-        <source src="video/factory-loop.mp4" type="video/mp4">
-      </video>
-      <div class="fv-overlay" id="fvPlay" role="button" tabindex="0" aria-label="Watch full factory tour">
-        <span class="fv-btn">▷</span>
-        <span class="fv-label">WATCH FULL FACTORY TOUR</span>
-      </div>
-    </div>
-
-    <div class="f-group">
-      <div class="fg-head">
-        <span class="fg-num">01</span>
-        <h3>Injection Workshop</h3>
-        <span class="fg-note">Injection molding machines producing the plastic parts in-house.</span>
-      </div>
-      <div class="fg3">
-      <div class="f-cell">
-        <div class="f-ratio"></div>
-        <img src="images/factory/injection-1.jpg" alt="Injection molding machine 1 in the workshop" loading="lazy" decoding="async">
-      </div>
-      <div class="f-cell">
-        <div class="f-ratio"></div>
-        <img src="images/factory/injection-2.jpg" alt="Injection molding machine 2 in the workshop" loading="lazy" decoding="async">
-      </div>
-      <div class="f-cell">
-        <div class="f-ratio"></div>
-        <img src="images/factory/injection-3.jpg" alt="Injection molding machine 3 in the workshop" loading="lazy" decoding="async">
-      </div>
-      <div class="f-cell">
-        <div class="f-ratio"></div>
-        <img src="images/factory/injection-4.jpg" alt="Injection molding machine 4 in the workshop" loading="lazy" decoding="async">
-      </div>
-      <div class="f-cell">
-        <div class="f-ratio"></div>
-        <img src="images/factory/injection-5.jpg" alt="Injection molding machine 5 in the workshop" loading="lazy" decoding="async">
-      </div>
-      <div class="f-cell">
-        <div class="f-ratio"></div>
-        <img src="images/factory/injection-6.jpg" alt="Injection molding machine 6 in the workshop" loading="lazy" decoding="async">
-      </div>
-      </div>
-    </div>
-
-    <div class="f-group">
-      <div class="fg-head">
-        <span class="fg-num">02</span>
-        <h3>Production Line</h3>
-        <span class="fg-note">Assembly &amp; QC lines where products are built and checked.</span>
-      </div>
-      <div class="fg2">
-      <div class="f-cell">
-        <div class="f-ratio"></div>
-        <img src="images/factory/production-1.jpg" alt="Assembly and QC production line 1" loading="lazy" decoding="async">
-      </div>
-      <div class="f-cell">
-        <div class="f-ratio"></div>
-        <img src="images/factory/production-2.jpg" alt="Assembly and QC production line 2" loading="lazy" decoding="async">
-      </div>
-      </div>
-    </div>
-
-    <div class="f-group">
-      <div class="fg-head">
-        <span class="fg-num">03</span>
-        <h3>Warehouse</h3>
-        <span class="fg-note">Finished goods and components stocked for fast fulfillment.</span>
-      </div>
-      <div class="fgwh">
-      <div class="f-cell">
-        <div class="f-ratio-wide"></div>
-        <img src="images/factory/warehouse-1.jpg" alt="Warehouse with finished goods and inventory" loading="lazy" decoding="async">
-      </div>
-        <div class="fgwh-row">
-        <div class="f-cell">
-          <div class="f-ratio"></div>
-          <img src="images/factory/warehouse-2.jpg" alt="Warehouse stocked for fulfillment 2" loading="lazy" decoding="async">
-        </div>
-        <div class="f-cell">
-          <div class="f-ratio"></div>
-          <img src="images/factory/warehouse-3.jpg" alt="Warehouse stocked for fulfillment 3" loading="lazy" decoding="async">
-        </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="f-group">
-      <div class="fg-head">
-        <span class="fg-num">04</span>
-        <h3>Office</h3>
-        <span class="fg-note">Our sales and support teams ready to handle your inquiries.</span>
-      </div>
-      <div class="fg2">
-      <div class="f-cell">
-        <div class="f-ratio-land"></div>
-        <img src="images/factory/office-1.jpg" alt="Office and sales support team 1" loading="lazy" decoding="async">
-      </div>
-      <div class="f-cell">
-        <div class="f-ratio-land"></div>
-        <img src="images/factory/office-2.jpg" alt="Office and sales support team 2" loading="lazy" decoding="async">
-      </div>
       </div>
     </div>
   </div>
@@ -423,12 +354,6 @@
   <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Enlarged certificate" data-lb-img>
 </div>
 
-<div class="lightbox" id="videoModal">
-  <button type="button" class="lightbox-close" id="videoModalClose" aria-label="Close">×</button>
-  <video id="videoModalPlayer" controls playsinline preload="metadata" style="width:100%;max-width:1000px;border-radius:10px">
-    <source src="video/factory-full-final.mp4" type="video/mp4">
-  </video>
-</div>
 
 <!-- OEM STRIP -->
 <section class="section">
@@ -537,5 +462,6 @@
 
 <script src="js/products.js"></script>
 <script src="js/main.js"></script>
+<script src="js/hero-dust.js"></script>
 </body>
 </html>

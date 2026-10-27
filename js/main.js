@@ -176,6 +176,22 @@ function productCard(p){
   </article>`;
 }
 
+/* home screen-3b: simplified featured carousel card (no price, no inline actions) */
+function featCard(p){
+  return `<article class="feat-card">
+    <a class="feat-img" href="${productUrl(p)}" aria-label="${esc(p.name)}">
+      ${hasImgs(p)
+        ? `<img src="${esc(p.images[0].src)}" alt="${esc(p.images[0].alt)}" loading="lazy" decoding="async">`
+        : phIcon(64)}
+    </a>
+    <div class="feat-body">
+      <span class="feat-tag">${esc(p.platformName)}</span>
+      <a class="feat-name" href="${productUrl(p)}">${esc(p.name)}</a>
+      <a class="feat-detail" href="${productUrl(p)}">View Details →</a>
+    </div>
+  </article>`;
+}
+
 /* ---------- mobile nav ---------- */
 function initNav(){
   const toggle = document.querySelector('.nav-toggle');
@@ -237,7 +253,12 @@ function initHome(){
   const feat = document.getElementById('homeFeatured');
   if(feat){
     const items = FEATURED_SKUS.map(s=>bySku[s]).filter(Boolean);
-    feat.innerHTML = items.map(productCard).join('');
+    feat.innerHTML = items.map(featCard).join('');
+    const fPrev = document.getElementById('featPrev');
+    const fNext = document.getElementById('featNext');
+    const fStep = () => Math.max(260, Math.round(feat.clientWidth * 0.82));
+    fPrev&&fPrev.addEventListener('click', ()=>feat.scrollBy({left:-fStep(), behavior:'smooth'}));
+    fNext&&fNext.addEventListener('click', ()=>feat.scrollBy({left:fStep(), behavior:'smooth'}));
   }
 }
 
@@ -809,19 +830,7 @@ function initDetail(){
     });
   }
 
-  /* copy email */
-  wrap.querySelectorAll('[data-copy-mail]').forEach(btn=>{
-    btn.addEventListener('click', async ()=>{
-      let ok=false;
-      try{ await navigator.clipboard.writeText(CFG.email); ok=true; }
-      catch(e){ ok=copyTextFallback(CFG.email); }
-      if(ok){
-        const orig=btn.textContent;
-        btn.textContent='Copied ✓'; btn.classList.add('copied');
-        setTimeout(()=>{btn.textContent=orig; btn.classList.remove('copied');},1800);
-      }
-    });
-  });
+  /* copy email 已改为全局事件委托（initCopyMail），覆盖产品页与 contact 页 */
 
   /* modal open/close + submit */
   const modal=document.getElementById('inquiryModal');
@@ -1063,6 +1072,32 @@ function initForm(){
   });
 }
 
+/* ---------- global copy-email (event delegation, works on detail & contact) ---------- */
+function initCopyMail(){
+  document.addEventListener('click', async e=>{
+    const btn=e.target.closest('[data-copy-mail]');
+    if(!btn) return;
+    let ok=false;
+    try{ await navigator.clipboard.writeText(CFG.email); ok=true; }
+    catch(err){ ok=copyTextFallback(CFG.email); }
+    if(ok){
+      const orig=btn.textContent;
+      btn.textContent='Copied ✓'; btn.classList.add('copied');
+      setTimeout(()=>{btn.textContent=orig; btn.classList.remove('copied');},1800);
+    }
+  });
+}
+
+/* ---------- contact: smooth scroll to inquiry form ---------- */
+function initGotoForm(){
+  document.querySelectorAll('[data-goto-form]').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const form=document.getElementById('inquiryForm');
+      if(form) form.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+  });
+}
+
 /* ---------- static WhatsApp buttons (hero / float / CTA) ---------- */
 function initWaLinks(){
   const generic = "Hi, I'd like a wholesale quote from JINGOX — MOQ and price, please.";
@@ -1085,6 +1120,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
   initDetail();
   initFaq();
   initForm();
+  initCopyMail();
+  initGotoForm();
   initWaLinks();
   initFloatGroup();
   initYear();
