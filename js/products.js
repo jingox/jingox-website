@@ -66,6 +66,13 @@ window.PRODUCTS = [
         "alt": "Triangle charging dock dimensions in millimeters",
         "kind": "main"
       }
+    ],
+    "shortName": "Charging Dock",
+    "features": [
+      "Charges 4 Joy-Con controllers at once with independent slots",
+      "Flowing rainbow RGB gradient light through the hollow center",
+      "Smart circuitry guards against overcharging, over-voltage & shorts",
+      "Stable ABS+PP build doubles as a controller storage stand"
     ]
   },
   {
@@ -155,6 +162,13 @@ window.PRODUCTS = [
         "alt": "Charging dock back view",
         "kind": "detail"
       }
+    ],
+    "shortName": "Charging Dock",
+    "features": [
+      "Charges 4 Joy-Con at once with an RGB gradient game card strip",
+      "Stores up to 9 game cards in a built-in compartment",
+      "Front LED light bar plus per-slot charging indicators",
+      "Sturdy ABS+PS with a 30cm built-in cable"
     ]
   },
   {
@@ -204,6 +218,13 @@ window.PRODUCTS = [
         "alt": "Charging Dock side angle view",
         "kind": "main"
       }
+    ],
+    "shortName": "Charging Dock",
+    "features": [
+      "Dual-layer tower charges 4 Joy-Con and stores the game library",
+      "Top tier holds 9 cards, bottom tier stores 16 game cases",
+      "Durable ABS+PC, stable 740g frame, 80cm Type-C cable",
+      "Vertical space-saving display"
     ]
   },
   {
@@ -248,6 +269,13 @@ window.PRODUCTS = [
         "alt": "Charging Dock top view",
         "kind": "main"
       }
+    ],
+    "shortName": "Wall Charging Dock",
+    "features": [
+      "2-in-1 wall mount charges 4 Joy-Con and saves desk space",
+      "Holds controllers on the wall away from spills and knocks",
+      "Sturdy black ABS with 20cm Type-C cable and hardware",
+      "Clean floating setup with hidden cables"
     ]
   },
   {
@@ -297,6 +325,13 @@ window.PRODUCTS = [
         "alt": "Charging Dock side angle view",
         "kind": "main"
       }
+    ],
+    "shortName": "Console Charging Stand",
+    "features": [
+      "Holds the Switch 2 console upright for charging and display",
+      "Colorful ambient light creates a modern eye-catching atmosphere",
+      "Stable cradle with Type-C cable, plug-and-play",
+      "Works as a display stand and protects from tipping"
     ]
   },
   {
@@ -351,6 +386,13 @@ window.PRODUCTS = [
         "alt": "Retail packaging box for charging dock",
         "kind": "packaging"
       }
+    ],
+    "shortName": "Charging Dock",
+    "features": [
+      "Vertical stand charges up to 4 Switch 2 Joy-Con",
+      "Blue LED while charging, turns off when full or empty",
+      "Smart protection against overcharge, overheat and shorts",
+      "Anti-slip base doubles as a desktop storage holder"
     ]
   },
   {
@@ -400,6 +442,13 @@ window.PRODUCTS = [
         "alt": "Charging Dock side angle view",
         "kind": "main"
       }
+    ],
+    "shortName": "Charging Dock",
+    "features": [
+      "Charges Joy-Con and organizes controllers with dedicated slots",
+      "Controllers sit upright and are always ready to grab",
+      "Sturdy black ABS with charging cable included",
+      "Compact space-saving footprint with tidy cable management"
     ]
   },
   {
@@ -449,6 +498,13 @@ window.PRODUCTS = [
         "alt": "Retail packaging box for charging dock",
         "kind": "packaging"
       }
+    ],
+    "shortName": "Charging Grip",
+    "features": [
+      "Combines two Joy-Con into one full-size gamepad while charging",
+      "Slide in for a traditional controller feel with better ergonomics",
+      "Built-in charging circuit with an 80cm Type-C cable",
+      "Wide ergonomic ABS handle reduces hand fatigue"
     ]
   },
   {
@@ -478,6 +534,13 @@ window.PRODUCTS = [
         "alt": "Charging Dock front view",
         "kind": "main"
       }
+    ],
+    "shortName": "Charging Dock",
+    "features": [
+      "4-bay charging for Switch 2 Joy-Con with colorful ambient light",
+      "Charges up to 4 controllers in a modern gaming atmosphere",
+      "Durable ABS with stable compact base and Type-C cable",
+      "Holds controllers upright and prevents desktop clutter"
     ]
   },
   {
@@ -527,6 +590,13 @@ window.PRODUCTS = [
         "alt": "Retail packaging box for charging dock",
         "kind": "packaging"
       }
+    ],
+    "shortName": "Wall Charging Dock",
+    "features": [
+      "Wall-mount 4-in-1 station charges and stores a Joy-Con set",
+      "Holds up to 4 controllers in wall bays, off the desk",
+      "Mixed metal-and-ABS construction supports controllers long-term",
+      "Clean floating setup with tidy hidden cables"
     ]
   },
   {
@@ -571,6 +641,13 @@ window.PRODUCTS = [
         "alt": "Retail packaging box for charging dock",
         "kind": "packaging"
       }
+    ],
+    "shortName": "Charging Dock",
+    "features": [
+      "6-in-1 dock charges Joy-Con and Switch 1/2 Pro controllers",
+      "The entire controller set powers up together in one station",
+      "Metal bottom shell adds weight, stability and heat dissipation",
+      "Durable ABS with included Type-C cable"
     ]
   },
   {
@@ -625,6 +702,13 @@ window.PRODUCTS = [
         "alt": "Retail packaging box for charging dock",
         "kind": "packaging"
       }
+    ],
+    "shortName": "Charging Dock",
+    "features": [
+      "Vertical 4-in-1 tower charges four Switch 2 Joy-Con",
+      "Controllers slide down into bays for secure simultaneous charging",
+      "Compact slim upright design takes little desk space",
+      "Durable black ABS with anti-tip base and Type-C cable"
     ]
   },
   {
@@ -679,6 +763,13 @@ window.PRODUCTS = [
         "alt": "Retail packaging box for charging dock",
         "kind": "packaging"
       }
+    ],
+    "shortName": "Cooling Charging Dock",
+    "features": [
+      "Universal dock for Switch and Switch 2: charging, cooling, display",
+      "Dissipates heat during long sessions to keep performance stable",
+      "366g ABS body, one dock works across generations",
+      "Open structure supports airflow and keeps ports accessible"
     ]
   },
   {
@@ -728,6 +819,13 @@ window.PRODUCTS = [
         "alt": "Retail packaging box for charging dock",
         "kind": "packaging"
       }
+    ],
+    "shortName": "Wall Charging Dock",
+    "features": [
+      "Universal wall-mount station for Switch and Switch 2",
+      "Sturdy metal bracket supports console and controllers",
+      "Displays on the wall away from clutter, spills and knocks",
+      "Floating setup with tidy cable management, spans two generations"
     ]
   },
   {
@@ -777,6 +875,13 @@ window.PRODUCTS = [
         "alt": "Retail packaging box for charging dock",
         "kind": "packaging"
       }
+    ],
+    "shortName": "Pro Charging Dock",
+    "features": [
+      "Dual dock charges two Switch 2 Pro controllers at once",
+      "Easy-to-dock cradle keeps both gamepads ready",
+      "Black or white, durable ABS with Type-C cable",
+      "Holds Pro controllers securely and protects from scratches"
     ]
   },
   {
@@ -826,6 +931,13 @@ window.PRODUCTS = [
         "alt": "Cooling Stand side angle view",
         "kind": "main"
       }
+    ],
+    "shortName": "Charging Dock",
+    "features": [
+      "Mini dual dock charges two Switch 2 Joy-Con",
+      "Compact footprint ideal for tight spaces and travel",
+      "Aluminum-alloy base adds stability and heat dissipation",
+      "80cm Type-C cable, slide-in plug-and-play"
     ]
   },
   {
@@ -875,6 +987,13 @@ window.PRODUCTS = [
         "alt": "Storage Stand side angle view",
         "kind": "main"
       }
+    ],
+    "shortName": "Console Playstand",
+    "features": [
+      "Playstand props Switch 2 at a comfortable viewing angle",
+      "Open-back design supports airflow and charging cable",
+      "Raises the screen to natural eye level for tabletop use",
+      "Lightweight compact, slips into a case, no install"
     ]
   },
   {
@@ -919,6 +1038,13 @@ window.PRODUCTS = [
         "alt": "Retail packaging box for storage stand",
         "kind": "packaging"
       }
+    ],
+    "shortName": "Card Storage Rack",
+    "features": [
+      "Storage stand organizes Switch 2 game cards in a tower",
+      "Dedicated slots hold cards upright, protect from dust and scratches",
+      "Quick to find and swap titles, stable base by the console",
+      "Durable black ABS, compact vertical space-saving design"
     ]
   },
   {
@@ -963,6 +1089,13 @@ window.PRODUCTS = [
         "alt": "Storage Stand top view",
         "kind": "main"
       }
+    ],
+    "shortName": "Wall Storage Bracket",
+    "features": [
+      "Heavy-duty wall kit for console, controllers and game cards",
+      "Includes shelf, card holder, two tower mounts and four screws",
+      "Metal-and-ABS supports gear in a floating display",
+      "Protects from knocks and spills, hides cables"
     ]
   },
   {
@@ -1012,6 +1145,13 @@ window.PRODUCTS = [
         "alt": "Somatosensory side angle view",
         "kind": "main"
       }
+    ],
+    "shortName": "Controller Grips",
+    "features": [
+      "Pair of ergonomic grips turn two Joy-Con into full-size gamepads",
+      "Wider natural hold improves control, reduces hand fatigue",
+      "Enlarged handles fit adult hands, solid smooth ABS",
+      "Insert/remove in seconds, ready for local multiplayer"
     ]
   },
   {
@@ -1061,6 +1201,13 @@ window.PRODUCTS = [
         "alt": "Somatosensory side angle view",
         "kind": "main"
       }
+    ],
+    "shortName": "Steering Wheels",
+    "features": [
+      "Pair of racing wheels for Switch 2 Joy-Con",
+      "Realistic circular wheel makes turning and drifting natural",
+      "Ergonomic rim reduces thumb strain during long races",
+      "Smooth durable ABS, quick to attach, two-pack for multiplayer"
     ]
   },
   {
@@ -1110,6 +1257,13 @@ window.PRODUCTS = [
         "alt": "Somatosensory side angle view",
         "kind": "main"
       }
+    ],
+    "shortName": "Steering Wheels",
+    "features": [
+      "Four-pack racing wheels for Switch 2 Joy-Con, party multiplayer",
+      "Each wheel holds one Joy-Con, four players join at once",
+      "Black, orange and cyan colors, lightweight ABS 303g",
+      "Slide on/off quickly, ergonomic rims for long tournaments"
     ]
   },
   {
@@ -1159,6 +1313,13 @@ window.PRODUCTS = [
         "alt": "Somatosensory side angle view",
         "kind": "main"
       }
+    ],
+    "shortName": "Mouse Grips",
+    "features": [
+      "Mouse-style grips for Switch 2 Joy-Con, pair",
+      "Hold like a compact mouse for improved aim in shooters",
+      "Angled design keeps fingers close to buttons for fast reactions",
+      "Lightweight ABS 69g, attach in seconds"
     ]
   },
   {
@@ -1203,6 +1364,13 @@ window.PRODUCTS = [
         "alt": "Somatosensory top view",
         "kind": "main"
       }
+    ],
+    "shortName": "Wrist Grips",
+    "features": [
+      "Wrist straps with slim grips for Switch 2 Joy-Con, pair",
+      "Prevent accidental throws during dancing and sports",
+      "Built-in grip makes the small controller easier to hold",
+      "Adjustable slider fits adults and kids, only 34.5g"
     ]
   },
   {
@@ -1247,6 +1415,13 @@ window.PRODUCTS = [
         "alt": "Somatosensory top view",
         "kind": "main"
       }
+    ],
+    "shortName": "Boxing Grips",
+    "features": [
+      "Glove-inspired boxing handles for Switch 2 Joy-Con, pair",
+      "Rounded shape fits each fist, punches feel natural",
+      "Enlarged grip improves wrist control and reduces strain",
+      "Lightweight ABS 37g, slide on quick, easy to wipe"
     ]
   },
   {
@@ -1331,6 +1506,13 @@ window.PRODUCTS = [
         "alt": "Somatosensory angled product shot",
         "kind": "detail"
       }
+    ],
+    "shortName": "Blaster Gun",
+    "features": [
+      "Blaster gun grip for Switch 2 Joy-Con with arcade realism",
+      "Natural two-handed posture improves stability and precision",
+      "Comfortable shouldering, every trigger and button in reach",
+      "Solid black ABS 303mm, smooth edges, quick to assemble"
     ]
   },
   {
@@ -1355,6 +1537,13 @@ window.PRODUCTS = [
         "alt": "Game Grip for Switch/Switch 2 Console",
         "kind": "main"
       }
+    ],
+    "shortName": "Controller Grips",
+    "features": [
+      "Universal grips for Switch, OLED and Switch 2 Joy-Con",
+      "Enlarges Joy-Con into an ergonomic handle, less hand fatigue",
+      "Slide in/out quickly, pair ready for two-player play",
+      "Lightweight black ABS 53.6g, cross-generation fit"
     ]
   },
   {
@@ -1409,6 +1598,13 @@ window.PRODUCTS = [
         "alt": "Retail packaging box for somatosensory",
         "kind": "packaging"
       }
+    ],
+    "shortName": "Fishing Rod",
+    "features": [
+      "Fishing rod controller for Switch 2 Joy-Con, 248mm",
+      "Natural cast, tilt and reel motions for fishing games",
+      "Comfortable grip and smooth rotation, easy on hands",
+      "Lightweight black ABS 70g, quick to assemble"
     ]
   },
   {
@@ -1458,6 +1654,13 @@ window.PRODUCTS = [
         "alt": "Somatosensory side angle view",
         "kind": "main"
       }
+    ],
+    "shortName": "Tennis Rackets",
+    "features": [
+      "Tennis rackets for Switch 2 Joy-Con with wrist straps, pair",
+      "Swing, serve and volley with realistic motions",
+      "Large racket face improves motion control",
+      "Durable ABS 88.4g, wrist straps secure controllers"
     ]
   },
   {
@@ -1547,6 +1750,13 @@ window.PRODUCTS = [
         "alt": "Somatosensory back view",
         "kind": "detail"
       }
+    ],
+    "shortName": "Blaster Guns",
+    "features": [
+      "Twin pack blaster grips for Switch 2 Joy-Con, two-player",
+      "Natural aiming posture, steadier control, quick button access",
+      "Two-pack lets friends play together out of the box",
+      "Solid black ABS, smooth edges, durable for energetic play"
     ]
   },
   {
@@ -1591,6 +1801,13 @@ window.PRODUCTS = [
         "alt": "Somatosensory top view",
         "kind": "main"
       }
+    ],
+    "shortName": "Leg Straps",
+    "features": [
+      "Adjustable leg straps for Switch 2 Joy-Con, pair",
+      "Soft PVC panel and breathable mesh hold Joy-Con against the leg",
+      "Fits adults and kids, no slipping during workouts",
+      "Lightweight washable, perfect for ring-fit and dance"
     ]
   },
   {
@@ -1640,6 +1857,13 @@ window.PRODUCTS = [
         "alt": "Somatosensory side angle view",
         "kind": "main"
       }
+    ],
+    "shortName": "Steering Wheels",
+    "features": [
+      "Colorful racing wheels for Switch 2 Joy-Con, orange and blue",
+      "Soft silicone-textured surface with non-slip rim",
+      "ABS core with silicone touch points, sturdy and comfortable",
+      "Quick to attach, bold colors for multiplayer"
     ]
   },
   {
@@ -1684,6 +1908,13 @@ window.PRODUCTS = [
         "alt": "Somatosensory top view",
         "kind": "main"
       }
+    ],
+    "shortName": "Control Bundle",
+    "features": [
+      "4-piece set: 2 racing wheels plus 2 ergonomic hand grips",
+      "Wheels for racing, grips for action and platform games",
+      "Ready for two-player play right out of the box",
+      "Durable black/colorful ABS, attaches in seconds"
     ]
   },
   {
@@ -1843,6 +2074,13 @@ window.PRODUCTS = [
         "alt": "Retail packaging and specifications for 43-in-1 kit",
         "kind": "detail"
       }
+    ],
+    "shortName": "Somatosensory Sports Set",
+    "features": [
+      "43-in-1 bundle with sports grips, protective gear & storage",
+      "Tennis, golf, ping pong, bowling, swordplay & jump rope play",
+      "Console case, Joy-Con covers, HD screen protector & thumb caps",
+      "Hard storage bag and game card rack keep everything organized"
     ]
   },
   {
@@ -1942,6 +2180,13 @@ window.PRODUCTS = [
         "alt": "Somatosensory lifestyle setup",
         "kind": "detail"
       }
+    ],
+    "shortName": "Sports Set",
+    "features": [
+      "35-in-1 deluxe sports bundle for Switch 2",
+      "Tennis, golf, table tennis, bowling and jump rope",
+      "Ergonomic grips, silicone rocker caps and heat sink base",
+      "Heavy-duty organizer bag with dual zipper"
     ]
   },
   {
@@ -2085,6 +2330,13 @@ window.PRODUCTS = [
         "alt": "Protective Case side angle view",
         "kind": "main"
       }
+    ],
+    "shortName": "Protection Set",
+    "features": [
+      "6-in-1 clear set: PC back cover, 2 TPU Joy-Con covers and thumb caps",
+      "Rigid PC back pairs with soft TPU controller covers",
+      "Transparent finish shows off the original hardware",
+      "Precision molded, tool-free install, full button access"
     ]
   },
   {
@@ -2139,6 +2391,13 @@ window.PRODUCTS = [
         "alt": "Retail packaging box for protective case",
         "kind": "packaging"
       }
+    ],
+    "shortName": "Protective Case",
+    "features": [
+      "Soft TPU set for Switch 2 console and Joy-Con, milky white",
+      "Absorbs bumps and shocks, resists fingerprints",
+      "Slight texture makes the console secure in hands",
+      "Easy to install, remove and rinse, no bulky weight"
     ]
   },
   {
@@ -2208,6 +2467,13 @@ window.PRODUCTS = [
         "alt": "Protective Case full set with accessories",
         "kind": "main"
       }
+    ],
+    "shortName": "Silicone Case",
+    "features": [
+      "One-piece silicone skin for Switch 2 console and Joy-Con",
+      "Cushions scratches and minor drops, non-slip texture",
+      "Fits snugly, full access to every control and vent",
+      "Easy to remove, rinse and reattach"
     ]
   },
   {
@@ -2257,6 +2523,13 @@ window.PRODUCTS = [
         "alt": "Protective Case side angle view",
         "kind": "main"
       }
+    ],
+    "shortName": "Dust Cover",
+    "features": [
+      "PVC dust cover for Switch and Switch 2 docks",
+      "Shields the docked console from dust, spills and scratches",
+      "28.5 x 5.5 x 14cm, wipes clean, folds flat",
+      "Lightweight 41.2g, easy access and airflow"
     ]
   },
   {
@@ -2306,6 +2579,13 @@ window.PRODUCTS = [
         "alt": "Storage Bag side angle view",
         "kind": "main"
       }
+    ],
+    "shortName": "Carrying Case",
+    "features": [
+      "Slim hard-shell case for Switch 2, PU+EVA",
+      "Soft velvet lining protects screen and surface",
+      "Reverse zipper reduces pressure, 29 x 14 x 2.5cm",
+      "Only 175g, slides into a backpack"
     ]
   },
   {
@@ -2350,6 +2630,13 @@ window.PRODUCTS = [
         "alt": "Storage Bag top view",
         "kind": "main"
       }
+    ],
+    "shortName": "Shoulder Bag",
+    "features": [
+      "Crossbody shoulder bag for Switch 2",
+      "900D coated polyester with foam padding and mesh panels",
+      "Adjustable shoulder strap for comfortable crossbody wear",
+      "28.5 x 18.5cm, holds console, cables and small items"
     ]
   },
   {
@@ -2394,6 +2681,13 @@ window.PRODUCTS = [
         "alt": "Storage Bag top view",
         "kind": "main"
       }
+    ],
+    "shortName": "Starter Kit",
+    "features": [
+      "10-in-1 starter bundle with a Lycra-EVA carrying bag",
+      "2 tempered glass screen protectors, TPU Joy-Con covers and PC back",
+      "Red and blue thumb caps with a soft TPE handle",
+      "Covers protection, storage and control in one set"
     ]
   },
   {
@@ -2443,6 +2737,13 @@ window.PRODUCTS = [
         "alt": "Retail packaging box for other",
         "kind": "packaging"
       }
+    ],
+    "shortName": "Controller Converter",
+    "features": [
+      "Two-pack adapters use Switch 1 controllers on Switch 2",
+      "Pairs older controllers with the new system",
+      "Plug in quickly, no complex setup",
+      "Durable black ABS 60g, two-pack for backup and extra player"
     ]
   },
   {
@@ -2522,6 +2823,13 @@ window.PRODUCTS = [
         "alt": "Retail packaging box for Switch charging dock",
         "kind": "detail"
       }
+    ],
+    "shortName": "Charging Dock",
+    "features": [
+      "Flexible layout: 4 Joy-Con, or 2 Joy-Con + 1 Pro controller",
+      "Can also charge 2 Joy-Con together with the Switch console",
+      "Acrylic LED column shows charging status at a glance",
+      "Non-slip silicone pad keeps the dock stable"
     ]
   },
   {
@@ -2611,6 +2919,13 @@ window.PRODUCTS = [
         "alt": "Retail packaging box for charging dock",
         "kind": "packaging"
       }
+    ],
+    "shortName": "Charging Dock",
+    "features": [
+      "Charges up to 4 Joy-Con + 2 Pro controllers at once, also fits the console",
+      "Acrylic transparent lamp post shows red/green charging status",
+      "Non-slip silicone pad keeps the base stable",
+      "Combines charging and storage, doubles as a display stand"
     ]
   },
   {
@@ -2665,6 +2980,13 @@ window.PRODUCTS = [
         "alt": "Retail packaging box for charging dock",
         "kind": "packaging"
       }
+    ],
+    "shortName": "Charging Dock",
+    "features": [
+      "Plugs directly into the Switch dock USB port, no extra cable",
+      "Charges up to 4 Joy-Con controllers at the same time",
+      "LED turns red while charging, green when full or idle",
+      "Compact with a red dust-proof cap for the USB plug"
     ]
   },
   {
@@ -2883,6 +3205,13 @@ window.PRODUCTS = [
         "kind": "packaging",
         "color": "all"
       }
+    ],
+    "shortName": "Steering Wheel",
+    "features": [
+      "Pair of steering wheels for Switch Joy-Con, ideal for Mario Kart",
+      "Ergonomic ring grip simulates real driving feel",
+      "SL/SR buttons reserved, all buttons work normally",
+      "Soft rubber non-slip pads, quick install and removal"
     ]
   },
   {
@@ -2917,6 +3246,13 @@ window.PRODUCTS = [
         "alt": "Somatosensory in use with controllers",
         "kind": "main"
       }
+    ],
+    "shortName": "Controller Grip",
+    "features": [
+      "Pair of grips tailored for Switch Joy-Con",
+      "Ergonomic curved grip fits the palm and prevents sore hands",
+      "All button openings reserved, controls stay smooth",
+      "Easy to assemble, ready for two-player games"
     ]
   },
   {
@@ -3068,6 +3404,13 @@ window.PRODUCTS = [
         "alt": "Retail packaging box for somatosensory",
         "kind": "packaging"
       }
+    ],
+    "shortName": "Gaming Gun",
+    "features": [
+      "Somatosensory game gun for Switch Joy-Con with realistic shooting feel",
+      "ABS body is compression and drop resistant",
+      "Sponge cushion in the slot protects the Joy-Con shell",
+      "Hollow precise openings never block buttons or joysticks"
     ]
   },
   {
@@ -3191,6 +3534,13 @@ window.PRODUCTS = [
         "alt": "Somatosensory top view",
         "kind": "detail"
       }
+    ],
+    "shortName": "Wrist Strap",
+    "features": [
+      "Wrist strap for Joy-Con dance games, frees your palms",
+      "ABS buckle fits firmly without scratching the controller",
+      "Widened velcro is elastic, durable and washable",
+      "Adjustable for adults and children, one pair"
     ]
   },
   {
@@ -3245,6 +3595,13 @@ window.PRODUCTS = [
         "alt": "Retail packaging box for somatosensory",
         "kind": "packaging"
       }
+    ],
+    "shortName": "Leg Strap",
+    "features": [
+      "2 leg straps (40cm, 60cm) for Switch fitness games",
+      "Widened velcro fits thighs and calves, resists slipping",
+      "Breathable mesh pocket locks the Joy-Con in place",
+      "Wear-resistant PU outer with soft lightweight fabric"
     ]
   },
   {
@@ -3299,6 +3656,13 @@ window.PRODUCTS = [
         "alt": "Retail packaging box for somatosensory",
         "kind": "packaging"
       }
+    ],
+    "shortName": "Fitness Ring",
+    "features": [
+      "Fitness ring + leg strap set for Ring Fit Adventure",
+      "Bend-resistant inner ring with stable rebound and high sensitivity",
+      "Soft breathable grip cushions prevent sore palms",
+      "Adjustable velcro leg strap keeps the Joy-Con secure"
     ]
   },
   {
@@ -3353,6 +3717,13 @@ window.PRODUCTS = [
         "alt": "Retail packaging box for somatosensory",
         "kind": "packaging"
       }
+    ],
+    "shortName": "Fitness Ring",
+    "features": [
+      "Children's fitness ring + leg strap for Ring Fit Adventure",
+      "Bend-resistant inner ring with stable rebound and high sensitivity",
+      "Soft breathable grip cushions prevent sore palms",
+      "Adjustable velcro leg strap keeps the Joy-Con secure"
     ]
   },
   {
@@ -3397,6 +3768,13 @@ window.PRODUCTS = [
         "alt": "Retail packaging box for somatosensory",
         "kind": "packaging"
       }
+    ],
+    "shortName": "Fitness Ring",
+    "features": [
+      "Adult fitness ring + leg strap for Ring Fit Adventure",
+      "Bend-resistant inner ring with stable rebound and high sensitivity",
+      "Soft breathable grip cushions prevent sore palms",
+      "Adjustable velcro leg strap keeps the Joy-Con secure"
     ]
   },
   {
@@ -3451,6 +3829,13 @@ window.PRODUCTS = [
         "alt": "Retail packaging box for somatosensory",
         "kind": "packaging"
       }
+    ],
+    "shortName": "Fitness Ring",
+    "features": [
+      "Children's fitness ring + leg strap for Ring Fit Adventure",
+      "Bend-resistant inner ring with stable rebound and high sensitivity",
+      "Soft breathable grip cushions prevent sore palms",
+      "Adjustable velcro leg strap keeps the Joy-Con secure"
     ]
   },
   {
@@ -3518,6 +3903,13 @@ window.PRODUCTS = [
         "kind": "packaging",
         "color": "all"
       }
+    ],
+    "shortName": "Boxing Grips",
+    "features": [
+      "Pair of grips for Switch boxing games, one for each Joy-Con",
+      "Ergonomic hold prevents sore hands during long swings",
+      "Adjustable locking lanyard stops the Joy-Con falling out",
+      "Slides in easily, sturdy ABS in multiple colors"
     ]
   },
   {
@@ -3552,6 +3944,13 @@ window.PRODUCTS = [
         "alt": "Somatosensory in use with controllers",
         "kind": "main"
       }
+    ],
+    "shortName": "Jump Rope Grips",
+    "features": [
+      "Pair of grips plus simulation rope for Jump Rope Challenge",
+      "Snap the Joy-Con in, no complex installation",
+      "Ergonomic non-slip handle with room for smooth rotation",
+      "Lightweight durable ABS, ideal for home fitness"
     ]
   },
   {
@@ -3643,6 +4042,13 @@ window.PRODUCTS = [
         "kind": "packaging",
         "color": "all"
       }
+    ],
+    "shortName": "Sword Grip",
+    "features": [
+      "Lightsaber sword grip for Zelda Skyward Sword, plus Joy-Con only",
+      "Glowing green blade after adding a No.7 battery",
+      "Ergonomic lengthened blade with SL/SR openings reserved",
+      "Anti-lost strap, ABS, available in 4 colors"
     ]
   },
   {
@@ -3697,6 +4103,13 @@ window.PRODUCTS = [
         "alt": "Retail packaging box for somatosensory",
         "kind": "packaging"
       }
+    ],
+    "shortName": "Steering Wheels",
+    "features": [
+      "Pair of steering wheels for Switch/Switch-OLED, no left/right distinction",
+      "1:1 molded, fits firmly without slipping",
+      "Enlarged SL/SR area with ergonomic grip for long play",
+      "Two wheels support two-player versus racing"
     ]
   },
   {
@@ -3746,6 +4159,13 @@ window.PRODUCTS = [
         "alt": "Somatosensory side angle view",
         "kind": "main"
       }
+    ],
+    "shortName": "Sports Set",
+    "features": [
+      "10-in-1 set for Switch Sports: tennis, fencing, boxing, football",
+      "Includes 2 rackets, 2 lightsabers, 2 boxing grips, 2 wrist and 2 leg straps",
+      "1:1 molded, Joy-Con fits firmly with anti-lost straps",
+      "Adjustable velcro straps fit adults and children"
     ]
   },
   {
@@ -3795,6 +4215,13 @@ window.PRODUCTS = [
         "alt": "Somatosensory side angle view",
         "kind": "main"
       }
+    ],
+    "shortName": "Sports Set",
+    "features": [
+      "20-in-1 set for Switch Sports: tennis, badminton, golf, fencing, football",
+      "Includes rackets, clubs, lightsabers, grips, straps and charging dock",
+      "Precise mold with anti-lost strap and ergonomic comfortable grip",
+      "Quad Joy-Con charging base with a 30cm Type-C cable"
     ]
   },
   {
@@ -3849,6 +4276,13 @@ window.PRODUCTS = [
         "alt": "Retail packaging box for somatosensory",
         "kind": "packaging"
       }
+    ],
+    "shortName": "Sports Set",
+    "features": [
+      "18-in-1 set for Switch Sports: tennis, golf, lightsabers, straps, grips",
+      "Universal detachable grip switches props quickly and saves storage",
+      "Accessories fit the Joy-Con firmly, the swing feels real",
+      "Family-friendly for tennis, bowling, fencing and football"
     ]
   },
   {
@@ -3933,6 +4367,13 @@ window.PRODUCTS = [
         "alt": "Somatosensory angled product shot",
         "kind": "detail"
       }
+    ],
+    "shortName": "Maraca Grips",
+    "features": [
+      "Maraca grips for Switch/Switch OLED rhythm and party games",
+      "Slide the Joy-Con in and shake to the beat",
+      "Ergonomic rounded shape reduces wrist fatigue",
+      "Secure inner slot, durable lightweight, two-pack"
     ]
   },
   {
@@ -3962,6 +4403,13 @@ window.PRODUCTS = [
         "alt": "Switch Lite Accessories front view",
         "kind": "main"
       }
+    ],
+    "shortName": "Crystal Case",
+    "features": [
+      "Clear hard PC case displays the original Switch Lite look",
+      "Snap-on front/back covers fit tightly without wobbling",
+      "All ports and buttons precisely reserved, no need to remove",
+      "Tough PC resists scratches, collisions and yellowing"
     ]
   },
   {
@@ -4011,6 +4459,13 @@ window.PRODUCTS = [
         "alt": "Switch Lite Accessories side angle view",
         "kind": "main"
       }
+    ],
+    "shortName": "Crystal Case",
+    "features": [
+      "Glitter clear TPU case molded only for Switch Lite",
+      "Shows the original color with delicate bling sparkle",
+      "Flexible TPU absorbs shocks, prevents scratches and fingerprints",
+      "Slim full-wrap, precise cutouts, snap-on install"
     ]
   },
   {
@@ -4095,6 +4550,13 @@ window.PRODUCTS = [
         "alt": "Retail packaging box for storage bag",
         "kind": "packaging"
       }
+    ],
+    "shortName": "Messenger Bag",
+    "features": [
+      "Carrying case for Switch/Switch Lite in wear-resistant oxford fabric",
+      "Three-layer cushioned breathable back relieves shoulder pressure",
+      "Multi-compartment large-capacity organized storage",
+      "Metal zipper, adjustable strap, handbag or crossbody carry"
     ]
   },
   {
@@ -4169,6 +4631,13 @@ window.PRODUCTS = [
         "alt": "Retail packaging box for storage bag",
         "kind": "packaging"
       }
+    ],
+    "shortName": "Fitness Ring Bag",
+    "features": [
+      "Round storage bag for the full Ring Fit set, Switch/OLED",
+      "Stores ring, console, dock, cables and up to 22 game cassettes",
+      "Thickened EVA hard shell protects the joystick from compression",
+      "Waterproof oxford, double zipper, handle plus shoulder strap"
     ]
   },
   {
@@ -4218,6 +4687,13 @@ window.PRODUCTS = [
         "alt": "Storage Bag side angle view",
         "kind": "main"
       }
+    ],
+    "shortName": "Handbag",
+    "features": [
+      "Animal-forest leaf theme bag for Switch/Switch OLED",
+      "Waterproof fabric with cushioned lining, anti-collision",
+      "Layered storage with mesh bags and 5 game card pockets",
+      "Reinforced grip plus adjustable shoulder strap"
     ]
   },
   {
@@ -4267,6 +4743,13 @@ window.PRODUCTS = [
         "alt": "Storage bag side angle view",
         "kind": "detail"
       }
+    ],
+    "shortName": "Sling Bag",
+    "features": [
+      "Crossbody sling bag for Switch/OLED/Lite",
+      "Multi-layer zipper pockets hold console and accessories separately",
+      "Tough woven fabric with breathable sweat-proof mesh backing",
+      "Adjustable strap, dual-head zippers, chest or crossbody wear"
     ]
   },
   {
@@ -4331,6 +4814,13 @@ window.PRODUCTS = [
         "alt": "White and black aircraft-style dual charging docks",
         "kind": "main"
       }
+    ],
+    "shortName": "Charging Dock",
+    "features": [
+      "Charges two PS5 DualSense controllers simultaneously",
+      "Blue LED ambient light with a sleek airplane-style design",
+      "Smart chip cuts power automatically after full charge",
+      "Detachable weighted base works as a display stand"
     ]
   },
   {
@@ -4410,6 +4900,13 @@ window.PRODUCTS = [
         "alt": "Retail packaging box for charging dock",
         "kind": "packaging"
       }
+    ],
+    "shortName": "Charging Dock",
+    "features": [
+      "Charges two PS5 controllers at once with red/green LED status",
+      "Smart chip auto-cuts power when full to protect the battery",
+      "Side guards hold controllers firmly and prevent slipping",
+      "Doubles as a charging base and storage rack"
     ]
   },
   {
@@ -4464,6 +4961,13 @@ window.PRODUCTS = [
         "alt": "Retail packaging box for charging dock",
         "kind": "packaging"
       }
+    ],
+    "shortName": "Charging Dock",
+    "features": [
+      "Drop-and-charge two PS5 controllers with anti-oxidation metal contacts",
+      "No plugging or unplugging; blue LED ambient light shows status",
+      "Over-charge protection chip auto-cuts power when full",
+      "Compact, lightweight design saves desk space"
     ]
   },
   {
@@ -4508,6 +5012,13 @@ window.PRODUCTS = [
         "alt": "Charging Dock top view",
         "kind": "main"
       }
+    ],
+    "shortName": "Charging Dock",
+    "features": [
+      "Clips onto PS5 console without drilling or adhesive",
+      "Pogopin spring contacts deliver fast drop-and-charge",
+      "Dual-color LED shows charging (red) and full (green)",
+      "Built-in headphone hook plus a 30cm Type-C cable"
     ]
   },
   {
@@ -4581,15 +5092,22 @@ window.PRODUCTS = [
         "kind": "packaging",
         "color": "all"
       }
+    ],
+    "shortName": "Charging Dock",
+    "features": [
+      "Airplane-shaped dock charges two PS5 controllers in 2-4.5 hours",
+      "Smart chip prevents overcharging and auto-cuts power",
+      "Blue/orange breathing LED shows charging status at a glance",
+      "Split ABS design works as charger and display stand"
     ]
   },
   {
     "sku": "HBP-505",
     "name": "RGB Charge and Storage Bracket for PS VR2",
-    "platformKey": "ps5",
-    "platformName": "PS5 / PS5 Slim / PS5 Pro",
+    "platformKey": "vr",
+    "platformName": "VR / Meta Quest 2 / 3",
     "type": "Charging Dock",
-    "compatibility": "PS5 / PS5 Slim / PS5 Pro",
+    "compatibility": "PS VR2",
     "color": "White",
     "material": "ABS+Metal+Acrylic",
     "netWeight": "321g",
@@ -4665,6 +5183,13 @@ window.PRODUCTS = [
         "alt": "Charging dock angled product shot",
         "kind": "detail"
       }
+    ],
+    "shortName": "VR2 Charging Stand",
+    "features": [
+      "Magnetic charging for two Sense controllers protects Type-C ports",
+      "Stores the PS VR2 headset on top with ambient lighting",
+      "Transparent bubble pillar with multi-mode RGB flowing lights",
+      "Tool-free assembly, extra lanyard hooks, two color choices"
     ]
   },
   {
@@ -4786,6 +5311,13 @@ window.PRODUCTS = [
         "kind": "packaging",
         "color": "all"
       }
+    ],
+    "shortName": "Charging Dock",
+    "features": [
+      "Charges one PS Portal and two PS5 controllers together",
+      "Magnetic Type-C tips prevent cable plugging and port wear",
+      "LED shows charging/full status; protection against overcharge",
+      "Sturdy ABS with non-slip pads doubles as storage display"
     ]
   },
   {
@@ -4795,15 +5327,14 @@ window.PRODUCTS = [
     "platformName": "PS5 / PS5 Slim / PS5 Pro",
     "type": "Cooling Stand",
     "compatibility": "PS5 / PS5 Slim / PS5 Pro",
-    "compatibilityNote": "Works with both the disc and digital editions of PS5, PS5 Slim and PS5 Pro. The console sits on the base and is locked with the included screws.",
     "color": "Black,White",
     "material": "ABS",
     "shortName": "Cooling Stand",
     "features": [
-      "Adjustable cooling fan with bottom air intake",
-      "Dual charging for 2 controllers with LED status",
-      "RGB ambient light with touch control",
-      "Built-in headphone holder & expansion ports"
+      "Touch-adjustable cooling fan with bottom air intake lowers console temperature fast",
+      "Dual slots charge two PS5 controllers with clear LED status lights",
+      "Controllable RGB ambient light creates a cool gaming atmosphere",
+      "Built-in headset hanger plus extra USB and data expansion ports"
     ],
     "netWeight": "423g",
     "grossWeight": "524g",
@@ -5018,6 +5549,13 @@ window.PRODUCTS = [
         "kind": "detail",
         "color": "all"
       }
+    ],
+    "shortName": "Cooling Stand",
+    "features": [
+      "Turbo cooling fans with 2-speed touch control for disc/digital PS5",
+      "Pogopin docks charge two controllers; orange/green LED status",
+      "15 game disc slots plus a dedicated headset hook",
+      "Detachable docks, extra USB ports, non-slip pads"
     ]
   },
   {
@@ -5115,6 +5653,13 @@ window.PRODUCTS = [
         "kind": "packaging",
         "color": "all"
       }
+    ],
+    "shortName": "Cooling Base",
+    "features": [
+      "Modular dock fits PS5, Slim and Pro (disc & digital) via swappable baffles",
+      "Dual-turbo fans with 3 touch modes (low/high/off)",
+      "Aluminum alloy base with non-slip pads, water-resistant",
+      "Dual charging slots plus headset hanger, disc slots and USB hub"
     ]
   },
   {
@@ -5199,6 +5744,13 @@ window.PRODUCTS = [
         "alt": "Retail packaging box for cooling stand",
         "kind": "packaging"
       }
+    ],
+    "shortName": "Cooling Base",
+    "features": [
+      "All-in-one cooling stand designed for PS5 Slim",
+      "Cooling fans with touch panel prevent thermal throttling",
+      "Dual charging docks with red/green LED, flash at 95-100%",
+      "Headset hook plus 6 disc slots and USB/Type-C ports"
     ]
   },
   {
@@ -5293,6 +5845,13 @@ window.PRODUCTS = [
         "alt": "Retail packaging box for cooling stand",
         "kind": "packaging"
       }
+    ],
+    "shortName": "Wall Cooling Bracket",
+    "features": [
+      "Sturdy metal wall mount for PS5/Slim (disc & digital)",
+      "Dual whirlpool fans with 3 adjustable speeds",
+      "Dual controller docks with orange/blue LED and RGB lighting",
+      "Storage hooks for headset/VR plus extra USB ports"
     ]
   },
   {
@@ -5438,6 +5997,13 @@ window.PRODUCTS = [
         "kind": "packaging",
         "color": "all"
       }
+    ],
+    "shortName": "Cooling Stand",
+    "features": [
+      "Downward-draft active cooling with 3 fan speeds for Slim/Pro",
+      "Dual docks charge two controllers with orange/blue LED",
+      "Customizable RGB ambient light with 4 modes",
+      "8 disc rack, headset hook, 2 USB ports and positioning screws"
     ]
   },
   {
@@ -5522,6 +6088,13 @@ window.PRODUCTS = [
         "alt": "Retail packaging box for storage stand",
         "kind": "packaging"
       }
+    ],
+    "shortName": "Vertical Stand",
+    "features": [
+      "Vertical stand for PS5 Slim disc and digital editions",
+      "Customizable RGB lighting with 3 modes and touch control",
+      "Non-slip silicone pads prevent sliding and wobble",
+      "Simple install with coin screw and USB power"
     ]
   },
   {
@@ -5586,6 +6159,13 @@ window.PRODUCTS = [
         "alt": "PS5 Slim digital with black faceplates, angled view",
         "kind": "main"
       }
+    ],
+    "shortName": "Replacement Faceplate",
+    "features": [
+      "5-in-1 ABS shell for PS5 Slim disc and digital editions",
+      "Shock-resistant, waterproof and moisture-proof protection",
+      "Precision molded panels fit tightly without gaps",
+      "Tool-free snap-lock install keeps cooling vents clear"
     ]
   },
   {
@@ -5635,6 +6215,13 @@ window.PRODUCTS = [
         "alt": "Faceplate side angle view",
         "kind": "main"
       }
+    ],
+    "shortName": "Replacement Faceplate",
+    "features": [
+      "Custom-fit faceplate for PS5 Digital Edition, tool-free install",
+      "Thickened reinforced ABS is sturdy and impact-resistant",
+      "Oil-injection matte finish for premium texture",
+      "Precision cutouts preserve the original cooling layout"
     ]
   },
   {
@@ -5643,7 +6230,7 @@ window.PRODUCTS = [
     "platformKey": "ps5",
     "platformName": "PS5 / PS5 Slim / PS5 Pro",
     "type": "Faceplate",
-    "compatibility": "PS5 / PS5 Slim / PS5 Pro",
+    "compatibility": "PS5 Disc Edition",
     "color": "Midnight Black/Star Red/Blue/Purple/Pink",
     "material": "ABS+Oil-Spraying",
     "netWeight": "779g",
@@ -5674,6 +6261,13 @@ window.PRODUCTS = [
         "alt": "Faceplate shown with console",
         "kind": "main"
       }
+    ],
+    "shortName": "Replacement Faceplate",
+    "features": [
+      "Custom faceplate designed for PS5 Disc Edition",
+      "Impact-resistant ABS guards against bumps and scratches",
+      "One-piece molding aligns with the original buckles",
+      "Heat dissipation ducts fully reserved without blocking airflow"
     ]
   },
   {
@@ -5748,6 +6342,13 @@ window.PRODUCTS = [
         "alt": "Retail packaging box for faceplate",
         "kind": "packaging"
       }
+    ],
+    "shortName": "Replacement Faceplate",
+    "features": [
+      "ABS shell for PS5 Slim and PS5 Digital Edition",
+      "Large cooling vent improves airflow and heat dissipation",
+      "RGB LED light strip with multiple modes and touch control",
+      "USB extender with 2 extra USB ports"
     ]
   },
   {
@@ -5802,6 +6403,13 @@ window.PRODUCTS = [
         "alt": "Retail packaging box for charging dock",
         "kind": "packaging"
       }
+    ],
+    "shortName": "Charging Dock",
+    "features": [
+      "Dual slots charge two PS4 controllers with glowing blue contacts",
+      "Wide anti-slip base in a novel aircraft shape keeps controllers stable",
+      "Sturdy wear-resistant ABS body built to last",
+      "Smart safety chip prevents overcharging and short circuits"
     ]
   },
   {
@@ -5876,6 +6484,13 @@ window.PRODUCTS = [
         "alt": "Retail packaging box for charging dock",
         "kind": "packaging"
       }
+    ],
+    "shortName": "Charging Dock",
+    "features": [
+      "4-in-1 base charges 2 PS4 controllers and 2 Move controllers together",
+      "Front LED shows standby (green) and charging (red) at a glance",
+      "3 USB output ports connect phones, headsets and other devices",
+      "Anti-slip pads, cable slot and smart safety circuit keep it tidy and safe"
     ]
   },
   {
@@ -5955,6 +6570,13 @@ window.PRODUCTS = [
         "alt": "Retail packaging box for charging dock",
         "kind": "packaging"
       }
+    ],
+    "shortName": "Charging Dock",
+    "features": [
+      "Dual slots charge two PS4 controllers at the same time",
+      "LED turns red while charging and green when full or standby",
+      "Inclined stand supports controllers and works as storage",
+      "ABS casing with a 1m Micro USB cable included"
     ]
   },
   {
@@ -5984,6 +6606,13 @@ window.PRODUCTS = [
         "alt": "Cooling Stand front view",
         "kind": "main"
       }
+    ],
+    "shortName": "Cooling Base",
+    "features": [
+      "Vertical stand with 3-speed cooling fans for PS4 Pro/Slim",
+      "Dual slots charge two controllers with real-time indicator",
+      "Side rack holds up to 15 game discs",
+      "Combines console stand, cooling, charging and storage in one"
     ]
   },
   {
@@ -5992,7 +6621,7 @@ window.PRODUCTS = [
     "platformKey": "ps4",
     "platformName": "PS4 / PS4 Pro / PS4 Slim",
     "type": "Somatosensory",
-    "compatibility": "PS4 / PS4 Pro / PS4 Slim",
+    "compatibility": "PS Move (PS4)",
     "color": "Black",
     "material": "ABS",
     "netWeight": "226g",
@@ -6038,6 +6667,13 @@ window.PRODUCTS = [
         "alt": "Retail packaging box for somatosensory",
         "kind": "packaging"
       }
+    ],
+    "shortName": "Move Gun Grip",
+    "features": [
+      "Realistic pistol grip made for PS4 Move controller",
+      "Slide the Move controller in for immersive shooting games",
+      "Ergonomic anti-slip handle for comfortable long sessions",
+      "Sturdy ABS plastic with quick, hassle-free assembly"
     ]
   },
   {
@@ -6087,6 +6723,13 @@ window.PRODUCTS = [
         "alt": "Cooling stand base with headset stand, side view",
         "kind": "main"
       }
+    ],
+    "shortName": "Cooling & Charging Stand",
+    "features": [
+      "Dual high-speed cooling fans with independent push switch",
+      "Dual slots charge two Xbox Series X/S controllers",
+      "Headset hanger plus 2 USB and 1 Type-C output ports",
+      "LED indicators show charging and standby status"
     ]
   },
   {
@@ -6181,6 +6824,13 @@ window.PRODUCTS = [
         "alt": "Retail packaging box for charging dock",
         "kind": "packaging"
       }
+    ],
+    "shortName": "Battery & Dock Set",
+    "features": [
+      "4-pack 2600mWh batteries give 15-28 hours of play each",
+      "4-bay dock charges all four at once with LED status",
+      "Smart circuit guards against overcharge, overvoltage and shorts",
+      "Works for Xbox Series X/S, One and Elite controllers"
     ]
   },
   {
@@ -6230,6 +6880,13 @@ window.PRODUCTS = [
         "alt": "Cooling Stand side angle view",
         "kind": "main"
       }
+    ],
+    "shortName": "Cooling Stand",
+    "features": [
+      "Top low-noise fan with 3-speed adjustment for Xbox Series X",
+      "Dual slots charge two controllers with clear LED indicators",
+      "RGB ambient lights plus a built-in game disc holder",
+      "Extra USB ports and vertical design save desk space"
     ]
   },
   {
@@ -6319,6 +6976,13 @@ window.PRODUCTS = [
         "alt": "Black VR stand rear view with cable management",
         "kind": "main"
       }
+    ],
+    "shortName": "Charging Display Stand",
+    "features": [
+      "Charging, storage and desktop display combined in one",
+      "Retractable top bracket fits Quest 2, 3 and 3S headsets",
+      "180-degree rotating dual holders for touch controllers",
+      "RGB base with 7 solid colors and breathing light modes"
     ]
   },
   {
@@ -6363,6 +7027,13 @@ window.PRODUCTS = [
         "alt": "Charging Dock top view",
         "kind": "main"
       }
+    ],
+    "shortName": "Charging Stand",
+    "features": [
+      "Charges Quest 3/3S headset and two touch controllers together",
+      "Ambient light shows progress: white = charging, blue = full",
+      "Touch-sensitive button controls the light effects",
+      "Fixed brackets, non-slip pads and Type-C power keep it stable"
     ]
   },
   {
@@ -6417,6 +7088,13 @@ window.PRODUCTS = [
         "alt": "Retail packaging box for charging dock",
         "kind": "packaging"
       }
+    ],
+    "shortName": "Charging Stand",
+    "features": [
+      "Charges headset and stores two controllers for Quest 2/3/3S",
+      "RGB ambient light with 7 static colors and touch control",
+      "Anti-scratch silicone pads protect the headset from scuffs",
+      "Non-slip feet and Type-C power keep it stable"
     ]
   },
   {
@@ -6496,6 +7174,13 @@ window.PRODUCTS = [
         "alt": "Retail packaging box for storage stand",
         "kind": "packaging"
       }
+    ],
+    "shortName": "Wall Mount Bracket",
+    "features": [
+      "Wall hanger holds 1 VR headset and 2 touch controllers together",
+      "High-strength ABS with non-slip hooks prevents drops",
+      "Fits Quest 2/3, Pico 3/4, PS VR2 and more",
+      "Full mounting hardware included, saves desktop space"
     ]
   },
   {
@@ -6580,6 +7265,13 @@ window.PRODUCTS = [
         "alt": "Somatosensory angled product shot",
         "kind": "detail"
       }
+    ],
+    "shortName": "Controller Gun Grip",
+    "features": [
+      "Turns Quest 2 touch controllers into realistic pistol grips",
+      "Precise cutouts keep every button and trigger accessible",
+      "Red sponge pad and lanyard hole prevent collisions and flying",
+      "Ergonomic non-slip handle with snap-in install"
     ]
   },
   {
@@ -6654,6 +7346,13 @@ window.PRODUCTS = [
         "alt": "Retail packaging box for storage stand",
         "kind": "packaging"
       }
+    ],
+    "shortName": "Game Storage Holder",
+    "features": [
+      "Detachable two-tier design holds up to 24 game cases",
+      "Fits PS5, PS4, Xbox and Switch game boxes",
+      "Four side hooks hang and organize up to 4 controllers",
+      "Tool-free snap assembly with a sturdy hard-plastic build"
     ]
   },
   {
@@ -6688,6 +7387,13 @@ window.PRODUCTS = [
         "alt": "Storage Stand in use with controllers",
         "kind": "main"
       }
+    ],
+    "shortName": "Storage Stand",
+    "features": [
+      "Organizes controllers, game cards and accessories in one tower",
+      "Dedicated compartments hold gear upright and sorted",
+      "Substantial ABS frame gives a stable, wobble-free base",
+      "Vertical space-saving design displays the collection neatly"
     ]
   },
   {
@@ -6772,6 +7478,13 @@ window.PRODUCTS = [
         "alt": "Retail packaging box for storage stand",
         "kind": "packaging"
       }
+    ],
+    "shortName": "Wall Storage Holder",
+    "features": [
+      "Wall rack holds 2 gamepads and 1 headset",
+      "Thickened PS material with curved brackets prevents falls",
+      "Fits PS5, PS4, Xbox, Switch Pro and most headsets",
+      "Mounting hardware included; transparent modern display"
     ]
   },
   {
@@ -6821,6 +7534,13 @@ window.PRODUCTS = [
         "alt": "Other side angle view",
         "kind": "main"
       }
+    ],
+    "shortName": "Carrying Case Kit",
+    "features": [
+      "Hard-shell EVA bag with shock absorption and waterproof exterior",
+      "Molded interior holds the ROG Ally X, mesh pocket for cables",
+      "2 tempered glass screen protectors included",
+      "4 non-slip thumb caps plus cleaning wipes and dust stickers"
     ]
   }
 ];
