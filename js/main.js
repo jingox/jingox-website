@@ -848,6 +848,12 @@ function initDetail(){
       const res=await fetch('https://api.web3forms.com/submit',{method:'POST',body:new FormData(modalForm)});
       const json=await res.json();
       if(json.success){
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: 'generate_lead',
+          lead_source: 'product_modal',
+          sku: modalForm.querySelector('[name="sku"]') ? modalForm.querySelector('[name="sku"]').value : ''
+        });
         const box=modal.querySelector('.modal');
         box.innerHTML=`<div style="text-align:center;padding:40px 10px">
           <div style="width:64px;height:64px;border-radius:50%;background:rgba(34,197,94,.15);color:#16A34A;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;font-size:1.8rem">✓</div>
@@ -1009,6 +1015,12 @@ function openGenericModal(){
       const res=await fetch('https://api.web3forms.com/submit',{method:'POST',body:new FormData(form)});
       const json=await res.json();
       if(json.success){
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: 'generate_lead',
+          lead_source: 'product_modal',
+          sku: form.querySelector('[name="sku"]') ? form.querySelector('[name="sku"]').value : ''
+        });
         const box=modal.querySelector('.modal');
         box.innerHTML=`<div style="text-align:center;padding:40px 10px">
           <div style="width:64px;height:64px;border-radius:50%;background:rgba(34,197,94,.15);color:#16A34A;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;font-size:1.8rem">✓</div>
@@ -1062,6 +1074,13 @@ function initForm(){
       if(json.success){
         form.style.display='none';
         success.classList.add('show');
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: 'generate_lead',
+          lead_source: 'contact_page',
+          product_type: form.querySelector('[name="product_type"]').value || '',
+          estimated_quantity: form.querySelector('[name="quantity"]').value || ''
+        });
         form.reset();
       } else {
         alert('Sorry, the message could not be sent. Please email ' + CFG.email);
