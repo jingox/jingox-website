@@ -54,7 +54,7 @@ function waReady(){
   return /^\d{8,}$/.test((CFG.whatsapp||"").replace(/\D/g,'')) && !CFG.whatsapp.includes("{{");
 }
 function waLink(text){
-  if(!waReady()){ return "contact.html"; }
+  if(!waReady()){ return "contact"; }
   return "https://wa.me/" + CFG.whatsapp.replace(/\D/g,'') + "?text=" + encodeURIComponent(text);
 }
 function productWaText(p){
@@ -112,9 +112,9 @@ function phIcon(size){
 function countBy(key, val){ return PRODUCTS.filter(p=>p[key]===val).length; }
 function hasImgs(p){ return !!(p.images && p.images.length); }
 /* 阶段3：每款独立静态页 URL。SKU 转 slug：小写，非字母数字/连字符统一替换为 "-"
-   （如 HBP-253B/W -> product-hbp-253b-w.html） */
+   （如 HBP-253B/W -> product-hbp-253b-w） */
 function productSlug(sku){ return String(sku).toLowerCase().replace(/[^a-z0-9-]/g, '-'); }
-function productUrl(p){ return `product-${productSlug(p.sku)}.html`; }
+function productUrl(p){ return `product-${productSlug(p.sku)}`; }
 function plainText(s){
   return String(s==null?"":s).replace(/^-\s+/gm,'').replace(/\*\*/g,'').replace(/\s+/g,' ').trim();
 }
@@ -216,12 +216,12 @@ function setActiveNav(){
   const menu = document.querySelector('.nav-menu');
   if(!menu) return;
   let target = null;
-  if(page==='home') target = menu.querySelector('li a[href="index.html"]');
+  if(page==='home') target = menu.querySelector('li a[href="/"]');
   else if(page==='products'||page==='product') target = menu.querySelector('li.has-drop');
-  else if(page==='oem') target = menu.querySelector('li a[href="oem.html"]');
-  else if(page==='about') target = menu.querySelector('li a[href="about.html"]');
-  else if(page==='faq') target = menu.querySelector('li a[href="faq.html"]');
-  else if(page==='blog') target = menu.querySelector('li a[href="blog.html"]');
+  else if(page==='oem') target = menu.querySelector('li a[href="oem"]');
+  else if(page==='about') target = menu.querySelector('li a[href="about"]');
+  else if(page==='faq') target = menu.querySelector('li a[href="faq"]');
+  else if(page==='blog') target = menu.querySelector('li a[href="blog"]');
   if(target){
     const li = target.closest('li');
     if(li) li.classList.add('nav-active-page');
@@ -242,7 +242,7 @@ function initHome(){
           <div class="cnt">New lineup in development</div>
         </div>`;
       }
-      return `<a class="platform-card" href="products.html?platform=${pl.key}">
+      return `<a class="platform-card" href="products?platform=${pl.key}">
         <div class="pico">${phIcon(26)}</div>
         <h3>${esc(pl.name)}</h3>
         <div class="cnt">${n} product${n===1?'':'s'}</div>
@@ -329,7 +329,7 @@ function initCollection(){
     });
     grid.innerHTML = list.length
       ? list.map(productCard).join('')
-      : `<div class="empty-note">No products match your filters. <a href="products.html" style="color:var(--blue-2)">Reset</a> or contact us — we regularly add new models.</div>`;
+      : `<div class="empty-note">No products match your filters. <a href="products" style="color:var(--blue-2)">Reset</a> or contact us — we regularly add new models.</div>`;
     if(counter){
       counter.textContent = `Showing ${list.length} of ${PRODUCTS.length} products`;
     }
@@ -430,7 +430,7 @@ function extractFeatures(p){
 /* D5 (2026-10-21): OEM/ODM 事实行；CFG.oem 未填时显示中性"Contact us"，不编造天数/数字 */
 function oemFacts(){
   const o = CFG.oem || {};
-  const ask = '<a href="contact.html">Contact us for the current schedule</a>';
+  const ask = '<a href="contact">Contact us for the current schedule</a>';
   const val = v => v ? esc(v) : ask;
   const rows = [
     ["MOQ", "<b>1 piece</b> (sample &amp; bulk)"],
@@ -573,7 +573,7 @@ function colorDot(c){
 function initDetail(){
   const wrap = document.getElementById('pd');
   if(!wrap) return;
-  // SKU 来源：URL query（动态 product.html?sku=）优先；其次 body data-sku（静态独立页 product-<sku>.html）
+  // SKU 来源：URL query（动态 product?sku=）优先；其次 body data-sku（静态独立页 product-<sku>）
   let sku = new URLSearchParams(location.search).get('sku');
   const isStatic = !sku && !!document.body.dataset.sku;
   if(!sku) sku = document.body.dataset.sku || null;
@@ -584,7 +584,7 @@ function initDetail(){
     wrap.innerHTML = `<div class="container"><div class="empty-note" style="min-height:300px">
       <h2 style="margin-bottom:12px">Product not found</h2>
       <p style="margin-bottom:20px">The requested model is unavailable. Browse our full catalog.</p>
-      <a class="btn btn-primary" href="products.html">Browse All Products</a></div></div>`;
+      <a class="btn btn-primary" href="products">Browse All Products</a></div></div>`;
     document.title = "Product Not Found | JINGOX";
     return;
   }
@@ -600,10 +600,10 @@ function initDetail(){
   setOg('og:title', `${p.shortName||p.name} | JINGOX`);
   setOg('og:description', metaDesc.slice(0,160));
   /* product page is indexable: self-referencing canonical keyed by sku, ensure robots allows indexing */
-  // canonical：静态独立页自指 product-<sku>.html；动态页自指 product.html?sku=
+  // canonical：静态独立页自指 product-<sku>；动态页自指 product?sku=
   setCanonical(isStatic
-    ? `https://jingox.com/product-${productSlug(p.sku)}.html`
-    : `https://jingox.com/product.html?sku=${encodeURIComponent(p.sku)}`);
+    ? `https://jingox.com/product-${productSlug(p.sku)}`
+    : `https://jingox.com/product?sku=${encodeURIComponent(p.sku)}`);
   setMeta('robots', 'index,follow');
 
   /* color state; only show the picker when images carry color data */
@@ -790,7 +790,7 @@ function initDetail(){
         <div class="pd-desc"><p>Send us your target market and quantities and we will get back to you with a tailored quote covering MOQ, sample lead time, bulk lead time and shipping.</p></div>
         <div class="pd-cta" style="margin-top:14px">
           <button type="button" class="btn btn-primary" data-modal-open>Request a Custom Quote</button>
-          <a class="btn btn-ghost" href="oem.html">Explore OEM Services</a>
+          <a class="btn btn-ghost" href="oem">Explore OEM Services</a>
         </div>
       </div>
 
