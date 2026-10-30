@@ -972,9 +972,28 @@ function initHomeFactory(){
 }
 
 /* floating WhatsApp + Email button group (E2), injected on every page */
+function floatMailHandler(){
+  if(document.getElementById('inquiryModal')){
+    document.getElementById('inquiryModal').classList.add('show');
+  } else {
+    openGenericModal();
+  }
+}
+function bindFloatMail(scope){
+  const btn=scope.querySelector('[data-float-mail]');
+  if(btn && !btn.dataset.floatMailBound){
+    btn.addEventListener('click',floatMailHandler);
+    btn.dataset.floatMailBound='1';
+  }
+}
 function initFloatGroup(){
   document.querySelectorAll('.wa-float').forEach(el=>el.style.display='none');
-  if(document.querySelector('.float-group')) return;
+  const existing=document.querySelector('.float-group');
+  if(existing){
+    // 静态页build时已写入按钮组：补绑email按钮，否则点击无反应
+    bindFloatMail(existing);
+    return;
+  }
   const group=document.createElement('div');
   group.className='float-group';
   const generic="Hi, I'd like a wholesale quote from JINGOX — MOQ and price, please.";
@@ -987,13 +1006,7 @@ function initFloatGroup(){
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
     </button>`;
   document.body.appendChild(group);
-  group.querySelector('[data-float-mail]').addEventListener('click',()=>{
-    if(document.getElementById('inquiryModal')){
-      document.getElementById('inquiryModal').classList.add('show');
-    } else {
-      openGenericModal();
-    }
-  });
+  bindFloatMail(group);
 }
 /* generic modal on non-product pages (no SKU) */
 function openGenericModal(){
