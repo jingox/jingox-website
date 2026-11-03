@@ -2284,6 +2284,13 @@ window.PRODUCTS = [
         "alt": "Somatosensory full set with accessories",
         "kind": "detail"
       }
+    ],
+    "shortName": "18-in-1 Sports Set",
+    "features": [
+      "18-in-1 kit covers tennis, golf, lightsaber and more motion-play gear",
+      "One-click detachable grips for quick prop swaps and compact storage",
+      "Secure Joy-Con fit with precise cutouts keeps all buttons accessible",
+      "Durable blue-and-orange ABS, easy for kids and adults to assemble"
     ]
   },
   {
@@ -3085,6 +3092,13 @@ window.PRODUCTS = [
         "kind": "packaging",
         "color": "all"
       }
+    ],
+    "shortName": "2-in-1 Charging Dock",
+    "features": [
+      "Charges two Joy-Con controllers simultaneously in one tidy stand",
+      "Plug-and-play slide-in slots, no extra setup required",
+      "Slim upright design saves desk space and doubles as a storage holder",
+      "Sturdy ABS build in black or white with a stable base"
     ]
   },
   {
@@ -3357,6 +3371,13 @@ window.PRODUCTS = [
         "kind": "packaging",
         "color": "all"
       }
+    ],
+    "shortName": "Tennis Racket Pair",
+    "features": [
+      "Sold as a pair for realistic two-player tennis and sports gameplay",
+      "Large racket face improves motion control for swings and serves",
+      "Secure slot keeps each Joy-Con firmly locked during active play",
+      "Durable ABS in black or colorful finishes withstands repeated swings"
     ]
   },
   {
@@ -3472,6 +3493,13 @@ window.PRODUCTS = [
         "alt": "Retail packaging box for somatosensory",
         "kind": "packaging"
       }
+    ],
+    "shortName": "Gaming Gun Stock",
+    "features": [
+      "Turns a single Joy-Con into an arcade-style blaster for shooter games",
+      "Natural aiming posture with steadier control for immersive action",
+      "Precise cutouts keep every button and joystick fully accessible",
+      "Blue-and-green ABS with a comfortable molded grip and smooth edges"
     ]
   },
   {
@@ -7580,3 +7608,4 @@ window.PRODUCTS = [
     ]
   }
 ];
+//（注：内容由AI生成）

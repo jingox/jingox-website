@@ -81,8 +81,11 @@ const slug = (sku) => String(sku).toLowerCase().replace(/[^a-z0-9-]/g, '-');
     url: `${SITE_ORIGIN}/product.html?sku=HA-8008&_build=${Date.now()}`,
   });
   await sleep(1500);
-  const skus = await cdp.eval('window.PRODUCTS.map(p => p.sku)');
-  console.log(`共 ${skus.length} 款产品，开始生成独立页...`);
+  const ALL_SKUS = await cdp.eval('window.PRODUCTS.map(p => p.sku)');
+  // 【本次限定】只重新生成这 4 款，其余 104 款不动；全量构建时把下一行改为 const skus = ALL_SKUS;
+  const ONLY = ['HBS-522', 'HBS-375', 'HBS-121', 'HBS-122C'];
+  const skus = ALL_SKUS.filter(s => ONLY.includes(s));
+  console.log(`本次仅生成 ${skus.length} 款（全量 ${ALL_SKUS.length} 款）：${skus.join(', ')}`);
 
   let ok = 0;
   for (const sku of skus) {
@@ -128,3 +131,4 @@ const slug = (sku) => String(sku).toLowerCase().replace(/[^a-z0-9-]/g, '-');
   cdp.close();
   console.log(`完成：生成 ${ok} 个独立产品页。`);
 })().catch(e => { console.error('构建失败:', e); process.exit(1); });
+//（注：内容由AI生成）
