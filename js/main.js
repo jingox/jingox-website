@@ -6,14 +6,14 @@
    - WhatsApp / email intent links
    - Inquiry form (Web3Forms) + FAQ + mobile nav
    P4: Web3Forms inquiry form is connected (sends to info@jingox.com).
-   P4: Business WhatsApp is connected (US +1 508 763 7390 -> wa.me/15087637390).
+   P4: Business WhatsApp is connected (China +86 180 0252 8191 -> wa.me/8618002528191).
    ============================================================ */
 
 const CFG = {
   brand: "JINGOX",
   email: "info@jingox.com",
-  // Business WhatsApp, digits only, country code + number (US +1 508 763 7390)
-  whatsapp: "15087637390",
+  // Business WhatsApp, digits only, country code + number (China +86 180 0252 8191)
+  whatsapp: "8618002528191",
   // Web3Forms access key (https://web3forms.com, public client-side key)
   web3formsKey: "2918e864-3ffb-4b3c-913e-6fc4dd27cd94",
   // OEM / ODM & logistics facts — 2026-10-21 审核会议 D5。
