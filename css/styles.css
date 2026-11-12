@@ -591,6 +591,14 @@ h1,h2,h3,h4{font-family:var(--font-display);line-height:1.2;font-weight:700;lett
   .pd-quickinfo .qi-row{flex-direction:column;align-items:flex-start;gap:4px;padding:13px 72px 13px 16px}
   .pd-quickinfo .qi-row .v{text-align:left}
   .pd-desc{padding-right:72px}
+  /* touch targets round 2: remaining interactive links/controls >= 40px on phones (ticket P2-2) */
+  .footer-col a{min-height:40px;display:inline-flex;align-items:center;padding:8px 0}
+  .dropdown a{min-height:44px;display:flex;align-items:center}
+  .oem-chip{min-height:40px;display:inline-flex;align-items:center}
+  .btn{min-height:44px}
+  .btn-sm{min-height:40px}
+  .form-step button,.form-step .btn{min-height:44px}
+  .article-body a{min-height:unset}
 }
 @media(max-width:420px){
   .platform-grid,.product-grid,.features,.steps,.blog-grid,.svc-list,.trust-grid{grid-template-columns:1fr}
