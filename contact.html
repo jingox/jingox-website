@@ -133,58 +133,75 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <input type="hidden" name="access_key" value="2918e864-3ffb-4b3c-913e-6fc4dd27cd94">
         <input type="hidden" name="subject" value="New wholesale inquiry from JINGOX website">
         <input type="hidden" name="from_name" value="JINGOX Website">
-        <div class="form-grid">
-          <div class="form-field">
-            <label>Your Name <span class="req">*</span></label>
-            <input type="text" name="name" required placeholder="Full name">
+        <div class="form-progress" id="formProgress">
+          <span class="fp-dot active" data-step="1"></span>
+          <span class="fp-line"></span>
+          <span class="fp-dot" data-step="2"></span>
+          <span class="fp-label" id="fpLabel">Step 1 of 2 · Your details</span>
+        </div>
+        <div class="form-step active" data-step="1">
+          <div class="form-grid">
+            <div class="form-field full">
+              <label>Your Name <span class="req">*</span></label>
+              <input type="text" name="name" required placeholder="Full name">
+            </div>
+            <div class="form-field full">
+              <label>Email <span class="req">*</span></label>
+              <input type="email" name="email" required placeholder="you@company.com">
+            </div>
+            <div class="form-field full">
+              <label>Product Type</label>
+              <select name="product_type">
+                <option value="">Select a category…</option>
+                <option>Charging Dock</option>
+                <option>Cooling Stand</option>
+                <option>Storage Stand</option>
+                <option>Somatosensory</option>
+                <option>Faceplate</option>
+                <option>Switch Lite Accessories</option>
+                <option>Protective Case</option>
+                <option>Storage Bag</option>
+                <option>Other</option>
+                <option>OEM / Custom Project</option>
+              </select>
+            </div>
+            <div class="form-field full">
+              <button type="button" class="btn btn-primary btn-block btn-lg" id="toStep2">Continue</button>
+              <p class="form-note">Takes about 30 seconds. No payment needed to ask a quote.</p>
+            </div>
           </div>
-          <div class="form-field">
-            <label>Company Name</label>
-            <input type="text" name="company" placeholder="Your business">
-          </div>
-          <div class="form-field">
-            <label>Email <span class="req">*</span></label>
-            <input type="email" name="email" required placeholder="you@company.com">
-          </div>
-          <div class="form-field">
-            <label>WhatsApp / Phone</label>
-            <input type="text" name="whatsapp" placeholder="With country code">
-          </div>
-          <div class="form-field">
-            <label>Product Type</label>
-            <select name="product_type">
-              <option value="">Select a category…</option>
-              <option>Charging Dock</option>
-              <option>Cooling Stand</option>
-              <option>Storage Stand</option>
-              <option>Somatosensory</option>
-              <option>Faceplate</option>
-              <option>Switch Lite Accessories</option>
-              <option>Protective Case</option>
-              <option>Storage Bag</option>
-              <option>Other</option>
-              <option>OEM / Custom Project</option>
-            </select>
-          </div>
-          <div class="form-field">
-            <label>Estimated Quantity</label>
-            <select name="quantity">
-              <option value="">Select quantity…</option>
-              <option>1 piece (sample)</option>
-              <option>2–49 pieces</option>
-              <option>50–199 pieces</option>
-              <option>200–499 pieces</option>
-              <option>500+ pieces</option>
-              <option>Not sure yet</option>
-            </select>
-          </div>
-          <div class="form-field full">
-            <label>Message / Reference Image</label>
-            <textarea name="message" placeholder="Model SKU or link, target market, customization (logo / color / packaging), and any link to a reference image…"></textarea>
-          </div>
-          <div class="form-field full">
-            <button type="submit" class="btn btn-primary btn-block btn-lg">Send Inquiry</button>
-            <p class="form-note">We use your details only to reply to this inquiry. See our <a href="privacy">Privacy Policy</a>.</p>
+        </div>
+        <div class="form-step" data-step="2">
+          <div class="form-grid">
+            <div class="form-field">
+              <label>Company Name</label>
+              <input type="text" name="company" placeholder="Your business">
+            </div>
+            <div class="form-field">
+              <label>WhatsApp / Phone</label>
+              <input type="text" name="whatsapp" placeholder="With country code">
+            </div>
+            <div class="form-field">
+              <label>Estimated Quantity</label>
+              <select name="quantity">
+                <option value="">Select quantity…</option>
+                <option>1 piece (sample)</option>
+                <option>2–49 pieces</option>
+                <option>50–199 pieces</option>
+                <option>200–499 pieces</option>
+                <option>500+ pieces</option>
+                <option>Not sure yet</option>
+              </select>
+            </div>
+            <div class="form-field full">
+              <label>Message / Reference Image</label>
+              <textarea name="message" placeholder="Model SKU or link, target market, customization (logo / color / packaging), and any link to a reference image…"></textarea>
+            </div>
+            <div class="form-field full">
+              <button type="submit" class="btn btn-primary btn-block btn-lg">Send Inquiry</button>
+              <button type="button" class="btn btn-ghost btn-block" id="backStep1" style="margin-top:10px">Back</button>
+              <p class="form-note">We use your details only to reply to this inquiry. See our <a href="privacy">Privacy Policy</a>.</p>
+            </div>
           </div>
         </div>
       </form>

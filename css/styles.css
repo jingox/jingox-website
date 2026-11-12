@@ -429,7 +429,18 @@ h1,h2,h3,h4{font-family:var(--font-display);line-height:1.2;font-weight:700;lett
 .form-field textarea{resize:vertical;min-height:100px}
 .form-field select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);background-position:calc(100% - 20px) 50%,calc(100% - 15px) 50%;background-size:5px 5px;background-repeat:no-repeat}
 .form-field select option{background:var(--surface-2);color:var(--text)}
-.form-note{font-size:.8rem;color:var(--muted-2);margin-top:10px}
+.form-note{font-size:.8rem;color:var(--muted-2);margin-top:10px;text-align:center}
+/* multi-step form */
+.form-progress{display:flex;align-items:center;gap:10px;margin-bottom:22px}
+.form-progress .fp-dot{width:12px;height:12px;border-radius:50%;background:var(--line-strong);flex:none;transition:.2s}
+.form-progress .fp-dot.active{background:var(--blue);box-shadow:0 0 0 4px rgba(0,132,175,.18)}
+.form-progress .fp-line{flex:1;height:2px;background:var(--line);border-radius:2px}
+.form-progress .fp-label{font-size:.8rem;color:var(--muted-2);white-space:nowrap}
+.form-step{display:none}
+.form-step.active{display:block;animation:fpFade .25s ease}
+@keyframes fpFade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.form-step .form-grid{grid-template-columns:1fr 1fr}
+@media (max-width:560px){.form-step .form-grid{grid-template-columns:1fr}}
 .form-success{display:none;text-align:center;padding:46px 24px}
 .form-success.show{display:block}
 .form-success .ok{width:64px;height:64px;border-radius:50%;background:rgba(34,197,94,.15);color:var(--wa);

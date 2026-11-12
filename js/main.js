@@ -1064,6 +1064,36 @@ function initForm(){
   const pt = new URLSearchParams(location.search).get('type');
   if(pt){ const sel=form.querySelector('[name="product_type"]'); if(sel) sel.value=pt; }
 
+  // multi-step navigation
+  const steps = Array.from(form.querySelectorAll('.form-step'));
+  const dots = Array.from(form.querySelectorAll('.fp-dot'));
+  const fpLabel = document.getElementById('fpLabel');
+  const stepLabels = ['Step 1 of 2 · Your details','Step 2 of 2 · Project details'];
+  function showStep(n){
+    steps.forEach(s=>s.classList.toggle('active', Number(s.dataset.step)===n));
+    dots.forEach(d=>d.classList.toggle('active', Number(d.dataset.step)<=n));
+    if(fpLabel) fpLabel.textContent = stepLabels[n-1];
+    const cardTop = card.getBoundingClientRect().top + window.scrollY;
+    window.scrollTo({top: cardTop - 120, behavior:'smooth'});
+  }
+  const toStep2 = document.getElementById('toStep2');
+  if(toStep2) toStep2.addEventListener('click', ()=>{
+    const nameF = form.querySelector('[name=name]');
+    const emailF = form.querySelector('[name=email]');
+    let firstBad = null;
+    if(!nameF.value.trim()){ firstBad = nameF; }
+    else if(!emailF.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailF.value.trim())){ firstBad = emailF; }
+    if(firstBad){
+      firstBad.focus();
+      firstBad.style.borderColor = 'var(--orange)';
+      setTimeout(()=>{ firstBad.style.borderColor=''; }, 1600);
+      return;
+    }
+    showStep(2);
+  });
+  const backStep1 = document.getElementById('backStep1');
+  if(backStep1) backStep1.addEventListener('click', ()=>showStep(1));
+
   form.addEventListener('submit', async e=>{
     e.preventDefault();
     if(CFG.web3formsKey.includes('{{')){
