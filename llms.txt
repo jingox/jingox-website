@@ -1,0 +1,34 @@
+# JINGOX
+> JINGOX is the wholesale brand of Shenzhen Zhimi Technology Co., Ltd., a Shenzhen, China source factory and trading partner for wholesale gaming console accessories. It supplies ready catalog items and OEM/ODM custom products for Nintendo Switch 2, Nintendo Switch, PlayStation (PS5 / Slim / Pro, PS4), Xbox and VR/Meta Quest platforms.
+
+Key facts for buyers:
+- Business model: B2B wholesale and OEM/ODM only. The site is a pure inquiry site — no online shopping cart, no payment, no published retail prices; pricing is provided per quote.
+- Minimum order: 1 piece for ready catalog products; a single sample is accepted. Custom OEM projects have a separate MOQ based on the model and customization level.
+- Main product categories: charging docks, cooling stands, controller and console storage, somatosensory/sports kits, faceplates, protective cases and storage bags.
+- OEM/ODM: custom color, logo, retail packaging, bundled sets and custom product development are supported.
+- Quality: every order is backed by material and function checks and consistent specifications; EMC and RoHS test reports are available for eligible models on request.
+- Contact: send an inquiry through the contact page, message on WhatsApp, or call +86 18002528191. Replies with MOQ and pricing are sent within one business day.
+
+## Core pages
+
+- [Home](https://jingox.com/): Company overview, featured products and free buying guides
+- [All Products](https://jingox.com/products): The full catalog of 108 wholesale products, filterable by platform
+- [OEM / ODM](https://jingox.com/oem): Customization capabilities, process and supported options
+- [About JINGOX](https://jingox.com/about): Factory background, workshop and production facilities
+- [Contact / Get a Quote](https://jingox.com/contact): Inquiry form, email, WhatsApp and phone
+- [FAQ](https://jingox.com/faq): MOQ, samples, OEM, supported consoles and common sourcing questions
+- [Blog](https://jingox.com/blog): Buying guides, comparisons and factory verification articles
+- [Product Catalog (PDF)](https://jingox.com/JINGOX-Product-Catalog.pdf): Downloadable wholesale catalog
+- [Privacy Policy](https://jingox.com/privacy): Data handling and privacy terms
+- [Terms of Service](https://jingox.com/terms): Website and service terms
+
+## Free buying guides
+
+- [Switch 2 Charging Dock Complete Guide](https://jingox.com/blog-switch2-charging-dock-guide): How to choose Switch 2 charging docks, compatibility, safety and bulk OEM checks
+- [Switch 2 Somatosensory Sports Guide](https://jingox.com/blog-switch2-somatosensory-guide): How to choose sports and motion kits, bundles, compatibility and factory verification
+- [PS5 Accessories Complete Guide](https://jingox.com/blog-ps5-accessories-guide): PS5 / Slim / Pro charging, cooling, faceplates and storage, with OEM guidance
+
+## Optional
+
+- [Sitemap](https://jingox.com/sitemap.xml): Machine-readable list of all 154 pages
+- [Robots](https://jingox.com/robots.txt): Crawler access rules, including AI search bots
