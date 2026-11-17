@@ -140,9 +140,9 @@ h1,h2,h3,h4{font-family:var(--font-display);line-height:1.2;font-weight:700;lett
 @keyframes heroBreathe{0%{opacity:.45}100%{opacity:1}}
 .hero-inner{position:relative;z-index:4;width:100%;padding:118px 0 70px;display:flex;justify-content:center;text-align:center}
 .hero-copy{max-width:770px;display:flex;flex-direction:column;align-items:center;transform:translateX(-3%)}
-.hero-badge{display:inline-flex;align-items:center;gap:9px;padding:7px 15px;border-radius:30px;
-  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.22);
-  font-size:.83rem;font-weight:600;color:#E8E9FF;margin-bottom:24px;letter-spacing:.02em;backdrop-filter:blur(4px)}
+.hero-badge{display:inline-flex;align-items:center;gap:9px;padding:8px 17px;border-radius:30px;
+  background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.32);
+  font-size:.88rem;font-weight:700;color:#FFFFFF;margin-bottom:24px;letter-spacing:.02em;backdrop-filter:blur(6px)}
 .hero-badge .pulse{width:8px;height:8px;border-radius:50%;background:var(--orange);animation:heroPulse 2s infinite}
 @keyframes heroPulse{0%{box-shadow:0 0 0 0 rgba(249,115,22,.55)}70%{box-shadow:0 0 0 9px rgba(249,115,22,0)}100%{box-shadow:0 0 0 0 rgba(249,115,22,0)}}
 .hero h1{font-size:clamp(2.15rem,3.7vw,3.25rem);line-height:1.1;margin-bottom:24px;color:#fff;font-weight:800;
