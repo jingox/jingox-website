@@ -26,12 +26,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="twitter:description" content="Source factory for Switch/PS5/Xbox/VR accessories. 1-piece MOQ, OEM/ODM, reliable wholesale supply.">
 <meta name="twitter:image" content="https://jingox.com/images/og-share.png">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/manrope@5.0.20/400.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/manrope@5.0.20/500.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/manrope@5.0.20/600.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/manrope@5.0.20/700.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/manrope@5.0.20/800.css">
+<link rel="preload" as="image" href="images/hero-bg-mobile.webp" media="(max-width:980px)" fetchpriority="high">
+<link rel="preload" as="image" href="images/hero-bg.webp" media="(min-width:981px)" fetchpriority="high">
+<link rel="stylesheet" href="fonts/manrope.css">
 <link rel="stylesheet" href="css/styles.css">
 <script type="application/ld+json">
 {
@@ -105,8 +102,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- HERO (screen 1) -->
 <section class="hero" id="hero">
   <div class="hero-bg">
-    <img class="hero-bg-desktop" src="images/hero-bg.jpg" alt="JINGOX game accessories showroom" loading="eager" decoding="async">
-    <img class="hero-bg-mobile" src="images/hero-bg-mobile.jpg" alt="JINGOX game accessories showroom" loading="eager" decoding="async">
+    <picture>
+      <source media="(max-width: 980px)" type="image/webp" srcset="images/hero-bg-mobile.webp">
+      <source media="(max-width: 980px)" srcset="images/hero-bg-mobile.jpg">
+      <source type="image/webp" srcset="images/hero-bg.webp">
+      <img src="images/hero-bg.jpg" alt="JINGOX game accessories showroom" fetchpriority="high" decoding="async" width="3128" height="1340">
+    </picture>
   </div>
   <div class="hero-shade" aria-hidden="true"></div>
   <div class="hero-glow" aria-hidden="true"></div>
